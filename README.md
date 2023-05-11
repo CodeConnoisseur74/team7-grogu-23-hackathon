@@ -1,7 +1,7 @@
 # 🥣 **Name** 👽 
 ## *desc*
 
-![image info]()
+![image info](https://ui.dev/amiresponsive)
 
 ## Game rules
 
