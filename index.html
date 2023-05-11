@@ -27,9 +27,14 @@
       <!--Villain content area-->
       <div class="row">
         <div class="container dice-container col-5">
-          <div class="">Dice Area</div>
-          <div class="">Blender Area</div>
-          <div class="">Blender Area</div>
+          <div class="col-7">
+            <div>Dice Area</div>
+          </div>
+          <div class="col-3">
+            <div>Blender Area</div>
+            <div>Unmarked</div>
+          </div>
+
           <button>Roll Dice</button>
         </div>
         <div class="container villain-container col-5">
@@ -51,21 +56,23 @@
         <div class="col-5 container hero-container mt-5">
           <div class="row">
             <div class="col-5 btn-wrapper">
-              <button class="colour-btn">Red</button>
-              <button class="colour-btn">Blue</button>
-              <button class="colour-btn">Green</button>
-              <button class="colour-btn">Yellow</button>
-              <button class="colour-btn">Black</button>
+              <button class="colour-btn" value="red" id="red">Red</button>
+              <button class="colour-btn" value="blue" id="blue">Blue</button>
+              <button class="colour-btn" value="green" id="green">Green</button>
+              <button class="colour-btn" value="yellow" id="yellow">
+                Yellow
+              </button>
+              <button class="colour-btn" value="black" id="black">Black</button>
             </div>
             <div class="col-7">
-              <img src="assets/images/grogu.png" alt="" />
+              <img src="images/grogu.png" alt="" />
               <div>
                 <p id="health-points">Health points</p>
               </div>
             </div>
           </div>
         </div>
-        <div>
+        <div col-7>
           <button>Rewards</button>
         </div>
       </div>
