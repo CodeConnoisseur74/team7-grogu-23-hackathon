@@ -91,6 +91,7 @@ Game rounds:
 ## Credits
 
 * [Be sure to credit any assets that are not yours](https://www.example.com)
+Sound effects: https://pixabay.com/sound-effects/search/star%20wars/
 
 | Name                | LinkedIn                                                                                    | GitHub                                                                                    |
 |---------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
