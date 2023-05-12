@@ -10,7 +10,34 @@
         font-family: 'Hind Guntur', sans-serif;
         font-weight: 300;
         color: whitesmoke !important;
+        overflow-x: hidden;
         }
+
+    /*Header Style*/
+    header{
+        text-align: center;
+    }
+
+    header ul {
+        float: right;
+        position: relative;
+        top: -80px;
+    }
+
+    header li {
+        display: inline;
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+
+    header li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    header li a:hover {
+        color: rgb(3, 223, 3);
+    }
     
     h1 {
         font-family: 'Poller One', cursive;
@@ -30,10 +57,7 @@
         background-size: cover;
       }
     
-    /*Header Style*/
-    header{
-        text-align: center;
-    }
+    
     
     /*Content Style*/
     
@@ -42,6 +66,7 @@
     .dice-container {
         background-color: bisque;
         min-height: 250px;
+        border-radius: 5px;
     }
 
     .dice-area {
@@ -49,6 +74,7 @@
         min-height: 150px;
         border: 1px solid black;
         margin-top: 10px;
+        border-radius: 5px;
     }
 
     .dice {
@@ -83,6 +109,7 @@
     /*Villain Container*/
     .villain-container {
         background-color: rgb(236, 77, 77);
+        border-radius: 5px;
     }
     .box-container {
         display: flex;
@@ -93,34 +120,59 @@
         border: 1px solid black;
         width: 80%;
         height: 50px;
-        margin: 0 10px;
+        margin: 10px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
     .box-by-two {
         border: 1px solid black;
         width: 80%;
         height: 50px;
-        margin: 0 10px;
+        margin: 10px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
     .box-by-four {
         border: 1px solid black;
-        width: 50%;
-        height: 100px;
+        width: 100%;
+        height: 50px;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
+    .top-box-row {
+        display: flex;
+        justify-content: center; 
+        margin-top: 10px !important;
+    }
+    .middle-box-row {
+        display: flex;
+        justify-content: center; 
+    }
     .bottom-box-row {
-        display: block;
-        
+        display: flex;
+        justify-content: center; 
     }
 
     .villain-img {
         width: 100%;
         height: auto;
     }
+    .villain-desc {
+        border: 1px solid black;
+        min-height: 150px;
+        margin: 5px 0;
+    }
     /*Hero Container*/
     
     .hero-container {
         background-color: azure;
-        display: block;
+        
+        border-radius: 5px;
     }
     
     .hero-container img {
@@ -184,6 +236,26 @@
         justify-content: center;
         align-items: center;
     }
+
+    .rewards-container {
+        display: block;
+        justify-content: center;
+        border: 1px solid yellow;
+    }
+
+    .reward {
+        border: 1px solid rgb(255, 255, 255);
+        width: 50px;
+        height: 50px;
+    }
+
+    .section {
+        transition: transform 1s, opacity 1s;
+      }
+      .section-hidden {
+        opacity: 0;
+        transform: translateY(5rem);
+      }
     
     
     
