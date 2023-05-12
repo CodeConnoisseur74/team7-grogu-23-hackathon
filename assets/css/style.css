@@ -55,8 +55,15 @@ header {
 
 #content-area div {
   text-align: center;
-  width: 100%;
 }
+
+/* Modal */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
 
 /*Dice Container*/
 .dice-container {
