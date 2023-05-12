@@ -24,36 +24,72 @@
     </header>
 
     <div id="content-area">
-      <!--Villain content area-->
+      <!--Dice area-->
       <div class="row">
-        <div class="container dice-container col-5">
-          <div class="col-7">
-            <div>Dice Area</div>
+        <div class="container dice-container col-md-5">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="dice-area text-center">
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+                <div class="dice" draggable="true"><p>1</p></div>
+                <div class="dice" draggable="true"><p>2</p></div>
+              </div>
+              <button id="roll-dice" class="text-center">Roll Dice</button>
+            </div>
+            <div class="col-3">
+              <div class="blender-area text-center">Blender Area</div>
+              <button class="unmarked text-center">Blend dice</button>
+            </div>
           </div>
-          <div class="col-3">
-            <div>Blender Area</div>
-            <div>Unmarked</div>
-          </div>
+        </div>
 
-          <button>Roll Dice</button>
-        </div>
-        <div class="container villain-container col-5">
-          <div class="col-5">
-            <div class="col-6">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-6">Box</div>
-            <div class="col-6">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-10">Arrows</div>
+        <!--Villain Container-->
+        <div class="container villain-container col-md-5">
+          <div class="row">
+            <div class="col-5 box-container">
+              <div class="row top-box-row">
+                <div class="col-6 box-by-two">Box</div>
+                <div class="col-3 box-by-one">Box</div>
+              </div>
+              <div class="row middle-box-row">
+                <div class="col-3 box-by-one">Box</div>
+                <div class="col-6 box-by-two">Box</div>
+              </div>
+              <div class="bottom-box-row">
+                <div class="box-by-four">Box</div>
+                <div class="box-by-one">Box</div>
+                <div class="box-by-one">Box</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <img class="villain-img" src="images/darth-vader.png" alt="" />
+              <div class="">Villain Description</div>
+            </div>
           </div>
-          <div class="col-7">
-            <img src="" alt="" />
-            <div class="">Villain Description</div>
-          </div>
         </div>
-        <div class="col-5 container hero-container mt-5">
+        <!--Hero Container-->
+        <div class="col-md-5 container hero-container mt-5">
           <div class="row">
             <div class="col-5 btn-wrapper">
               <button class="colour-btn" value="red" id="red">Red</button>
@@ -66,7 +102,7 @@
             </div>
             <div class="col-7">
               <img src="images/grogu.png" alt="" />
-              <div>
+              <div class="health-container">
                 <p id="health-points">Health points</p>
               </div>
             </div>
