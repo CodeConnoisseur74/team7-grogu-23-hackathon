@@ -77,7 +77,6 @@ function generateHeroModal(){
             renderHeroGameProfile(id)
         } );
     });
-    
 }
 
 //Write function to render hero  profile in html according to player chosen hero at the start of turn
