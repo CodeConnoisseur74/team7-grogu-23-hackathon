@@ -41,6 +41,14 @@ header li a:hover {
     color: rgb(3, 223, 3);
 }
 
+#highscoreModalLabel {
+    color: black;
+}
+
+#highscore-list {
+    color: black;
+}
+
 h1 {
     font-family: 'Poller One', cursive;
     color: whitesmoke;
