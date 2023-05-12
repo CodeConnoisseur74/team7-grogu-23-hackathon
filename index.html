@@ -19,61 +19,63 @@
     <title>StarWars Battle Dice</title>
   </head>
   <body id="stars">
-    <header>
-      <h1>StarWars <br />Battle Dice</h1>
-    </header>
+    <div class="container-fluid h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <header>
+          <h1>StarWars <br />Battle Dice</h1>
+        </header>
 
-    <div id="content-area">
-      <!--Villain content area-->
-      <div class="row">
-        <div class="container dice-container col-5">
-          <div class="">Dice Area</div>
-          <div class="">Blender Area</div>
-          <div class="">Blender Area</div>
-          <button>Roll Dice</button>
-        </div>
-        <div class="container villain-container col-5">
-          <div class="col-5">
-            <div class="col-6">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-6">Box</div>
-            <div class="col-6">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-4">Box</div>
-            <div class="col-10">Arrows</div>
-          </div>
-          <div class="col-7">
-            <img src="" alt="" />
-            <div class="">Villain Description</div>
-          </div>
-        </div>
-        <div class="col-5 container hero-container mt-5">
+        <div id="content-area" class="col-10">
+          <!--Villain content area-->
           <div class="row">
-            <div class="col-5 btn-wrapper">
-              <button class="colour-btn btn btn-danger">Red</button>
-              <button class="colour-btn btn btn-primary">Blue</button>
-              <button class="colour-btn btn btn-success">Green</button>
-              <button class="colour-btn btn btn-warning">Yellow</button>
-              <button class="colour-btn btn btn-dark">Black</button>
+            <div class="container dice-container col-5">
+              <div class="">Dice Area</div>
+              <div class="">Blender Area</div>
+              <div class="">Blender Area</div>
+              <button>Roll Dice</button>
             </div>
-            <div class="col-7">
-              <img src="assets/images/grogu.png" alt="" />
-              <div>
-                <p id="health-points">Health points</p>
+            <div class="container villain-container col-5">
+              <div class="col-5">
+                <div class="col-6">Box</div>
+                <div class="col-4">Box</div>
+                <div class="col-4">Box</div>
+                <div class="col-6">Box</div>
+                <div class="col-6">Box</div>
+                <div class="col-4">Box</div>
+                <div class="col-4">Box</div>
+                <div class="col-10">Arrows</div>
+              </div>
+              <div class="col-7">
+                <img src="" alt="" />
+                <div class="">Villain Description</div>
               </div>
             </div>
+            <div class="col-5 container hero-container mt-5">
+              <div class="row">
+                <div class="col-5 btn-wrapper">
+                  <button class="colour-btn btn btn-danger">Red</button>
+                  <button class="colour-btn btn btn-primary">Blue</button>
+                  <button class="colour-btn btn btn-success">Green</button>
+                  <button class="colour-btn btn btn-warning">Yellow</button>
+                  <button class="colour-btn btn btn-dark">Black</button>
+                </div>
+                <div class="col-7">
+                  <img src="assets/images/grogu.png" alt="" />
+                  <div>
+                    <p id="health-points">Health points</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button>Rewards</button>
+            </div>
           </div>
         </div>
-        <div>
-          <button>Rewards</button>
-        </div>
-      </div>
-    </div>
 
-    <footer class="fixed-bottom">
-      <p>Footer Content</p>
-    </footer>
+        <footer class="fixed-bottom">
+          <p>Footer Content</p>
+        </footer>
 
     <!-- JS -->
     <script src="assets/js/script.js"></script>

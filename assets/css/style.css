@@ -1,113 +1,35 @@
+/*Import fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap');
 
-/*General style*/
-*{
-    padding: 0;
-    border: 0;
-    margin: 0;
+/*Global style*/
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Hind Guntur', sans-serif;
-    font-weight: 300;
-    color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    }@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap');
+body {
+  font-family: 'Hind Guntur', sans-serif;
+  font-weight: 300;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-    /*General style*/
-    *{
-        padding: 0;
-        border: 0;
-        margin: 0;
-    }
-    
-    body{
-        font-family: 'Hind Guntur', sans-serif;
-        font-weight: 300;
-        color: whitesmoke !important;
-        }
-    
-    h1 {
-        font-family: 'Poller One', cursive;
-        color: whitesmoke;
-    }
-    
-    h2{
-        font-family: 'Marmelad', sans-serif;
-        color: whitesmoke
-    }
-    /*Background Image*/
-    #stars{
-        background: url('../images/stars_background.jpg') no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }
-    
-    /*Header Style*/
-    header{
-        text-align: center;
-    }
-    
-    /*Content Style*/
-    
-    /*Dice Container*/
-    
-    .dice-container {
-        background-color: bisque;
-    }
-    
-    /*Villain Container*/
-    .villain-container {
-        background-color: rgb(236, 77, 77);
-    }
-    /*Hero Container*/
-    
-    .hero-container {
-        background-color: azure;
-        display: block;
-    }
-    
-    .hero-container img {
-        width: 100%;
-    }
-    
-    .btn-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .colour-btn {
-        width: 80%;
-        padding: 10px 0px;
-        margin: 10px;
-    }
-    
-    
-    
-    /*Footer Style*/
-    footer{
-        background-color: rgb(27, 27, 47, 0.9);
-        text-align: center;
-    
-    }
-    /*Media Query for screens bigger than 1240*/
-    
+h1, h2 {
+  color: whitesmoke !important;
+}
 
 h1 {
-    font-family: 'Poller One', cursive;
-    color: whitesmoke;
+  font-family: 'Poller One', cursive;
 }
 
-h2{
-    font-family: 'Marmelad', sans-serif;
-    color: whitesmoke
+h2 {
+  font-family: 'Marmelad', sans-serif;
 }
+
 /*Background Image*/
 #stars{
     background: url('../images/stars_background.jpg') no-repeat center center fixed; 
@@ -118,35 +40,68 @@ h2{
   }
 
 /*Header Style*/
-header{
-    text-align: center;
+header {
+  text-align: center;
 }
 
 /*Content Style*/
-
-#content-area{
-    background: rgb(27, 27, 47, 0.9);
-    display: flex;
-    align-content: center;
-    margin: 5px;
-}
-#content-area div{
-    text-align: center;
-    width:100%;
+#content-area {
+  background-color: rgba(27, 27, 47, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
 }
 
+#content-area div {
+  text-align: center;
+  width: 100%;
+}
 
+/*Dice Container*/
+.dice-container {
+  background-color: bisque;
+}
+
+/*Villain Container*/
+.villain-container {
+  background-color: rgb(236, 77, 77);
+}
+
+/*Hero Container*/
+.hero-container {
+  background-color: azure;
+  display: block;
+}
+
+.hero-container img {
+  width: 100%;
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.colour-btn {
+  width: 80%;
+  padding: 10px 0px;
+  margin: 10px;
+}
 
 /*Footer Style*/
-footer{
-    background-color: rgb(27, 27, 47, 0.9);
-    text-align: center;
-
+footer {
+  background-color: rgba(27, 27, 47, 0.9);
+  text-align: center;
+  color: whitesmoke;
 }
+
 /*Media Query for screens bigger than 1240*/
-@media screen and (min-width: 1240px){
-    body{
-        max-width: 1240px;
-        margin: auto;
-    }
+@media screen and (min-width: 1240px) {
+  body {
+    max-width: 1240px;
+    margin: auto;
+  }
 }
