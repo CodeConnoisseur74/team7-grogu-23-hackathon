@@ -1,6 +1,8 @@
+/*Import fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap');
 
-    *{
+/*Global style*/
+ *{
         padding: 0;
         border: 0;
         margin: 0;
