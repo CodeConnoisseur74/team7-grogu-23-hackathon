@@ -67,11 +67,19 @@ header li a {
 #highscore-btn {
     color: #000;
     background-color: yellow;
+    transition: background-color 0.5s;
+}
+#highscore-btn:hover {
+    background-color: rgba(255, 238, 0, 0.6);
 }
 
 #new-game-btn {
     color: #ffffff;
     background-color: rgb(0, 26, 255);
+    transition: background-color 0.5s;
+}
+#new-game-btn:hover {
+    background-color: rgba(0, 26, 255,0.6);
 }
 
 /*==================End of Navbar=====================*/
@@ -123,7 +131,7 @@ h2 {
 }
 
 .dice {
-    width: 40px;
+    min-width: 40px;
     display: inline-block;
     height: 40px;
     border: 2px solid black;
@@ -133,7 +141,8 @@ h2 {
 .blender-area {
     width: 100%;
     min-height: 100px;
-    border: 1px solid black;
+    border: 2px solid #fff;
+    border-radius: 20px;
     margin-top: 10px;
 }
 
@@ -181,7 +190,7 @@ h2 {
 .villain-container {
     background-color: rgba(179, 37, 42, 0.7);    
     border-radius: 5px;
-    min-height: 350px;
+    min-height: fit-content;
 }
 
 .box-container {
@@ -346,10 +355,15 @@ h2 {
     color: #fff;
 }
 
+.colour-amount {
+    float: right;
+    margin-right: 5px;
+}
+
 .health-container {
     width: 80%;
     height: 60px;
-    border: 2px solid green;
+    border: 2px solid #ffffff;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -400,5 +414,32 @@ footer {
     }
     .villain-img {
         width: 40%;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {
+    .logo {
+        display: none;
+    }
+    header nav {
+        float: left;
+    }
+    .nav-links li {
+        display: block;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {
+    .box-by-one, .box-by-two, .box-by-four {
+        margin: 2px ;
+        width:100%;
+    }
+
+    .dice {
+        margin: 2px;
+    }
+
+    .blender-area {
+        min-height: 150px;
     }
   }
