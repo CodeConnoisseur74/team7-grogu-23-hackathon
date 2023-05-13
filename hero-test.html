@@ -36,16 +36,15 @@
     </div>
     
     <!-- Modal -->
-    <div class="modal fade hero-selection" id="selectHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade hero-selection" id="selectHeroModal" tabindex="-1" role="dialog" aria-labelledby="reward-modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content bg-dark">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Choose a Hero</h5>
+                    <h5 class="modal-title" id="reward-modal">Choose a Hero</h5>
                     <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div id="chooseHeroArrow" class="modal-body carousel slide" data-interval="false">
                     <div class="carousel-inner" id="modal-heroes">
-
                     </div>
                     <a class="carousel-control-prev" href="#chooseHeroArrow" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true" aria-label="Arrow moving to next option"></span>
@@ -65,10 +64,10 @@
           <div class="row">
             <div class="col-5 btn-wrapper">
               <div class="hero-powers" id="red"><span class="badge bg-danger power-badges" id="red-power">0/6</span></div>
-              <div class="hero-powers" id="blue"><span class="badge bg-danger power-badges" id="red-power">0/6</span></div>
-              <div class="hero-powers" id="green"> <span class="badge bg-danger power-badges" id="red-power">0/6</span></div>
-              <div class="hero-powers" id="yellow"><span class="badge bg-danger power-badges" id="red-power">0/6</span></div>
-              <div class="hero-powers" id="black"><span class="badge bg-danger power-badges" id="red-power">0/6</span></div>
+              <div class="hero-powers" id="blue"><span class="badge bg-primary power-badges" id="blue-power">0/6</span></div>
+              <div class="hero-powers" id="green"> <span class="badge bg-success power-badges" id="green-power">0/6</span></div>
+              <div class="hero-powers" id="yellow"><span class="badge bg-warning power-badges" id="yellow-power">0/6</span></div>
+              <div class="hero-powers" id="black"><span class="badge bg-dark power-badges" id="black-power">0/6</span></div>
             </div>
             <div class="col-7">
               <img src="" id ="game-hero-img" alt=""/>
@@ -88,8 +87,17 @@
         </div>
         <div class="col-5 mt-5 rewards-container">
           <h4 class="text-center">Rewards</h4>
+              <!-- Reward modal button -->
+              <div class="row">
+                <div class="col-12">
+                    <section class="jumbotron text-center">
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#select-reward-modal">
+                            Claim Reward
+                        </button>
+                    </section>
+                </div>
+            </div>
           <hr />
-          <div class="reward"></div>
         </div>
       </div>
          <div class="row">
@@ -98,6 +106,31 @@
          </div>
     </div>
   </div>
+
+  <!--Rewards Modal-->
+  <div class="modal fade select-rewards" id="select-reward-modal" tabindex="-1" role="dialog" aria-labelledby="reward-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reward-modal">Congratulation on Defeating the Opponent!</h5>
+                <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <p>You earned <span id="earned-game-point"> - </span>points!</p>
+                <p>Your life points are down by <span id="lost-life-points"> - </span> points!</p>
+              </div>
+              <div class="row" id="reward-container">
+                <h5> Please select your reward!</h5>
+                <div id="reward-wrapper">
+  
+                </div>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="confirm-reward-btn">Confirm Selection</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
