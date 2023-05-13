@@ -17,18 +17,23 @@
 </head>
 
 <body id="stars">
-
-    <header>
-      <h1>StarWars <br />Battle Dice</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><button type="button" class="btn" id="highscore-btn" data-bs-toggle="modal"
-          data-bs-target="#highscoreModal">
-          Highscore
-        </button></li>
-        <li><a href="#">Start New Game</a></li>
-      </ul>
-    </header>
+<div class="row">
+  <header>
+    <h1>StarWars <br />Battle Dice</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><button type="button" class="btn" id="highscore-btn" data-bs-toggle="modal"
+        data-bs-target="#highscoreModal">
+        Highscore
+      </button></li>
+      <li><button type="button" class="btn" id="new-game-btn" data-bs-toggle="modal"
+        data-bs-target="#newGameModal">
+        Start New Game
+      </button></li>
+    </ul>
+  </header>
+</div>
+    
   </div>
   <div id="content-area">
     <div class="d-flex justify-content-center pb-3">
@@ -134,7 +139,7 @@
           </div>
           <div class="col-3 blender-wrapper">
             <div class="blender-area text-center text-dark">Blender Area</div>
-            <button class="unmarked text-center">Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice</button>
+            <button class="blend-dice-btn text-center">Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice</button>
           </div>
         </div>
       </div>
