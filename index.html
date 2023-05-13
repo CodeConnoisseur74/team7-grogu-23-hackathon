@@ -17,12 +17,15 @@
 </head>
 
 <body id="stars">
-  <div class="row">
+  <div class="row header-row">
     <header>
       <h1>StarWars <br />Battle Dice</h1>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#">Highscores</a></li>
+        <li><button type="button" class="btn btn-light" id="highscore-btn" data-bs-toggle="modal"
+          data-bs-target="#highscoreModal">
+          Highscore
+        </button></li>
         <li><a href="#">Start New Game</a></li>
       </ul>
     </header>
@@ -30,10 +33,7 @@
   <div id="content-area">
     <div class="d-flex justify-content-center pb-3">
     <!-- Open Modal -->
-    <button type="button" class="btn btn-light" id="highscore-btn" data-bs-toggle="modal"
-      data-bs-target="#highscoreModal">
-      Highscore
-    </button>
+    
     <!-- Modal -->
     <div class="modal fade" id="highscoreModal" tabindex="-1" aria-labelledby="highscoreModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -53,9 +53,9 @@
   </div>
     <!--Dice area-->
     <div class="row vh-100">
-      <div class="container dice-container col-md-5">
+      <div class="container dice-container col-md-5 section">
         <div class="row">
-          <div class="col-md-7 section">
+          <div class="col-md-7">
             <div class="dice-area text-center">
               <div class="dice" draggable="true">
                 <p>1</p>
@@ -142,7 +142,7 @@
       <div class="container villain-container col-md-5 section">
         <div class="row">
           <div class="col-5 box-container">
-            <div class="row top-box-row">
+            <div class="row box-row top-box-row">
               <div class="col-6 box-by-two text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
@@ -157,7 +157,7 @@
                 </div>
               </div>
             </div>
-            <div class="row middle-box-row">
+            <div class="row box-row middle-box-row">
               <div class="col-3 box-by-one text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
@@ -172,7 +172,7 @@
                 </div>
               </div>
             </div>
-            <div class="row bottom-box-row">
+            <div class="row box-row bottom-box-row">
               <div class="col-10 box-by-four text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
@@ -199,7 +199,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-6 villain-portfolio">
             <img class="villain-img" src="assets/images/darth-vader.png" alt="" />
             <div class="text-center villain-desc">
               <h4>{villain.name}</h4>
@@ -208,9 +208,9 @@
           </div>
         </div>
       </div>
-      <!--Hero Container-->
+      <!---------------------------Hero Container-------------------->
       <div class="row">
-        <div class="col-md-5 container hero-container mt-5">
+        <div class="col-md-5 container hero-container mt-5 section">
           <div class="row">
             <div class="col-5 btn-wrapper">
               <button class="colour-btn" value="red" id="red" data-sound="red_blaster.mp3">
@@ -229,7 +229,7 @@
                 Droid
               </button>
             </div>
-            <div class="col-7">
+            <div class="col-7 hero-portfolio">
               <img src="assets/images/grogu.png" alt="" />
               <div class="health-container">
                 <p id="health-points">Health points</p>

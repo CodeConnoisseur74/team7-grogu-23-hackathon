@@ -1,7 +1,7 @@
-/*Import fonts*/
+/*============================Import fonts============================*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap');
 
-/*Global style*/
+/*============================Global style============================*/
 * {
     padding: 0;
     border: 0;
@@ -15,15 +15,19 @@ body {
     overflow-x: hidden;
 }
 
-/*Header Style*/
-header {
-    text-align: center;
+/*=============================Header Style=============================*/
+
+h1 {
+    font-family: 'Poller One', cursive;
+    color: whitesmoke;
+    float: left;
+    font-size: 2rem !important;
 }
 
 header ul {
     float: right;
     position: relative;
-    top: -80px;
+    margin-top: 10px;
 }
 
 header li {
@@ -49,17 +53,12 @@ header li a:hover {
     color: black;
 }
 
-h1 {
-    font-family: 'Poller One', cursive;
-    color: whitesmoke;
-}
-
 h2 {
     font-family: 'Marmelad', sans-serif;
     color: whitesmoke
 }
 
-/*Background Image*/
+/*============================Background Image============================*/
 #stars {
     background: url('../images/stars_background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -68,15 +67,11 @@ h2 {
     background-size: cover;
 }
 
-
-
-/*Content Style*/
-
-/*Dice Container*/
+/*============================Dice Container============================*/
 
 .dice-container {
     background-color: bisque;
-    min-height: 250px;
+    max-height: 350px;
     border-radius: 5px;
 }
 
@@ -117,16 +112,21 @@ h2 {
     padding: 10px;
 }
 
-/*Villain Container*/
+/*=======================Villain Container=========================*/
 .villain-container {
     background-color: rgb(236, 77, 77);
     border-radius: 5px;
+    max-height: 350px;
 }
 
 .box-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.box-row {
+    margin: 10px 0;
 }
 
 .box-by-one {
@@ -174,15 +174,20 @@ h2 {
     display: flex;
     justify-content: center;
 }
+/*===========================Villain Image & Description===========================*/
 
+.villain-portfolio {
+    display: block;
+    margin: auto;
+    
+}
 .villain-img {
-    width: 100%;
+    width: 60%;
     height: auto;
 }
 
 .villain-desc {
     border: 1px solid black;
-    min-height: 150px;
     margin: 5px 0;
 }
 
@@ -190,12 +195,12 @@ h2 {
 
 .hero-container {
     background-color: azure;
-
     border-radius: 5px;
 }
 
 .hero-container img {
-    width: 100%;
+    width: 60%;
+    height: auto;
 }
 
 .btn-wrapper {
