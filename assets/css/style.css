@@ -6,6 +6,7 @@
     padding: 0;
     border: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -102,7 +103,7 @@ h2 {
 /*============================Dice Container============================*/
 
 .dice-container {
-    background-color: bisque;
+    background-color: rgba(88, 97, 224, 0.7);
     max-height: fit-content;
     border-radius: 5px;
 }
@@ -115,7 +116,7 @@ h2 {
 
 .dice-area {
     min-width: 80%;
-    min-height: 150px;
+    max-height: 150px;
     border: 1px solid black;
     margin-top: 10px;
     border-radius: 5px;
@@ -178,7 +179,7 @@ h2 {
 
 /*====================================Villain Container===============================*/
 .villain-container {
-    background-color: rgb(236, 77, 77);
+    background-color: rgba(179, 37, 42, 0.7);    
     border-radius: 5px;
     min-height: 350px;
 }
@@ -271,14 +272,20 @@ h2 {
 /*============================Hero Container============================*/
 
 .hero-container {
-    background-color: azure;
+    background-color: rgba(33, 184, 33, 0.7);
     border-radius: 5px;
     margin-top: 80px !important;
     min-height: 350px;
 }
 
-.hero-container img {
-    width: 60%;
+.hero-portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-portfolio img {
+    max-width: 50%;
     height: auto;
 }
 
@@ -327,6 +334,7 @@ h2 {
 
 #green:hover {
     background-color: green;
+    color: #fff;
 }
 
 #yellow:hover {
@@ -358,12 +366,13 @@ h2 {
 }
 
 
-
 /*Footer Style*/
 footer {
     background-color: rgb(27, 27, 47, 0.9);
     text-align: center;
 }
+
+/*========================Media Queries===========================*/
 
 @media only screen and (max-width: 1200px) {
     .villain-container {
@@ -371,6 +380,20 @@ footer {
     }
     .hero-container {
         margin-top: 5px !important;
+        height: 300px;
+    }
+    .colour-btn {
+        height: 30px;
+        padding: 2px;
+    }
+    .hero-portfolio {
+        flex-direction: row;
+    }
+    .hero-portfolio img {
+        width: 250px;
+    }
+    .health-container {
+        width: 200px;
     }
     .dice-area {
         max-width: 50%;
