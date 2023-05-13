@@ -63,6 +63,11 @@ header li a {
     transform-origin: bottom center;
 }
 
+#highscore-btn {
+    color: #000;
+    background-color: yellow;
+}
+
 /*==================End of Navbar=====================*/
 
 /*=======================Modal======================*/
@@ -132,13 +137,32 @@ h2 {
     width: 40%;
     border-radius: 30px;
     padding: 10px;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 1.3rem;
 }
+
+.icon{
+    padding: 0 5px;
+}
+
+.gentle-hover-shake:hover {
+    animation: tilt-shaking 0.25s infinite;
+  }
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
 
 /*====================================Villain Container===============================*/
 .villain-container {
     background-color: rgb(236, 77, 77);
     border-radius: 5px;
-    max-height: 350px;
+    min-height: 350px;
 }
 
 .box-container {
