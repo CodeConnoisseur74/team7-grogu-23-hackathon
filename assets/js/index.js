@@ -1,3 +1,3 @@
 "use strict";
 
-// Main fil for index page.
+// Main fil for index page
