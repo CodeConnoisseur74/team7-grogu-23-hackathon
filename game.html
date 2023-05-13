@@ -28,6 +28,7 @@
         <div class="navbar-nav">
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+             <li><a href="game.html">Home</a></li>
             <li><button type="button" class="btn" id="highscore-btn" data-bs-toggle="modal"
               data-bs-target="#highscoreModal">
               Highscore
@@ -70,7 +71,7 @@
       <div class="container dice-container col-xl-5 col-12 section">
         <div class="row">
           <div class="col-md-7 dice-wrapper">
-            <div class="dice-area text-center">
+            <div class="dice-area text-center" id="dice-area">
               <div class="dice" draggable="true">
                 <p>1</p>
               </div>
@@ -144,10 +145,10 @@
                 <p>2</p>
               </div>
             </div>
-            <button id="roll-dice" class="text-center mt-5 gentle-hover-shake">Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice</button>
+            <button id="roll-dice" class="text-center mt-5 gentle-hover-shake" onclick="rollDices()">Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice</button>
           </div>
           <div class="col-3 blender-wrapper">
-            <div class="blender-area text-center text-dark">Blender Area</div>
+            <div class="blender-area text-center text-dark" id="blender-area">Blender Area</div>
             <button class="blend-dice-btn text-center">Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice</button>
           </div>
         </div>
@@ -155,112 +156,125 @@
       <!--Villain Container-->
       <div class="container villain-container col-xl-5 col-12 section">
         <div class="row">
-          <div class="col-5 box-container">
-            <div class="row box-row top-box-row">
-              <div id="droppable" class="col-6 box-by-two text-center">
+          <div class="col-5 box-container " id="fighting-point-field">
+            <div class="row box-row top-box-row" >
+              <!--  Filled in with rendering -->
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              </div>
-              <div id="droppable" class="col-3 box-by-one text-center">
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              </div>
-            </div>
-            <div class="row box-row middle-box-row">
-              <div id="droppable" class="col-3 box-by-one text-center">
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              </div>
-              <div id="droppable" class="col-6 box-by-two text-center">
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              </div>
-            </div>
-            <div class="row box-row bottom-box-row">
-              <div id="droppable" class="col-10 box-by-four text-center">
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              </div>
-              <div id="droppable" class="col-3 box-by-one text-center">
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              </div>
-              <div id="droppable" class="col-3 box-by-one text-center">
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              </div>
+              
             </div>
           </div>
           <div class="col-6 villain-portfolio">
-            <img class="villain-img" src="assets/images/darth-vader.png" alt="" />
+            <img class="villain-img" id="villian-image" alt="" />
             <div class="text-center villain-desc">
               <h4>{villain.name}</h4>
-              <p>Villain Description</p>
+              <p id="villian-description">Villain Description</p>
             </div>
           </div>
         </div>
       </div>
-      <!---------------------------Hero Container-------------------->
+      <!---------------------------Hero Container -------------------->
       <div class="row">
         <div class="col-xl-5 col-12 container hero-container section">
           <div class="row">
             <div class="col-5 btn-wrapper">
-              <button class="colour-btn" value="red" id="red" data-sound="red_blaster.mp3">
-                Blaster
-              </button>
-              <button class="colour-btn" value="blue" id="blue" data-sound="blue_lightsaber.mp3">
-                Lightsaber
-              </button>
-              <button class="colour-btn" value="green" id="green" data-sound="green_chewie.mp3">
-                Chewbacca
-              </button>
-              <button class="colour-btn" value="yellow" id="yellow" data-sound="yellow_engine_flyby.mp3">
-                Force Power
-              </button>
-              <button class="colour-btn" value="black" id="black" data-sound="black_droid.mp3">
-                Droid
-              </button>
+              <div class="hero-powers" id="red"><span class="badge bg-danger power-badges" id="red-power">0/6</span></div>
+              <div class="hero-powers" id="blue"><span class="badge bg-primary power-badges" id="blue-power">0/6</span></div>
+              <div class="hero-powers" id="green"> <span class="badge bg-success power-badges" id="green-power">0/6</span></div>
+              <div class="hero-powers" id="yellow"><span class="badge bg-warning power-badges" id="yellow-power">0/6</span></div>
+              <div class="hero-powers" id="black"><span class="badge bg-dark power-badges" id="black-power">0/6</span></div>
             </div>
             <div class="col-7 hero-portfolio">
-              <img src="assets/images/grogu.png" alt="" />
-              <div class="health-container">
-                <p id="health-points">Health points</p>
+            <img src="" id ="game-hero-img" alt=""/>
+            <div class="health-container">
+                <div class="healthBar">
+                    <div id="healthRemaining">
+                    </div>
+                    <i class="fa-solid fa-heart health-heart"></i>
+                    <p id="health-points">0/0</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+        <!-------------------- Hero selection modal START------------------->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectHeroModal">
+  Choose a hero
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade hero-selection" id="selectHeroModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="selectHeroModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="select-mero-modal">Choose a Hero</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+     <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner" id="modal-heroes">
+    
+  <!-- rendered from js -->
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
     </div>
+  </div>
+      
+    </div>
+         <!-------------------- Hero selection modal End------------------->
+         <!-------------------- Villain selection modal Start------------------->
+             <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="villain-modal-boddy">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+         <!-------------------- Villain selection modal End------------------->
+         
+    
     <!-- JS -->
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/game-setup.js"></script>
     <script src="assets/js/game-hero.js"></script>
-    <script src="assets/js/highscore.js"></script>
+    <script src="assets/js/game-villain.js"></script>
+    <script src="assets/js/game-dice.js"></script>
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <!--Font Awesome-->
       <script src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
 </body>
