@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.game-area {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  touch-action: none;
+}
+
+#combat-field {
+  margin: 50px;
+  height: 400px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.combat-box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid red;
+}
+
+.dice {
+  border: 1px solid blue;
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: coral;
+}
+
+#blender-field {
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+  border: 1px solid red;
+}
+
+#dice-field {
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+  border: 1px solid red;
+}
+
+.highlighted-square {
+  background-color: aquamarine;
+}
