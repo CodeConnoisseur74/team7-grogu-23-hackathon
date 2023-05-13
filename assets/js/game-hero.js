@@ -192,13 +192,6 @@ generateRewards()
 
 const currentVillanData=
 {
-    colorProcentages: {
-        red: 30,
-        blue: 30,
-        green: 20,
-        yellow: 20,
-        black: 0,
-      },
       rewardProcentage: { color: 50, black: 20, health: 10, extraStorage: 20 },
       colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
 }
@@ -221,11 +214,11 @@ const rewardData = {
 
 function generateRewardObjects() {
     rewardsArray = [];
-    const red = currentVillainData.colorProcentages.red;
-    const blue = currentVillainData.colorProcentages.blue;
-    const green = currentVillainData.colorProcentages.green;
-    const yellow = currentVillainData.colorProcentages.yellow;
-    const black = currentVillainData.colorProcentages.black;
+    const red = currentVillainData.rewardPercentage.red;
+    const blue = currentVillainData.rewardPercentage.blue;
+    const green = currentVillainData.rewardPercentage.green;
+    const yellow = currentVillainData.rewardPercentage.yellow;
+    const black = currentVillainData.rewardPercentage.black;
     
     for (let i = 0; i < 3; i++) {
       const randomNo = randomInt(0, 100);
@@ -264,8 +257,8 @@ function generateRewards(){
     for(let i=0; i < 3; i++){
         rewardWrapper.innerHTML += `<div class="reward-box"></div>` 
     }
-
 }
+
 //Used when the current game reloaded or when round is over, and hero loses helth
 //Updates current game hero profile stats
 // function updateHeroGameProfile(currentGameHeroData)

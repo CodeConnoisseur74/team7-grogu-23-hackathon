@@ -40,7 +40,7 @@
 }
 
 /*Reward Modal and Buttons*/
-.modal-body{
+.reward-modal-text{
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -69,5 +69,13 @@
     display: flex;
     justify-content: space-around;
 }
-    
 
+.reward-box{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
