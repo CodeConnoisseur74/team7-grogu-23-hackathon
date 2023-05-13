@@ -1,152 +1,294 @@
+/*Import fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap');
 
-/*General style*/
-*{
+/*Global style*/
+* {
     padding: 0;
     border: 0;
     margin: 0;
 }
 
-body{
+body {
     font-family: 'Hind Guntur', sans-serif;
     font-weight: 300;
-    color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    }@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap');
+    color: whitesmoke !important;
+    overflow-x: hidden;
+}
 
-    /*General style*/
-    *{
-        padding: 0;
-        border: 0;
-        margin: 0;
-    }
-    
-    body{
-        font-family: 'Hind Guntur', sans-serif;
-        font-weight: 300;
-        color: whitesmoke !important;
-        }
-    
-    h1 {
-        font-family: 'Poller One', cursive;
-        color: whitesmoke;
-    }
-    
-    h2{
-        font-family: 'Marmelad', sans-serif;
-        color: whitesmoke
-    }
-    /*Background Image*/
-    #stars{
-        background: url('../images/stars_background.jpg') no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }
-    
-    /*Header Style*/
-    header{
-        text-align: center;
-    }
-    
-    /*Content Style*/
-    
-    /*Dice Container*/
-    
-    .dice-container {
-        background-color: bisque;
-    }
-    
-    /*Villain Container*/
-    .villain-container {
-        background-color: rgb(236, 77, 77);
-    }
-    /*Hero Container*/
-    
-    .hero-container {
-        background-color: azure;
-        display: block;
-    }
-    
-    .hero-container img {
-        width: 100%;
-    }
-    
-    .btn-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .colour-btn {
-        width: 80%;
-        padding: 10px 0px;
-        margin: 10px;
-    }
-    
-    
-    
-    /*Footer Style*/
-    footer{
-        background-color: rgb(27, 27, 47, 0.9);
-        text-align: center;
-    
-    }
-    /*Media Query for screens bigger than 1240*/
-    
+/*Header Style*/
+header {
+    text-align: center;
+}
+
+header ul {
+    float: right;
+    position: relative;
+    top: -80px;
+}
+
+header li {
+    display: inline;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+header li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header li a:hover {
+    color: rgb(3, 223, 3);
+}
+
+#highscoreModalLabel {
+    color: black;
+}
+
+#highscore-list {
+    color: black;
+}
 
 h1 {
     font-family: 'Poller One', cursive;
     color: whitesmoke;
 }
 
-h2{
+h2 {
     font-family: 'Marmelad', sans-serif;
     color: whitesmoke
 }
+
 /*Background Image*/
-#stars{
-    background: url('../images/stars_background.jpg') no-repeat center center fixed; 
+#stars {
+    background: url('../images/stars_background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
-
-/*Header Style*/
-header{
-    text-align: center;
 }
+
+
 
 /*Content Style*/
 
-#content-area{
-    background: rgb(27, 27, 47, 0.9);
-    display: flex;
-    align-content: center;
+/*Dice Container*/
+
+.dice-container {
+    background-color: bisque;
+    min-height: 250px;
+    border-radius: 5px;
+}
+
+.dice-area {
+    min-width: 100%;
+    min-height: 150px;
+    border: 1px solid black;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.dice {
+    width: 40px;
+    display: inline-block;
+    height: 40px;
+    border: 2px solid black;
     margin: 5px;
 }
-#content-area div{
-    text-align: center;
-    width:100%;
+
+.blender-area {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.unmarked {
+    width: 90%;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+#roll-dice {
+    width: 40%;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+/*Villain Container*/
+.villain-container {
+    background-color: rgb(236, 77, 77);
+    border-radius: 5px;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box-by-one {
+    border: 1px solid black;
+    width: 80%;
+    height: 50px;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box-by-two {
+    border: 1px solid black;
+    width: 80%;
+    height: 50px;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box-by-four {
+    border: 1px solid black;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.top-box-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px !important;
+}
+
+.middle-box-row {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-box-row {
+    display: flex;
+    justify-content: center;
+}
+
+.villain-img {
+    width: 100%;
+    height: auto;
+}
+
+.villain-desc {
+    border: 1px solid black;
+    min-height: 150px;
+    margin: 5px 0;
+}
+
+/*Hero Container*/
+
+.hero-container {
+    background-color: azure;
+
+    border-radius: 5px;
+}
+
+.hero-container img {
+    width: 100%;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.colour-btn {
+    width: 80%;
+    padding: 10px 0px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+#red {
+    border: 1px solid red;
+}
+
+#blue {
+    border: 1px solid blue;
+}
+
+#green {
+    border: 1px solid green;
+}
+
+#yellow {
+    border: 1px solid yellow;
+}
+
+#black {
+    border: 1px solid black;
+}
+
+#red:hover {
+    background-color: red;
+}
+
+#blue:hover {
+    background-color: blue;
+    color: #fff;
+}
+
+#green:hover {
+    background-color: green;
+}
+
+#yellow:hover {
+    background-color: yellow;
+}
+
+#black:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.health-container {
+    width: 80%;
+    height: 60px;
+    border: 2px solid green;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rewards-container {
+    display: block;
+    justify-content: center;
+    border: 1px solid yellow;
+}
+
+.reward {
+    border: 1px solid rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+}
+
+.section {
+    transition: transform 1s, opacity 1s;
+}
+
+.section-hidden {
+    opacity: 0;
+    transform: translateY(5rem);
 }
 
 
 
 /*Footer Style*/
-footer{
+footer {
     background-color: rgb(27, 27, 47, 0.9);
     text-align: center;
-
-}
-/*Media Query for screens bigger than 1240*/
-@media screen and (min-width: 1240px){
-    body{
-        max-width: 1240px;
-        margin: auto;
-    }
 }
