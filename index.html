@@ -53,9 +53,9 @@
   </div>
     <!--Dice area-->
     <div class="row vh-90">
-      <div class="container dice-container col-md-5 section">
+      <div class="container dice-container col-xl-5 col-12 section">
         <div class="row">
-          <div class="col-md-7">
+          <div class="col-md-7 dice-wrapper">
             <div class="dice-area text-center">
               <div class="dice" draggable="true">
                 <p>1</p>
@@ -132,18 +132,18 @@
             </div>
             <button id="roll-dice" class="text-center mt-5 gentle-hover-shake">Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice</button>
           </div>
-          <div class="col-3">
-            <div class="blender-area text-center">Blender Area</div>
-            <button class="unmarked text-center">Blend dice</button>
+          <div class="col-3 blender-wrapper">
+            <div class="blender-area text-center text-dark">Blender Area</div>
+            <button class="unmarked text-center">Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice</button>
           </div>
         </div>
       </div>
       <!--Villain Container-->
-      <div class="container villain-container col-md-5 section">
+      <div class="container villain-container col-xl-5 col-12 section">
         <div class="row">
           <div class="col-5 box-container">
             <div class="row box-row top-box-row">
-              <div class="col-6 box-by-two text-center">
+              <div id="droppable" class="col-6 box-by-two text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
@@ -151,19 +151,19 @@
                   <p>2</p>
                 </div>
               </div>
-              <div class="col-3 box-by-one text-center">
+              <div id="droppable" class="col-3 box-by-one text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
               </div>
             </div>
             <div class="row box-row middle-box-row">
-              <div class="col-3 box-by-one text-center">
+              <div id="droppable" class="col-3 box-by-one text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
               </div>
-              <div class="col-6 box-by-two text-center">
+              <div id="droppable" class="col-6 box-by-two text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
@@ -173,7 +173,7 @@
               </div>
             </div>
             <div class="row box-row bottom-box-row">
-              <div class="col-10 box-by-four text-center">
+              <div id="droppable" class="col-10 box-by-four text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
@@ -187,12 +187,12 @@
                   <p>2</p>
                 </div>
               </div>
-              <div class="col-3 box-by-one text-center">
+              <div id="droppable" class="col-3 box-by-one text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
               </div>
-              <div class="col-3 box-by-one text-center">
+              <div id="droppable" class="col-3 box-by-one text-center">
                 <div class="dice" draggable="true">
                   <p>2</p>
                 </div>
@@ -210,7 +210,7 @@
       </div>
       <!---------------------------Hero Container-------------------->
       <div class="row">
-        <div class="col-md-5 container hero-container section">
+        <div class="col-xl-5 col-12 container hero-container section">
           <div class="row">
             <div class="col-5 btn-wrapper">
               <button class="colour-btn" value="red" id="red" data-sound="red_blaster.mp3">

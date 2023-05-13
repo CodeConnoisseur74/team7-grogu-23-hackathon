@@ -98,12 +98,18 @@ h2 {
 
 .dice-container {
     background-color: bisque;
-    max-height: 350px;
+    max-height: fit-content;
     border-radius: 5px;
 }
 
+.dice-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .dice-area {
-    min-width: 100%;
+    max-width: 80%;
     min-height: 150px;
     border: 1px solid black;
     margin-top: 10px;
@@ -158,6 +164,12 @@ h2 {
     100% { transform: rotate(0deg); }
   }
 
+  .blender-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 /*====================================Villain Container===============================*/
 .villain-container {
     background-color: rgb(236, 77, 77);
@@ -176,17 +188,18 @@ h2 {
 }
 
 .box-by-one {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 80%;
     height: 50px;
     margin: 10px 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    transition: border 0.2s;
 }
 
 .box-by-two {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 80%;
     height: 50px;
     margin: 10px 10px;
@@ -196,13 +209,21 @@ h2 {
 }
 
 .box-by-four {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 100%;
     height: 50px;
     margin: 10px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+#droppable{
+    border: 2px solid green;
+  }
+
+#droppable:hover {
+    border: 2px solid gray;
 }
 
 .top-box-row {
@@ -345,3 +366,15 @@ footer {
     background-color: rgb(27, 27, 47, 0.9);
     text-align: center;
 }
+
+@media only screen and (max-width: 1200px) {
+    .villain-container {
+        margin-top: 5px !important;
+    }
+    .hero-container {
+        margin-top: 5px !important;
+    }
+    .dice-area {
+        max-width: 50%;
+    }
+  }
