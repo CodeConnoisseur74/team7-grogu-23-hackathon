@@ -1,7 +1,7 @@
-/*Import fonts*/
+/*============================Import fonts============================*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap');
 
-/*Global style*/
+/*============================Global style============================*/
 * {
     padding: 0;
     border: 0;
@@ -15,21 +15,21 @@ body {
     overflow-x: hidden;
 }
 
-/*Header Style*/
-header {
+/*=============================Header Style=============================*/
+
+h1 {
+    font-family: 'Poller One', cursive;
+    color: whitesmoke;
+    float: left;
     text-align: center;
+    margin: 10px 20px;
+    font-size: 2rem !important;
 }
 
 header ul {
     float: right;
     position: relative;
-    top: -80px;
-}
-
-header li {
-    display: inline;
-    padding: 5px 10px;
-    font-size: 18px;
+    margin-top: 10px;
 }
 
 header li a {
@@ -37,9 +37,40 @@ header li a {
     color: #fff;
 }
 
-header li a:hover {
-    color: rgb(3, 223, 3);
+.nav-links li {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    font-size: 18px;
+    padding: 5px 10px;
 }
+
+.nav-links li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00ca00;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+#highscore-btn {
+    color: #000;
+    background-color: yellow;
+}
+
+/*==================End of Navbar=====================*/
+
+/*=======================Modal======================*/
 
 #highscoreModalLabel {
     color: black;
@@ -49,17 +80,12 @@ header li a:hover {
     color: black;
 }
 
-h1 {
-    font-family: 'Poller One', cursive;
-    color: whitesmoke;
-}
-
 h2 {
     font-family: 'Marmelad', sans-serif;
     color: whitesmoke
 }
 
-/*Background Image*/
+/*============================Background Image============================*/
 #stars {
     background: url('../images/stars_background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -68,20 +94,22 @@ h2 {
     background-size: cover;
 }
 
-
-
-/*Content Style*/
-
-/*Dice Container*/
+/*============================Dice Container============================*/
 
 .dice-container {
     background-color: bisque;
-    min-height: 250px;
+    max-height: fit-content;
     border-radius: 5px;
 }
 
+.dice-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .dice-area {
-    min-width: 100%;
+    max-width: 80%;
     min-height: 150px;
     border: 1px solid black;
     margin-top: 10px;
@@ -115,32 +143,63 @@ h2 {
     width: 40%;
     border-radius: 30px;
     padding: 10px;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 1.3rem;
 }
 
-/*Villain Container*/
+.icon{
+    padding: 0 5px;
+}
+
+.gentle-hover-shake:hover {
+    animation: tilt-shaking 0.25s infinite;
+  }
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .blender-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+/*====================================Villain Container===============================*/
 .villain-container {
     background-color: rgb(236, 77, 77);
     border-radius: 5px;
+    min-height: 350px;
 }
 
 .box-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.box-row {
+    margin: 10px 0;
 }
 
 .box-by-one {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 80%;
     height: 50px;
     margin: 10px 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    transition: border 0.2s;
 }
 
 .box-by-two {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 80%;
     height: 50px;
     margin: 10px 10px;
@@ -150,13 +209,21 @@ h2 {
 }
 
 .box-by-four {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 100%;
     height: 50px;
     margin: 10px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+#droppable{
+    border: 2px solid green;
+  }
+
+#droppable:hover {
+    border: 2px solid gray;
 }
 
 .top-box-row {
@@ -174,28 +241,35 @@ h2 {
     display: flex;
     justify-content: center;
 }
+/*===========================Villain Image & Description===========================*/
 
+.villain-portfolio {
+    display: block;
+    margin: auto;
+    
+}
 .villain-img {
-    width: 100%;
+    width: 60%;
     height: auto;
 }
 
 .villain-desc {
     border: 1px solid black;
-    min-height: 150px;
     margin: 5px 0;
 }
 
-/*Hero Container*/
+/*============================Hero Container============================*/
 
 .hero-container {
     background-color: azure;
-
     border-radius: 5px;
+    margin-top: 80px !important;
+    min-height: 350px;
 }
 
 .hero-container img {
-    width: 100%;
+    width: 60%;
+    height: auto;
 }
 
 .btn-wrapper {
@@ -292,3 +366,15 @@ footer {
     background-color: rgb(27, 27, 47, 0.9);
     text-align: center;
 }
+
+@media only screen and (max-width: 1200px) {
+    .villain-container {
+        margin-top: 5px !important;
+    }
+    .hero-container {
+        margin-top: 5px !important;
+    }
+    .dice-area {
+        max-width: 50%;
+    }
+  }
