@@ -1,23 +1,11 @@
 "use strict";
 const fightingField = document.getElementById("fighting-point-field");
-const modalBody = document.querySelector(".modal-body");
+const villainModalBoddy = document.querySelector("#villain-modal-boddy");
 // this is a a file that deals with villain modifications
 
-// To delete later after files are connected
-const currentGameSettings = {
-  score: 0,
-  level: 3,
-  diceArrangment: "size / colour",
-};
-
-//Used to update when existing game is loaded and hold current game data
-
-//Delete once all files are connected
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
 // ..............................................................................................
 
-let currentVillainData;
+let currentVillainData = {};
 
 const villainlist = [
   {
@@ -118,19 +106,20 @@ function choseRandomVillain() {
 }
 
 function renderVillainModal() {
-  modalBody.inner = "";
+  villainModalBoddy.inner = "";
   choseRandomVillain();
   for (let i = 0; i < villianChoice.length; i++) {
     const mainDiv = document.createElement("a");
     const pictureDiv = document.createElement("div");
     const descriptionDiv = document.createElement("div");
     mainDiv.setAttribute("onclick", `renderVillian(${i})`);
+    mainDiv.classList.add("villain-modal-description");
 
     descriptionDiv.innerHTML = villianChoice[i].description;
 
     mainDiv.appendChild(pictureDiv);
     mainDiv.appendChild(descriptionDiv);
-    modalBody.appendChild(mainDiv);
+    villainModalBoddy.appendChild(mainDiv);
   }
 }
 renderVillainModal();
@@ -140,8 +129,8 @@ function renderVillian(index) {
   renderVillianGameProfile();
   const sizeArray = decideRectangleSize(); // Change later
   generateVillainGameStats(sizeArray);
-  generateVillianNumbers()
-  renderFightingPointRectangle()
+  generateVillianNumbers();
+  renderFightingPointRectangle();
 }
 
 function renderVillianGameProfile() {
@@ -152,10 +141,7 @@ function renderVillianGameProfile() {
 }
 
 function decideRectangleSize() {
-  const randomBaseNumber = randomInt(
-    currentVillainData.minimum,
-    currentVillainData.maximum
-  );
+  const randomBaseNumber = randomInt(currentVillainData.minimum, currentVillainData.maximum);
   let villainfightingPoint = currentGameSettings.level * 2 + randomBaseNumber;
 
   let squareSize = [];
@@ -196,24 +182,23 @@ function generateVillainGameStats(array) {
     }
     currentVillainData.colorChoices.push(color);
   }
-  
 }
 
-function generateVillianNumbers(){
-    const data = currentVillainData.squareSizes
-    currentVillainData.fightingNumbers = [];
-    for(let i = 0; i < data.length; i++){
-        currentVillainData.fightingNumbers.push(randomInt(data[i], data[i]*6))  
-    }
+function generateVillianNumbers() {
+  const data = currentVillainData.squareSizes;
+  currentVillainData.fightingNumbers = [];
+  for (let i = 0; i < data.length; i++) {
+    currentVillainData.fightingNumbers.push(randomInt(data[i], data[i] * 6));
+  }
 }
 
-function renderFightingPointRectangle(){
+function renderFightingPointRectangle() {
   const dataNumbers = currentVillainData.fightingNumbers;
   const dataSquares = currentVillainData.squareSizes;
   const dataColors = currentVillainData.colorChoices;
-  let renderData = ""
-  for(let i = 0; i < dataNumbers.length; i++){
-    renderData += ` <div class="size-${dataSquares[i]} ${dataColors[i]}-area" data-area-no="${dataNumbers[i]}"></div>`
+  let renderData = "";
+  for (let i = 0; i < dataNumbers.length; i++) {
+    renderData += ` <div class="size-${dataSquares[i]} ${dataColors[i]}-area" data-area-no="${dataNumbers[i]}"></div>`;
   }
-  fightingField.innerHTML = renderData
+  fightingField.innerHTML = renderData;
 }
