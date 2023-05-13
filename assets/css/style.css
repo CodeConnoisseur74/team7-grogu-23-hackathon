@@ -21,6 +21,8 @@ h1 {
     font-family: 'Poller One', cursive;
     color: whitesmoke;
     float: left;
+    text-align: center;
+    margin: 10px 20px;
     font-size: 2rem !important;
 }
 
@@ -30,20 +32,40 @@ header ul {
     margin-top: 10px;
 }
 
-header li {
-    display: inline;
-    padding: 5px 10px;
-    font-size: 18px;
-}
-
 header li a {
     text-decoration: none;
     color: #fff;
 }
 
-header li a:hover {
-    color: rgb(3, 223, 3);
+.nav-links li {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    font-size: 18px;
+    padding: 5px 10px;
 }
+
+.nav-links li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00ca00;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+/*==================End of Navbar=====================*/
+
+/*=======================Modal======================*/
 
 #highscoreModalLabel {
     color: black;
@@ -112,7 +134,7 @@ h2 {
     padding: 10px;
 }
 
-/*=======================Villain Container=========================*/
+/*====================================Villain Container===============================*/
 .villain-container {
     background-color: rgb(236, 77, 77);
     border-radius: 5px;
@@ -191,11 +213,13 @@ h2 {
     margin: 5px 0;
 }
 
-/*Hero Container*/
+/*============================Hero Container============================*/
 
 .hero-container {
     background-color: azure;
     border-radius: 5px;
+    margin-top: 80px !important;
+    min-height: 350px;
 }
 
 .hero-container img {
