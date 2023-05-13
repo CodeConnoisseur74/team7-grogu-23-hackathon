@@ -1,5 +1,5 @@
 "use strict";
-
+const fightingField = document.getElementById("fighting-point-field");
 const modalBody = document.querySelector(".modal-body");
 // this is a a file that deals with villain modifications
 
@@ -140,6 +140,8 @@ function renderVillian(index) {
   renderVillianGameProfile();
   const sizeArray = decideRectangleSize(); // Change later
   generateVillainGameStats(sizeArray);
+  generateVillianNumbers()
+  renderFightingPointRectangle()
 }
 
 function renderVillianGameProfile() {
@@ -177,7 +179,6 @@ function generateVillainGameStats(array) {
   const blue = currentVillainData.colorProcentages.blue;
   const green = currentVillainData.colorProcentages.green;
   const yellow = currentVillainData.colorProcentages.yellow;
-  const black = currentVillainData.colorProcentages.black;
   for (let i = 0; i < array.length; i++) {
     const randomNo = randomInt(0, 100);
 
@@ -195,5 +196,24 @@ function generateVillainGameStats(array) {
     }
     currentVillainData.colorChoices.push(color);
   }
-  console.log(currentVillainData);
+  
+}
+
+function generateVillianNumbers(){
+    const data = currentVillainData.squareSizes
+    currentVillainData.fightingNumbers = [];
+    for(let i = 0; i < data.length; i++){
+        currentVillainData.fightingNumbers.push(randomInt(data[i], data[i]*6))  
+    }
+}
+
+function renderFightingPointRectangle(){
+  const dataNumbers = currentVillainData.fightingNumbers;
+  const dataSquares = currentVillainData.squareSizes;
+  const dataColors = currentVillainData.colorChoices;
+  let renderData = ""
+  for(let i = 0; i < dataNumbers.length; i++){
+    renderData += ` <div class="size-${dataSquares[i]} ${dataColors[i]}-area" data-area-no="${dataNumbers[i]}"></div>`
+  }
+  fightingField.innerHTML = renderData
 }
