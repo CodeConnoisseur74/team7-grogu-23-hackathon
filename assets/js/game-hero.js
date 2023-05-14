@@ -91,48 +91,6 @@ let heroesData = [
     image: "assets/images/heroes/rey.png",
     description: "Adopts the name Rey Skywalker to honor her mentors, an amazing force-sensitive bloodline of the Sheev Palpatine. As the last remaining Jedi, she makes it her mission to rebuild the Jedi order.",
   },
-  {
-    name: "Chewbecca",
-    diceAmount: {
-      red: "2",
-      blue: "3",
-      green: "5",
-      yellow: "2",
-      black: "1",
-    },
-    diceLimit: {
-      red: 6,
-      blue: 6,
-      green: 6,
-      yellow: 6,
-      black: 6,
-    },
-    maxLife: 30,
-    currentLife: 30,
-    image: "assets/images/heroes/chewbacca.png",
-    description: "A wookiee male warrior, smuggler, mechanic, pilot an resistance fighter.",
-  },
-  {
-    name: "Obi-wan",
-    diceAmount: {
-      red: 3,
-      blue: 5,
-      green: 2,
-      yellow: 3,
-      black: 0,
-    },
-    diceLimit: {
-      red: 6,
-      blue: 6,
-      green: 6,
-      yellow: 6,
-      black: 6,
-    },
-    maxLife: 30,
-    currentLife: 30,
-    image: "assets/images/heroes/obi-wan.png",
-    description: "A noble man and gifted in the ways of the force.",
-  },
 ];
 
 //SELECT HERO FUNCTIONALITIES
@@ -262,13 +220,13 @@ function generateRewardObjects() {
 
     let rewardType;
     if (randomNo < colorPrc) {
-      rewardType = "colorPrc";
+      rewardType = "color";
     } else if (randomNo < colorPrc + blackPrc) {
-      rewardType = "blackPrc";
+      rewardType = "black";
     } else if (randomNo < colorPrc + blackPrc + healthPrc) {
-      rewardType = "healthPrc";
+      rewardType = "health";
     } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
-      rewardType = "extraStoragPrc";
+      rewardType = "extraStorage";
     } else {
         rewardType = "extraBlackStoragePrc";
       }
@@ -281,15 +239,15 @@ function generateRewardObjects() {
 
     for (let i = 0; i<cycles; i++) {
         if(randomNo2 < redRew) {
-            color.push("red");
+            diceColors.push("redRew");
         } else if (randomNo2 < redRew + blueRew) {
-            color.push("blueRew");
+            diceColors.push("blueRew");
         } else if (randomNo2 < redRew + blueRew + greenRew) {
-            color.push("blueRew");
+            diceColors.push("blueRew");
         } else if (randomNo2 < redRew + blueRew + greenRew + yellowRew) {
-            color.push("yellowRew");
+            diceColors.push("yellowRew");
         } else {
-            color.push("blackRew");
+            diceColors.push("blackRew");
         }
     }
     let reward;
