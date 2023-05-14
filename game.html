@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta name="description" content="Starwars themed dice game." />
-  <meta name="keywords" content="#" />
+    <meta name="description" content="Starwars themed dice game." />
+    <meta name="keywords" content="#" />
   
        <!--Font Awesome-->
       <script defer src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
@@ -19,123 +18,131 @@
   <title>StarWars Battle Dice</title>
 </head>
 
-<body class="stars">
-<div class="row">
-  <header>
-    <h1 class="logo">StarWars <br />Battle Dice</h1>
-    <nav class="navbar navbar-expand-lg">
-      <button class="navbar-toggler bg-light mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><button type="button" class="btn" id="highscore-btn" data-bs-toggle="modal"
-              data-bs-target="#highscoreModal">
-              Highscore
-            </button></li>
-            <li><button type="button" class="btn" id="new-game-btn" data-bs-toggle="modal"
-            data-bs-target="#newGameModal">
-            Start New Game
-        </button></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-</div>
-    
-  </div>
-  <div id="content-area">
-    <div class="d-flex justify-content-center pb-3">
-    <!-- Open Modal -->
-    
-    <!-- Modal -->
-    <div class="modal fade" id="highscoreModal" tabindex="-1" aria-labelledby="highscoreModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content bg-dark">
-          <div class="modal-header">
-            <h5 class="modal-title" id="highscoreModalLabel">Highscore</h5>
-          </div>
-          <div class="modal-body">
-            <ul id="highscore-list"></ul>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="game.html">Game</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="highscores.html">Highscores</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-    <!--Dice area-->
-    <div class="row vh-90">
-      <div class="container dice-container col-xl-5 col-12 section">
-        <div class="row">
-          <div class="col-md-7 col-8 dice-wrapper">
-            <div class="dice-area text-center" id="dice-area">
-  <!-- Rendered after dice roll -->
-            </div>
-            <button id="roll-dice" class="text-center mt-5 gentle-hover-shake" onclick="rollDices()">Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice</button>
-          </div>
-          <div class="col-3 blender-wrapper">
-            <div class="blender-area text-center text-dark" id="blender-area">Blender Area</div>
-            <button class="blend-dice-btn text-center">Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice</button>
-          </div>
-        </div>
-      </div>
-      <!--Villain Container-->
-      <div class="container villain-container col-xl-5 col-12 section">
-        <div class="row">
-          <div class="col-md-5 col-7 box-container" id="fighting-point-field">
-            <div class="row box-row top-box-row">
-              <div id="droppable" class="col-6 box-by-two text-center">
-              <!--  Filled in with rendering -->
-                <div class="dice" draggable="true">
-                  <p>2</p>
-                </div>
-              
-            </div>
-          </div>
-          <div class="col-md-6 col-5 villain-portfolio">
-            <img class="villain-img" src="assets/images/darth-vader.png" alt="" id="villian-image" />
-            <div class="text-center villain-desc">
-              <h4>{villain.name}</h4>
-              <p id="villian-description">Villain Description</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!---------------------------Hero Container-------------------->
-      <div class="row hero-row g-0">
-        <div class="col-xl-5 col-12 container hero-container section">
+      </nav>
+    </header>
+
+
+ <main>
+      
+      <div class="container">
+        <div id="game-size-container">
           <div class="row">
-            <div class="col-5 btn-wrapper">
-              <button class="colour-btn" value="red" id="red-power" data-sound="red_blaster.mp3">
-                Blaster<span class="colour-amount">/6</span>
-              </button>
-              <button class="colour-btn" value="blue" id="blue-power" data-sound="blue_lightsaber.mp3">
-                Lightsaber<span class="colour-amount">/6</span>
-              </button>
-              <button class="colour-btn" value="green" id="green-power" data-sound="green_chewie.mp3">
-                Chewbacca<span class="colour-amount">/6</span>
-              </button>
-              <button class="colour-btn" value="yellow" id="yellow-power" data-sound="yellow_engine_flyby.mp3">
-                Force Power<span class="colour-amount">/6</span>
-              </button>
-              <button class="colour-btn" value="black" id="black-power" data-sound="black_droid.mp3">
-                Droid<span class="colour-amount">/6</span>
-              </button>
+               <!-- vilain section -->
+            <div class="col-8">
+             
+            <div class="row">
+            
+            <div class="col-6">
+             <div class="col-md-6 col box-container" id="fighting-point-field"></div>
             </div>
-            <div class="col-7 hero-portfolio">
-            <img src="" id ="game-hero-img" alt=""/>
-            <div class="health-container">
-                <div class="healthBar">
-                    <div id="healthRemaining">
-                    </div>
-                    <i class="fa-solid fa-heart health-heart"></i>
-                    <p id="health-points">0/0</p>
+            <div class="col-6">
+                <div id="villian-image">
+              </div>
+              <div class="text-center villain-desc">
+                <h4>{villain.name}</h4>
+                <p id="villian-description">Villain Description</p>
+              </div>
+            </div>
+            </div>
+            </div>
+            <!-- Hero section -->
+            <div class="col-4">
+              <div class="row">
+                 <div class="col-5 power-wrapper">
+              <div class="hero-powers" id="red">
+                <span class="badge bg-danger power-badges" id="red-power">0/6</span>
+              </div>
+              <div class="hero-powers" id="blue">
+                <span class="badge bg-primary power-badges" id="blue-power">0/6</span>
+              </div>
+              <div class="hero-powers" id="green">
+                <span class="badge bg-success power-badges" id="green-power">0/6</span>
+              </div>
+              <div class="hero-powers" id="yellow">
+                <span class="badge bg-warning power-badges" id="yellow-power">0/6</span>
+              </div>
+              <div class="hero-powers" id="black">
+                <span class="badge bg-dark power-badges" id="black-power">0/6</span>
+              </div>
+                 </div>
+                  <div class="col-7 hero-portfolio">
+                     <img src="" id="game-hero-img" alt="" />
+                      <div class="health-container">
+                       <div class="healthBar">
+                      <div id="healthRemaining"></div>
+                     <i class="fa-solid fa-heart health-heart"></i>
+                     <p id="health-points">0/0</p>
                 </div>
+              </div>
+            </div>
+          </div>
+            </div>
+            <!-- Dice container -->
+            <div class="col-8">
+
+            <div class="col-10 dice-container">
+              <div class="dice-area text-center" id="dice-area">
+              <!-- Rendered after dice roll -->
+            </div>
+             
+            </button>
+            </div>
+            <div class="col-2">
+              <div class="blender-wrapper">
+              <div class="blender-area text-center text-dark" id="blender-area">
+              <div class="dice dice-red" draggable="true" data-dice-ammount="3" data-dice-id="55">
+                <i class="fa-solid fa-dice-three"></i>
+              </div>
+              <div class="dice dice-blue" draggable="true" data-dice-ammount="4" data-dice-id="43">
+                <i class="fa-solid fa-dice-four"></i>
+              </div>
+              </div>
+             
+           
+            </div>
+            </div>
+            </div>
+            <div class="col-4">
+              <div id="game-button-area">
+                   <p id="score-points">replace this with render score points</p>
+                  <button class="blend-dice-btn text-center" onclick="blendDice()">
+                    Menu<span class="icon"><i class="fa-solid fa-blender"></i></span>
+                  </button>
+                  <button id="roll-dice" class="blend-dice-btn text-center" onclick="blendDice()">
+                    Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice
+                  </button>
+                  <button id="roll-dice" class=" blend-dice-btn text-center " onclick="rollDices()">
+                    Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice 
+                  </button>
               </div>
             </div>
           </div>
@@ -288,6 +295,7 @@
       </div>
     </div>
   </div>
+  </main>
   <!-- JS -->
   <script src="assets/js/game-setup.js"></script>
   <script src="assets/js/game-hero.js"></script>
