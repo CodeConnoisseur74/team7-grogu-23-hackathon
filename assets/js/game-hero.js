@@ -182,13 +182,15 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
+// GENERATE REWARDS
+
 function generateRewardObjects() {
   rewardsArray = [];
-  const red = currentVillainData.colorProcentages.red;
-  const blue = currentVillainData.colorProcentages.blue;
-  const green = currentVillainData.colorProcentages.green;
-  const yellow = currentVillainData.colorProcentages.yellow;
-  const extraBlackStorage = currentVillainData.colorProcentages.extraBlackStorage;
+  const red = currentVillainData.rewardPercentage.red;
+  const blue = currentVillainData.rewardPercentage.blue;
+  const green = currentVillainData.rewardPercentage.green;
+  const yellow = currentVillainData.rewardPercentage.yellow;
+  const black = currentVillainData.rewardPercentage.black;
 
   for (let i = 0; i < 3; i++) {
     const randomNo = randomInt(0, 100);
@@ -205,57 +207,60 @@ function generateRewardObjects() {
     }
 
     const randomNo2 = randomInt(0, 100);
-    let color;
+    let color = [];
     let cycles = 0;
     rewardType == "color" ? (cycles = 2) : "";
     rewardType == "extraStorage" ? (cycles = 1) : "";
 
-    for (let i = 0; i < cycles; i++) {
-      if (randomNo2 < color) {
-        color.push("red");
-      } else if (randomNo < red + blue) {
-        color.push("blue");
-      } else if (randomNo < red + blue + green) {
-        color.push("green");
-      } else {
-        color.push("yellow");
-      }
+    for (let i = 0; i<cycles; i++) {
+        if(randomNo2 < color) {
+            color.push("red");
+        } else if (randomNo < red + blue) {
+            color.push("blue");
+        } else if (randomNo < red + blue + green) {
+            color.push("blue");
+        } else if (randomNo < red + blue + green + yellow) {
+            color.push("yellow");
+        } else {
+            color.push("black");
+        }
+    }
+    let reward;
+    if(rewardType == "black") {
+        reward = `
+        <div class= "reward- black" id="black-reward-dice"></div>`;
+    } else if(rewardType ==`health`) {
+        reward = `
+        <div class= "reward-life" id="currentLife">
+            <i class="fa-solid fa-heart"> +10 </i>
+        </div>`;
+    } else if(rewardType =="color"){
+        reward = `
+        <div class= "reward-dice ${color[0]}" id="${color[0]}-reward-dice"></div>
+        <div class= "reward-dice ${color[0]}" id="${color[0]}></div>`;
+    } else if(rewardType =="extraStorage"){
+        reward = `
+        <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>
+        <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>`;
+    };
+    rewardArray.push(reward);
+
     }
 
-    if (rewardType == "black") {
-      const reward = `render`;
-      rewardsArray.push(reward);
-    } else if (rewardType == "health") {
-      const reward = `redner`;
-      rewardsArray.push(reward);
-    } else if (rewardType == "color") {
-      const reward = ` <div>   <div>  rewardType[0];</div>   <div> rewardType[1];</div>   </div>`;
-      rewardsArray.push(reward);
-    } else if (rewardType == "extraStorage") {
-      const reward = ` <div>      rewardType[0];   </div>`;
-      rewardsArray.push(reward);
-    }
+    console.log(rewardsArray)
+  }
 
-    //extraStorag
-    rewardType[0];
+//----------------------------------------------------------------
 
-    //color:
-    rewardType[0];
-    rewardType[1];
+function generateRewards() {
+  let rewardWrapper = document.getElementById("reward-wrapper");
+  for (let i = 0; i < 3; i++) {
+    rewardWrapper.innerHTML += `<div class="reward-box"></div>`;
   }
 }
 
-// ----------------------------------------------------------------
-
-// function generateRewards() {
-//   let rewardWrapper = document.getElementById("reward-wrapper");
-//   for (let i = 0; i < 3; i++) {
-//     rewardWrapper.innerHTML += `<div class="reward-box"></div>`;
-//   }
-// }
-
 // //REWARD MODAL AND GENERATION
-// generateRewards();
+generateRewards();
 
 // ----------------------------------------------------------------
 
