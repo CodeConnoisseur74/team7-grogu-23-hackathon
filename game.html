@@ -9,11 +9,7 @@
     <meta name="keywords" content="#" />
 
     <!--Font Awesome-->
-    <script
-      defer
-      src="https://kit.fontawesome.com/0fc8d7e1ea.js"
-      crossorigin="anonymous"
-    ></script>
+    <script defer src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
     <!--Main CSS-->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!--Bootstrap-->
@@ -44,9 +40,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
-                >
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="game.html">Game</a>
@@ -64,26 +58,17 @@
       <div class="container">
         <div id="game-size-container">
           <div class="row">
-            <!-- vilain section -->
+            <!-- villain section -->
             <div class="col-8">
               <div class="row">
-
                 <div class="col-6">
-                  <div
-                    class="col-md-6 col box-container"
-                    id="fighting-point-field"
-                  ></div>
+                  <div class="col-md-6 col box-container" id="fighting-point-field"></div>
                 </div>
                 <div class="col-6">
-                  <div id="villian-image">
-                    <img
-                      src="assets/images/heroes/shadow.png"
-                      alt="silhouette image"
-                    />
-                  </div>
+                  <div id="villain-image"></div>
                   <div class="text-center villain-desc">
                     <h4>{villain.name}</h4>
-                    <p id="villian-description">Villain Description</p>
+                    <p id="villain-description">Villain Description</p>
                   </div>
                 </div>
               </div>
@@ -91,49 +76,29 @@
             <!-- Hero section -->
             <div class="col-4">
               <div class="hero-portfolio">
-                <img
-                  src="assets/images/heroes/shadow.png"
-                  id="game-hero-img"
-                  alt="silhouette image"
-                />
+                <img src="" id="game-hero-img" alt="" />
               </div>
               <div class="power-wrapper">
                 <div class="row">
                   <div class="col-4 full-height">
                     <div class="power-container" id="red">
-                      <span class="badge bg-danger power-badges" id="red-power"
-                        >0/6</span
-                      >
+                      <span class="badge bg-danger power-badges" id="red-power">0/6</span>
                     </div>
                     <div class="power-container" id="blue">
-                      <span
-                        class="badge bg-primary power-badges"
-                        id="blue-power"
-                        >0/6</span
-                      >
+                      <span class="badge bg-primary power-badges" id="blue-power">0/6</span>
                     </div>
                   </div>
                   <div class="col-4 full-height">
                     <div class="power-container" id="green">
-                      <span
-                        class="badge bg-success power-badges"
-                        id="green-power"
-                        >0/6</span
-                      >
+                      <span class="badge bg-success power-badges" id="green-power">0/6</span>
                     </div>
                     <div class="power-container" id="yellow">
-                      <span
-                        class="badge bg-warning power-badges"
-                        id="yellow-power"
-                        >0/6</span
-                      >
+                      <span class="badge bg-warning power-badges" id="yellow-power">0/6</span>
                     </div>
                   </div>
                   <div class="col-4 full-height">
                     <div class="power-container" id="black">
-                      <span class="badge bg-dark power-badges" id="black-power"
-                        >0/6</span
-                      >
+                      <span class="badge bg-dark power-badges" id="black-power">0/6</span>
                     </div>
 
                     <div class="health-container">
@@ -157,36 +122,12 @@
                 </div>
                 <div class="col-2">
                   <div class="blender-wrapper">
-
                     <div class="blender-area text-center text-dark" id="blender-area">
-                      <div class="dice dice-red" draggable="true" data-dice-ammount="3" data-dice-id="55 ">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="bi bi-dice-1"
-                          viewBox="0 0 16 16"
-                        >
-                          <circle cx="8" cy="8" r="1.5" />
-                          <path
-                            d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"
-                          />
-                        </svg>
+                      <div class="dice dice-red" draggable="true" data-dice-ammount="3" data-dice-id="55">
+                        <i class="fa-solid fa-dice-three"></i>
                       </div>
-                      <div class="dice dice-red" draggable="true" data-dice-ammount="5" data-dice-id="56 ">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="bi bi-dice-5"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"
-                          />
-                          <path
-                            d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
-                          />
-                        </svg>
-
+                      <div class="dice dice-blue" draggable="true" data-dice-ammount="4" data-dice-id="43">
+                        <i class="fa-solid fa-dice-four"></i>
                       </div>
                     </div>
                   </div>
@@ -196,30 +137,14 @@
             <div class="col-4">
               <div id="game-button-area">
                 <p id="score-points">replace this with render score points</p>
-                <button
-                  class="blend-dice-btn text-center"
-                  onclick="blendDice()"
-                >
-                  Menu<span class="icon"
-                    ><i class="fa-solid fa-blender"></i
-                  ></span>
+                <button class="blend-dice-btn text-center" onclick="blendDice()">
+                  Menu<span class="icon"><i class="fa-solid fa-blender"></i></span>
                 </button>
-                <button
-                  id="roll-dice"
-                  class="blend-dice-btn text-center"
-                  onclick="blendDice()"
-                >
-                  Blend<span class="icon"
-                    ><i class="fa-solid fa-blender"></i></span
-                  >Dice
+                <button id="roll-dice" class="blend-dice-btn text-center" onclick="blendDice()">
+                  Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice
                 </button>
-                <button
-                  id="roll-dice"
-                  class="blend-dice-btn text-center"
-                  onclick="rollDices()"
-                >
-                  Roll<span class="icon"><i class="fa-solid fa-dice"></i></span
-                  >Dice
+                <button id="roll-dice" class="blend-dice-btn text-center" onclick="rollDices()">
+                  Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice
                 </button>
               </div>
             </div>
@@ -230,12 +155,7 @@
       <!-------------------- MODALS ------------------->
 
       <!-------------------- Hero Modal------------------->
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#selectHeroModal"
-      >
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectHeroModal">
         Choose a hero
       </button>
       <div
@@ -250,9 +170,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title fs-5" id="select-hero-modal">
-                Choose a Hero
-              </h5>
+              <h5 class="modal-title fs-5" id="select-hero-modal">Choose a Hero</h5>
               <button
                 type="button"
                 class="btn-close btn-close-white"
@@ -270,10 +188,7 @@
                 data-bs-target="#carouselExample"
                 data-bs-slide="prev"
               >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
               <button
@@ -282,28 +197,18 @@
                 data-bs-target="#carouselExample"
                 data-bs-slide="next"
               >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn m-auto btn btn-warning">
-                Confirm Selection
-              </button>
+              <button type="button" class="btn m-auto btn btn-warning">Confirm Selection</button>
             </div>
           </div>
         </div>
       </div>
       <!-------------------- Rewards Modal ------------------->
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#select-reward-modal"
-      >
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#select-reward-modal">
         Rewards Modal
       </button>
 
@@ -318,35 +223,20 @@
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title fs-5" id="rewardModalLabel">
-                Congratulation on Defeating the Opponent!
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <h5 class="modal-title fs-5" id="rewardModalLabel">Congratulation on Defeating the Opponent!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="reward-modal-body">
               <div>
                 <p>You earned <span id="earned-game-point"> - </span>points!</p>
-                <p>
-                  Your life points are down by
-                  <span id="lost-life-points"> - </span> points!
-                </p>
+                <p>Your life points are down by <span id="lost-life-points"> - </span> points!</p>
               </div>
               <div class="row" id="reward-container">
                 <h5>Click to select your reward!</h5>
                 <div id="reward-wrapper">
                   <p>Rewards are stated here</p>
                 </div>
-                <button
-                  type="button"
-                  class="btn btn btn-warning"
-                  data-bs-dismiss="modal"
-                  id="confirm-reward-btn"
-                >
+                <button type="button" class="btn btn btn-warning" data-bs-dismiss="modal" id="confirm-reward-btn">
                   Confirm Selection
                 </button>
               </div>
@@ -357,153 +247,75 @@
 
       <!-------------------- Villain selection modal Start------------------->
       <!-- Button trigger modal -->
-      <button
-        type="button"
-        class="btn btn btn-warning"
-        data-bs-toggle="modal"
-        data-bs-target="#villanModal"
-      >
-        Select Villan
+      <button type="button" class="btn btn btn-warning" data-bs-toggle="modal" data-bs-target="#villainModal">
+        Select Villain
       </button>
 
       <!-- Modal -->
-      <div
-        class="modal fade"
-        id="villanModal"
-        tabindex="-1"
-        aria-labelledby="villanModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="villainModal" tabindex="-1" aria-labelledby="villainModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title fs-5" id="villanModalLabel">
-                Select an Opponent
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <h5 class="modal-title fs-5" id="villainModalLabel">Select an Opponent</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div id="villanCarousel" class="carousel slide">
+            <div id="villainCarousel" class="carousel slide">
               <div class="carousel-inner" id="villain-modal-boddy">
                 <!-- Carousel from js -->
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#villanCarousel"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-prev" type="button" data-bs-target="#villainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#villanCarousel"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-next" type="button" data-bs-target="#villainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn m-auto btn-warning">
-                Confirm Selection
-              </button>
+              <button type="button" class="btn btn m-auto btn-warning">Confirm Selection</button>
             </div>
           </div>
         </div>
       </div>
       <!-------------------- Extra Modal ------------------->
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#gameOverModal"
-      >
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameOverModal">
         Game Lost
       </button>
 
       <!-- Modal -->
-      <div
-        class="modal fade"
-        id="gameOverModal"
-        tabindex="-1"
-        aria-labelledby="gameOverModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="gameOverModal" tabindex="-1" aria-labelledby="gameOverModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title fs-5" id="gameOverModalLabel">
-                Game Over!
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <h5 class="modal-title fs-5" id="gameOverModalLabel">Game Over!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="modal1-modal-body">
               <p>Well played,</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn btn-warning">
-                Main Menu
-              </button>
-              <button type="button" class="btn btn btn-warning">
-                New Game
-              </button>
+              <button type="button" class="btn btn btn-warning">Main Menu</button>
+              <button type="button" class="btn btn btn-warning">New Game</button>
             </div>
           </div>
         </div>
       </div>
       <!-------------------- Extra Modal2 ------------------->
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal2"
-      >
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
         Extra Modal 2
       </button>
 
-      <div
-        class="modal fade"
-        id="exampleModal2"
-        tabindex="-1"
-        aria-labelledby="exampleModal2Label"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title fs-5" id="exampleModal2Label">
-                Modal2 title
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <h5 class="modal-title fs-5" id="exampleModal2Label">Modal2 title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="modal2-modal-body">...</div>
             <div class="modal-footer">
-              <button type="button" class="btn btn btn-warning">
-                Confirm Selection
-              </button>
+              <button type="button" class="btn btn btn-warning">Confirm Selection</button>
             </div>
           </div>
         </div>
@@ -532,9 +344,6 @@
       crossorigin="anonymous"
     ></script>
     <!--Font Awesome-->
-    <script
-      src="https://kit.fontawesome.com/0fc8d7e1ea.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
   </body>
 </html>
