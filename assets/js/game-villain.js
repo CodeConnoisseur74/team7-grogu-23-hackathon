@@ -103,6 +103,7 @@ function choseRandomVillain() {
   let intList = []
   for (let i = 0; i < 2; i++) {
     let generatedInt = randomInt(0, villainlist.length - 1);
+
     while (generatedInt in intList){generatedInt = randomInt(0, villainlist.length - 1)};
     intList.push(generatedInt);
   }
@@ -120,10 +121,11 @@ function renderVillainModal() {
     const titleDiv = document.createElement("h5");
     const descriptionDiv = document.createElement("div");
     mainDiv.setAttribute("onclick", `renderVillian(${i})`);
-    let activeImage = (i == 0 ? "active" : "not-active");
+    let activeImage = i == 0 ? "active" : "not-active";
     mainDiv.classList.add("carousel-item", `${activeImage}`, "villain-modal-description");
 
     descriptionDiv.innerHTML = villianChoice[i].description;
+
     descriptionDiv.classList.add("w-100", "d-block", "m-auto", "text-center")
 
     titleDiv.innerHTML = villianChoice[i].name;
@@ -133,6 +135,7 @@ function renderVillainModal() {
     pictureDiv.classList.add("d-block", "hero-img", "m-auto", "text-center");
   
   
+
     mainDiv.appendChild(pictureDiv);
     mainDiv.appendChild(titleDiv);
     mainDiv.appendChild(descriptionDiv);
@@ -215,7 +218,7 @@ function renderFightingPointRectangle() {
   const dataColors = currentVillainData.colorChoices;
   let renderData = "";
   for (let i = 0; i < dataNumbers.length; i++) {
-    renderData += ` <div class="size-${dataSquares[i]} ${dataColors[i]}-area" data-area-no="${dataNumbers[i]}"></div>`;
+    renderData += ` <div class="size-${dataSquares[i]} ${dataColors[i]}-area combat-box" data-area-no="${dataNumbers[i]}"></div>`;
   }
   fightingField.innerHTML = renderData;
 }
