@@ -6,6 +6,7 @@
   padding: 0;
   border: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -66,11 +67,19 @@ header li a {
 #highscore-btn {
   color: #000;
   background-color: yellow;
+  transition: background-color 0.5s;
+}
+#highscore-btn:hover {
+  background-color: rgba(255, 238, 0, 0.6);
 }
 
 #new-game-btn {
   color: #ffffff;
   background-color: rgb(0, 26, 255);
+  transition: background-color 0.5s;
+}
+#new-game-btn:hover {
+  background-color: rgba(0, 26, 255, 0.6);
 }
 
 /*==================End of Navbar=====================*/
@@ -102,7 +111,7 @@ h2 {
 /*============================Dice Container============================*/
 
 .dice-container {
-  background-color: bisque;
+  background-color: rgba(88, 97, 224, 0.7);
   max-height: fit-content;
   border-radius: 5px;
 }
@@ -177,12 +186,26 @@ h2 {
 .dice-yellow > .fa-solid {
   background-color: black;
   border: 2px solid black;
+  min-width: 80%;
+  max-height: 150px;
+  border: 1px solid black;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.dice {
+  min-width: 40px;
+  display: inline-block;
+  height: 40px;
+  border: 2px solid black;
+  margin: 5px;
 }
 
 .blender-area {
   width: 100%;
   min-height: 100px;
-  border: 1px solid black;
+  border: 2px solid #fff;
+  border-radius: 20px;
   margin-top: 10px;
 }
 
@@ -238,9 +261,9 @@ h2 {
 
 /*====================================Villain Container===============================*/
 .villain-container {
-  background-color: rgb(236, 77, 77);
+  background-color: rgba(179, 37, 42, 0.7);
   border-radius: 5px;
-  min-height: 350px;
+  min-height: fit-content;
 }
 
 .box-container {
@@ -331,14 +354,20 @@ h2 {
 /*============================Hero Container============================*/
 
 .hero-container {
-  background-color: azure;
+  background-color: rgba(33, 184, 33, 0.7);
   border-radius: 5px;
   margin-top: 80px !important;
   min-height: 350px;
 }
 
-.hero-container img {
-  width: 60%;
+.hero-portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-portfolio img {
+  max-width: 50%;
   height: auto;
 }
 
@@ -387,6 +416,7 @@ h2 {
 
 #green:hover {
   background-color: green;
+  color: #fff;
 }
 
 #yellow:hover {
@@ -398,10 +428,15 @@ h2 {
   color: #fff;
 }
 
+.colour-amount {
+  float: right;
+  margin-right: 5px;
+}
+
 .health-container {
   width: 80%;
   height: 60px;
-  border: 2px solid green;
+  border: 2px solid #ffffff;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -423,12 +458,28 @@ footer {
   text-align: center;
 }
 
+/*========================Media Queries===========================*/
+
 @media only screen and (max-width: 1200px) {
   .villain-container {
     margin-top: 5px !important;
   }
   .hero-container {
     margin-top: 5px !important;
+    height: 300px;
+  }
+  .colour-btn {
+    height: 30px;
+    padding: 2px;
+  }
+  .hero-portfolio {
+    flex-direction: row;
+  }
+  .hero-portfolio img {
+    width: 250px;
+  }
+  .health-container {
+    width: 200px;
   }
   .dice-area {
     max-width: 50%;
@@ -436,6 +487,47 @@ footer {
   .villain-img {
     width: 40%;
   }
+}
+
+@media only screen and (max-width: 990px) {
+  .logo {
+    display: none;
+  }
+  header nav {
+    float: left;
+  }
+  .nav-links li {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .box-by-one,
+  .box-by-two,
+  .box-by-four {
+    margin: 2px;
+    width: 100%;
+  }
+
+  .dice {
+    margin: 2px;
+  }
+
+  .blender-area {
+    min-height: 150px;
+  }
+}
+.villain-container {
+  margin-top: 5px !important;
+}
+.hero-container {
+  margin-top: 5px !important;
+}
+.dice-area {
+  max-width: 50%;
+}
+.villain-img {
+  width: 40%;
 }
 
 /*  --------------------------   Hero section START ------------------------ */
