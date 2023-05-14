@@ -101,15 +101,13 @@ renderModalHeroes();
 function renderModalHeroes() {
   const modalContent = document.getElementById("modal-heroes");
   let modalInner = "";
-  console.log(modalInner);
   for (let i in heroesData) {
     modalInner += `
-        <div class="carousel-item ${i == 0 ? "active" : "not-active"} selectHero" id="${heroesData[i].name}">
+        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" id="${heroesData[i].name}">
             <img src="${heroesData[i].image}" class="d-block mx-auto" alt="Image of ${heroesData[i].name}">
             <p class="mx-auto d-block">${heroesData[i].name}<br>${heroesData[i].description}</p>
         </div>`;
   }
-  console.log(modalInner);
   modalContent.innerHTML = modalInner;
 }
 
@@ -184,83 +182,89 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
-//REWARD MODAL AND GENERATION
-generateRewards();
+// --------------------------------------------------
+// const currentVillanData = {
+//   colorProcentages: {
+//     red: 30,
+//     blue: 30,
+//     green: 20,
+//     yellow: 20,
+//     black: 0,
+//   },
+//   rewardProcentage: { color: 50, black: 20, health: 10, extraStorage: 20 },
+//   colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
+// };
 
-const currentVillanData = {
-  colorProcentages: {
-    red: 30,
-    blue: 30,
-    green: 20,
-    yellow: 20,
-    black: 0,
-  },
-  rewardProcentage: { color: 50, black: 20, health: 10, extraStorage: 20 },
-  colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
-};
+// const rewardData = {
+//   color: {
+//     amount: 2,
+//     colorType: { red: 25, blue: 30, green: 10, yellow: 35 },
+//   },
+//   black: {
+//     amount: 1,
+//   },
+//   health: {
+//     amount: 10,
+//   },
+//   extraStorage: {
+//     amount: 20,
+//   },
+// };
 
-const rewardData = {
-  color: {
-    amount: 2,
-    colorType: { red: 25, blue: 30, green: 10, yellow: 35 },
-  },
-  black: {
-    amount: 1,
-  },
-  health: {
-    amount: 10,
-  },
-  extraStorage: {
-    amount: 20,
-  },
-};
+// function generateRewardObjects() {
+//   rewardsArray = [];
+//   const red = currentVillainData.colorProcentages.red;
+//   const blue = currentVillainData.colorProcentages.blue;
+//   const green = currentVillainData.colorProcentages.green;
+//   const yellow = currentVillainData.colorProcentages.yellow;
+//   const black = currentVillainData.colorProcentages.black;
 
-function generateRewardObjects() {
-  rewardsArray = [];
-  const red = currentVillainData.colorProcentages.red;
-  const blue = currentVillainData.colorProcentages.blue;
-  const green = currentVillainData.colorProcentages.green;
-  const yellow = currentVillainData.colorProcentages.yellow;
-  const black = currentVillainData.colorProcentages.black;
+//   for (let i = 0; i < 3; i++) {
+//     const randomNo = randomInt(0, 100);
 
-  for (let i = 0; i < 3; i++) {
-    const randomNo = randomInt(0, 100);
+//     let rewardType;
+//     if (randomNo < color) {
+//       rewardType = "color";
+//     } else if (randomNo < color + black) {
+//       rewardType = "black";
+//     } else if (randomNo < color + black + health) {
+//       rewardType = "health";
+//     } else {
+//       rewardType = "extraStorage";
+//     }
 
-    let rewardType;
-    if (randomNo < color) {
-      rewardType = "color";
-    } else if (randomNo < color + black) {
-      rewardType = "black";
-    } else if (randomNo < color + black + health) {
-      rewardType = "health";
-    } else {
-      rewardType = "extraStorage";
-    }
+//     let color;
+//     if (rewardType == "color" || rewardType == "extraStorage") {
+//       if (randomNo < color) {
+//         color = "red";
+//       } else if (randomNo < red + blue) {
+//         color = "blue";
+//       } else if (randomNo < red + blue + green) {
+//         color = "green";
+//       } else if (randomNo < red + blue + green + yellow) {
+//         color = "yellow";
+//       } else {
+//         color = "black";
+//       }
+//     }
+//     rewardsArray.push();
+//   }
+// }
 
-    let color;
-    if (rewardType == "color" || rewardType == "extraStorage") {
-      if (randomNo < color) {
-        color = "red";
-      } else if (randomNo < red + blue) {
-        color = "blue";
-      } else if (randomNo < red + blue + green) {
-        color = "green";
-      } else if (randomNo < red + blue + green + yellow) {
-        color = "yellow";
-      } else {
-        color = "black";
-      }
-    }
-    rewardsArray.push();
-  }
-}
+// ----------------------------------------------------------------
 
-function generateRewards() {
-  let rewardWrapper = document.getElementById("reward-wrapper");
-  for (let i = 0; i < 3; i++) {
-    rewardWrapper.innerHTML += `<div class="reward-box"></div>`;
-  }
-}
+// function generateRewards() {
+//   let rewardWrapper = document.getElementById("reward-wrapper");
+//   for (let i = 0; i < 3; i++) {
+//     rewardWrapper.innerHTML += `<div class="reward-box"></div>`;
+//   }
+// }
+
+// //REWARD MODAL AND GENERATION
+// generateRewards();
+
+// ----------------------------------------------------------------
+
 //Used when the current game reloaded or when round is over, and hero loses helth
 //Updates current game hero profile stats
 // function updateHeroGameProfile(currentGameHeroData)

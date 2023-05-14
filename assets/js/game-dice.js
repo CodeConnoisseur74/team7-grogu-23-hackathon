@@ -2,19 +2,8 @@
 
 // this is a a file that deals with dice roll and control
 
-const diceArea = document.querySelector("dice-area");
-const blenderArea = document.querySelector("blender-area");
-
-// Delete later ----------------------------------
-const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-// Starting game settings
-const gameSettings = {
-  score: 0,
-  level: 0,
-  diceId: 1,
-  diceArrangment: "size",
-};
+const diceArea = document.querySelector("#dice-area");
+const blenderArea = document.querySelector("#blender-area");
 
 // -------------------------------------------------
 let currentDiceBoard = [];
@@ -30,7 +19,7 @@ function rollDices() {
   for (let color of colors) {
     for (let i = 0; i < data[color]; i++) {
       const diceRoll = randomInt(1, 6);
-      const object = { roll: diceRoll, color: color, id: gameSettings.diceId++ };
+      const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++ };
       currentDiceBoard.push(object);
     }
   }
@@ -75,12 +64,12 @@ function sortArrayByColor() {
 
 // turns dice in the blender to average of 2 dice in to 1 black
 function conventDice() {
-  const blackDice = { color: "black", id: gameSettings.diceId };
+  const blackDice = { color: "black", id: currentGameSettings.diceId };
 
   const sum = currentBlender.reduce((a, cV) => a + cV.roll, 0);
   blackDice.roll = Math.floor(sum / currentBlender.length);
 
   currentDiceBoard.push(blackDice);
   clearBlender();
-  gameSettings.diceId++;
+  currentGameSettings.diceId++;
 }

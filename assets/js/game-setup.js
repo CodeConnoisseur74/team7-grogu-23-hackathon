@@ -7,11 +7,12 @@ const gameSettings = {
   score: 0,
   level: 0,
   diceId: 1,
+  volume: 0,
   diceArrangment: "size",
 };
-
+//-------------------------------------Fix later----------------------
 // Loaded game settings
-const currentGameSettings = {};
+const currentGameSettings = gameSettings;
 
 // Is used to find out random number
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
