@@ -8,7 +8,7 @@ const blenderArea = document.querySelector("#blender-area");
 // -------------------------------------------------
 let currentDiceBoard = [];
 
-let currentBlender = [];
+let currentBlender = [3, 4];
 
 // takes hero avialable dices, rolls them and pushes to dice array
 function rollDices() {
@@ -20,29 +20,7 @@ function rollDices() {
     for (let i = 0; i < data[color]; i++) {
       const diceRoll = randomInt(1, 6);
 
-      let diceWord;
-      switch (diceRoll) {
-        case 1:
-          diceWord = "one";
-          break;
-        case 2:
-          diceWord = "two";
-          break;
-        case 3:
-          diceWord = "three";
-          break;
-        case 4:
-          diceWord = "four";
-          break;
-        case 5:
-          diceWord = "five";
-          break;
-        case 6:
-          diceWord = "six";
-          break;
-        default:
-          "";
-      }
+      const diceWord = setDicePhrase(diceRoll);
 
       const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++, dicePhrase: diceWord };
       currentDiceBoard.push(object);
@@ -90,18 +68,20 @@ function sortArrayByColor() {
 }
 
 // turns dice in the blender to average of 2 dice in to 1 black
-function conventDice() {
+function blendDice() {
   const blackDice = { color: "black", id: currentGameSettings.diceId };
-
-  const sum = currentBlender.reduce((a, cV) => a + cV.roll, 0);
+  const sum = currentBlender.reduce((a, cV) => a + cV, 0);
   blackDice.roll = Math.floor(sum / currentBlender.length);
-
+  const diceWord = setDicePhrase(blackDice.roll);
+  blackDice.dicePhrase = diceWord;
   currentDiceBoard.push(blackDice);
   clearBlender();
   currentGameSettings.diceId++;
+  renderDiceBoard();
 }
 
 function renderDiceBoard() {
+  diceArea.innerHTML = "";
   for (let i = 0; i < currentDiceBoard.length; i++) {
     const mainDiv = document.createElement("div");
     mainDiv.classList.add("dice");
@@ -114,16 +94,29 @@ function renderDiceBoard() {
   }
 }
 
-// for (let i = 0; i < villianChoice.length; i++) {
-//   const mainDiv = document.createElement("a");
-//   const pictureDiv = document.createElement("div");
-//   const descriptionDiv = document.createElement("div");
-//   mainDiv.setAttribute("onclick", `renderVillian(${i})`);
-//   mainDiv.classList.add("villain-modal-description");
-
-//   descriptionDiv.innerHTML = villianChoice[i].description;
-
-//   mainDiv.appendChild(pictureDiv);
-//   mainDiv.appendChild(descriptionDiv);
-//   villainModalBoddy.appendChild(mainDiv);
-// }
+function setDicePhrase(diceRoll) {
+  let diceWord;
+  switch (diceRoll) {
+    case 1:
+      diceWord = "one";
+      break;
+    case 2:
+      diceWord = "two";
+      break;
+    case 3:
+      diceWord = "three";
+      break;
+    case 4:
+      diceWord = "four";
+      break;
+    case 5:
+      diceWord = "five";
+      break;
+    case 6:
+      diceWord = "six";
+      break;
+    default:
+      "";
+  }
+  return diceWord;
+}
