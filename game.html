@@ -159,52 +159,18 @@
         Choose a hero
       </button>
 
-      <div
-        class="modal fade hero-selection"
-        id="selectHeroModal"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="selectHeroModal"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content bg-dark">
-            <div class="modal-header">
-              <h5 class="modal-title fs-5" id="select-hero-modal">Choose a Hero</h5>
-              <button
-                type="button"
-                class="btn-close btn-close-white"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div id="carouselExample" class="carousel slide">
-              <div class="carousel-inner" id="modal-heroes">
-                <!-- Carousel from js -->
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="prev"
-              >
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="next"
-              >
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn m-auto btn btn-warning">Confirm Selection</button>
-            </div>
+
+  <div class="modal fade hero-selection" id="selectHeroModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="selectHeroModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="select-hero-modal">Choose a Hero</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner" id="modal-heroes">
+                  <!-- Carousel from js -->
+
           </div>
         </div>
       </div>
@@ -304,10 +270,17 @@
         </div>
       </div>
 
-      <!-------------------- Extra Modal2 ------------------->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-        Extra Modal 2
-      </button>
+
+    <!-------------------- Extra Modal2 ------------------->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+      Extra Modal 2
+  </button>
+    
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+
+     
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
