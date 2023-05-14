@@ -12,13 +12,13 @@ const gameSettings = {
 };
 //-------------------------------------Fix later----------------------
 // Loaded game settings
-const currentGameSettings = gameSettings;
+const currentGameSettings = {};
 
 // Is used to find out random number
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 window.addEventListener("load", () => {
-  // Code to be added later
+  // call
 });
 
 function endRound() {
