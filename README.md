@@ -5,15 +5,15 @@
 
 ## Game rules
 
-The player starts with one of the chosen hero profiles (4-10 choices)
-The random Villain is chosen
+The player starts with chosing one of the hero profiles (4-10 choices).
+A random Villain is selected for the player.
 
 Hero:
-- Has preset starting number of 4 different colors “dices” minimum 1 maximum 3
-- Some of the hero profiles have also black but have fewer of the standard ones
-- Each hero has a different setup with different strengths and weaknesses
+- The player begins with 4 different preset colors of dice (minimum 1, maximum 3)
+- Some of the hero profiles have also black (wild) dice, in exchange for fewer of the standard ones
+- Each hero has varying sets of strengths and weaknesses
 - The amount of dice each hero can accumulate is different but the space can be given as a reward as well
-- The black dice are given either for specific heroes (or later as a reward)
+- The black dice are given either for specific heroes or later as a reward
 
 
 Villain:
