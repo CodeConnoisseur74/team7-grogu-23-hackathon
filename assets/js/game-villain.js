@@ -113,6 +113,50 @@ const villainlist = [
     minimum: 5,
     maximum: 7,
   },
+  {
+    name: "Jabba",
+    picture: "assets/images/villians/jabba.png",
+    description: "A fat, slug-like alien gangster, one of the most successful crime lords in the entire galaxy.",
+    strongAgainst: "Prefers green and Red",
+    colorProcentages: {
+      red: 35,
+      blue: 10,
+      green: 40,
+      yellow: 10,
+      black: 5
+    },
+    rewardProcentage: { color: 30, black: 20, health: 30, extraStorage: 10,  extraBlackStorage: 10 },
+    colorReward: {
+      red: 40,
+      blue: 15,
+      green: 30,
+      yellow: 15,
+    },
+    minimum: 5,
+    maximum: 7,
+  },
+  {
+    name: "Kylo-ren",
+    picture: "assets/images/villians/kylo-ren.png",
+    description: "Dark, powerful and extremely wrathful master of the Knightsmof Ren.",
+    strongAgainst: "Preferes Green and Yellow",
+    colorProcentages: {
+      red: 15,
+      blue: 20,
+      green: 30,
+      yellow: 35,
+      black: 0,
+    },
+    rewardProcentage: { color: 30, black: 20, health: 20, extraStorage: 10,  extraBlackStorage: 20 },
+    colorReward: {
+      red: 15,
+      blue: 20,
+      green: 30,
+      yellow: 35,
+    },
+    minimum: 5,
+    maximum: 7,
+  },
 ];
 
 /**
@@ -125,7 +169,6 @@ function choseRandomVillain() {
   let intList = []
   for (let i = 0; i < 2; i++) {
     let generatedInt = randomInt(0, villainlist.length - 1);
-
     while (generatedInt in intList){generatedInt = randomInt(0, villainlist.length - 1)};
     intList.push(generatedInt);
   }
@@ -176,10 +219,12 @@ function renderVillian(index) {
 }
 
 function renderVillianGameProfile() {
-  let villianImage = document.getElementById("villian-image");
+  let villianImage = document.getElementById("villain-image");
   let villianDescription = document.getElementById("villian-description");
-  villianImage.innerHTML = currentVillainData.picture;
+  let villianTitle = document.getElementById("villian-title");
+  villianImage.setAttribute("src", currentVillainData.picture)
   villianDescription.innerHTML = currentVillainData.description;
+  villianTitle.innerHTML = currentVillainData.name;
 }
 
 function decideRectangleSize() {

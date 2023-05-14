@@ -184,46 +184,70 @@ function clearHeroProfile() {
 }
 
 // GENERATE REWARDS
+let currentVillainData = {
+    name: "Darth Veder",
+    picture: "assets/images/villians/darth-vader.png",
+    description: "A high ranking Jedi Knight who fought for Galactic Republic.",
+    strongAgainst: "Prefers Blue and Red",
+    colorProcentages: {
+      red: 30,
+      blue: 30,
+      green: 20,
+      yellow: 20,
+      black: 0,
+    }, rewardProcentage: { color: 35, black: 10, health: 20, extraStorage: 20, extraBlackStorage: 15 },
+    colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
+    minimum: 5,
+    maximum: 7,
+}
+
 
 function generateRewardObjects() {
-  rewardsArray = [];
-  const red = currentVillainData.rewardPercentage.red;
-  const blue = currentVillainData.rewardPercentage.blue;
-  const green = currentVillainData.rewardPercentage.green;
-  const yellow = currentVillainData.rewardPercentage.yellow;
-  const black = currentVillainData.rewardPercentage.black;
+  let rewardsArray = [];
+  const colorPrc = currentVillainData.rewardProcentage.color;
+  const blackPrc = currentVillainData.rewardProcentage.black;
+  const healthPrc = currentVillainData.rewardProcentage.health;
+  const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
+  const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
+
+  const redRew = currentVillainData.colorReward.red;
+  const blueRew = currentVillainData.colorReward.blue;
+  const greenRew = currentVillainData.colorReward.green;
+  const yellowRew = currentVillainData.colorReward.yellow;
 
   for (let i = 0; i < 3; i++) {
     const randomNo = randomInt(0, 100);
 
     let rewardType;
-    if (randomNo < color) {
+    if (randomNo < colorPrc) {
       rewardType = "color";
-    } else if (randomNo < color + black) {
+    } else if (randomNo < colorPrc + blackPrc) {
       rewardType = "black";
-    } else if (randomNo < color + black + health) {
+    } else if (randomNo < colorPrc + blackPrc + healthPrc) {
       rewardType = "health";
-    } else {
+    } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
       rewardType = "extraStorage";
-    }
+    } else {
+        rewardType = "extraBlackStoragePrc";
+      }
 
     const randomNo2 = randomInt(0, 100);
-    let color = [];
+    let diceColors = [];
     let cycles = 0;
     rewardType == "color" ? (cycles = 2) : "";
     rewardType == "extraStorage" ? (cycles = 1) : "";
 
     for (let i = 0; i<cycles; i++) {
-        if(randomNo2 < color) {
-            color.push("red");
-        } else if (randomNo < red + blue) {
-            color.push("blue");
-        } else if (randomNo < red + blue + green) {
-            color.push("blue");
-        } else if (randomNo < red + blue + green + yellow) {
-            color.push("yellow");
+        if(randomNo2 < redRew) {
+            diceColors.push("redRew");
+        } else if (randomNo2 < redRew + blueRew) {
+            diceColors.push("blueRew");
+        } else if (randomNo2 < redRew + blueRew + greenRew) {
+            diceColors.push("blueRew");
+        } else if (randomNo2 < redRew + blueRew + greenRew + yellowRew) {
+            diceColors.push("yellowRew");
         } else {
-            color.push("black");
+            diceColors.push("blackRew");
         }
     }
     let reward;
@@ -244,11 +268,11 @@ function generateRewardObjects() {
         <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>
         <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>`;
     };
-    rewardArray.push(reward);
+    rewardsArray.push(reward);
 
     }
 
-    console.log(rewardsArray)
+    console.log(rewarsdArray)
   }
 
 //----------------------------------------------------------------
@@ -261,7 +285,7 @@ function generateRewards() {
 }
 
 // //REWARD MODAL AND GENERATION
-generateRewards();
+generateRewardObjects();
 
 // ----------------------------------------------------------------
 
