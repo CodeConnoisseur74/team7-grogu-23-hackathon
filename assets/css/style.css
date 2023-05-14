@@ -261,6 +261,9 @@ h2 {
   }
 }
 
+
+/*====================================Combat Box===============================*/
+
 /*====================================Villain Container===============================*/
 
 .villain-container {
@@ -269,6 +272,14 @@ h2 {
   min-height: fit-content;
 }
 
+
+.box-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+  
 #fighting-point-field {
   height: 100%;
   background-color: rgb(255, 127, 206);
@@ -577,7 +588,7 @@ footer {
 
 /*  --------------------------   Hero section END ------------------------ */
 
-/*  --------------------------   Vilain section Start------------------------ */
+/*  --------------------------   Villain section Start------------------------ */
 .villain-modal-description {
   color: #000;
 }
@@ -621,7 +632,7 @@ footer {
   height: 100px;
 }
 
-/*  --------------------------   Vilain section End------------------------ */
+/*  --------------------------   Villain section End------------------------ */
 
 /*============================ Game Modal Style ============================*/
 
