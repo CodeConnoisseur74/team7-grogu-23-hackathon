@@ -46,7 +46,7 @@
                 <a class="nav-link" href="game.html">Game</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="highscores.html">Highscores</a>
+                <a class="nav-link" href="highscore.html">Highscores</a>
               </li>
             </ul>
           </div>
@@ -62,7 +62,7 @@
             <div class="col-8">
              
               <div class="row">
-             
+
                 <div class="col-6">
                   <div class="col-md-6 col box-container" id="fighting-point-field">
                   </div>
@@ -128,10 +128,12 @@
                 </div>
                 <div class="col-2">
                   <div class="blender-wrapper">
+
                     <div class="blender-area text-center text-dark" id="blender-area" draggable="false">
                       <div
                         class="dice dice-red"
                         id="dice-id-55"
+
                         draggable="true"
                         data-dice-ammount="3"
                         data-dice-id="55 "
@@ -150,7 +152,12 @@
                           />
                         </svg>
                       </div>
-                      <div class="dice dice-red" draggable="true" data-dice-ammount="5" data-dice-id="56 ">
+                      <div
+                        class="dice dice-red"
+                        draggable="true"
+                        data-dice-ammount="5"
+                        data-dice-id="56 "
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="currentColor"
@@ -287,18 +294,28 @@
       <!-------------------- Villain selection modal Start------------------->
       <!-- Button trigger modal -->
 
+
       <button type="button" class="btn btn btn-warning" data-bs-toggle="modal" data-bs-target="#villainModal">
+
         Select Villain
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="villainModal" tabindex="-1" aria-labelledby="villainModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="villainModal"
+        tabindex="-1"
+        aria-labelledby="villainModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
+
               <h5 class="modal-title fs-5" id="villainModalLabel">Select an Opponent</h5>
 
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
             <div id="villainCarousel" class="carousel slide">
               <div class="carousel-inner" id="villain-modal-boddy">
@@ -312,6 +329,7 @@
               <button class="carousel-control-next" type="button" data-bs-target="#villainCarousel" data-bs-slide="next">
 
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
