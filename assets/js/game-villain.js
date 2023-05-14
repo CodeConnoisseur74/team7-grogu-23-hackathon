@@ -11,7 +11,7 @@ const villainlist = [
   {
     name: "Darth Veder",
     picture: "assets/images/darth-vader.png",
-    description: "Comander of sith",
+    description: "A high ranking Jedi Knight who fought for Galactic Republic, he has borderline personality disorder and he is commander of sith",
     strongAgainst: "Prefairs Blue and Red",
     colorProcentages: {
       red: 30,
@@ -28,7 +28,7 @@ const villainlist = [
   {
     name: "Emperor Palpatine",
     picture: "assets/images/emperor-palpatine.png",
-    description: "Living a double life",
+    description: "He is Kylo Ren's secret master. A Dark lord of the sith who plans to destroy Jedi and take permanenet control of the galaxy.",
     strongAgainst: "Prefairs Green and Yellow",
     colorProcentages: {
       red: 15,
@@ -50,8 +50,8 @@ const villainlist = [
   {
     name: "General Grievous",
     picture: "assets/images/general-grievous.png",
-    description: "Notorious for visual design and powerful presence",
-    strongAgainst: "Preferes Yellow and Red",
+    description: "General of the Kaleesh Army during the Huk War. Extremely proficient lightstaber wielder and notorious for visual design and powerful presence.",
+    strongAgainst: "Prefers Yellow and Red",
     colorProcentages: {
       red: 35,
       blue: 10,
@@ -72,7 +72,7 @@ const villainlist = [
   {
     name: "Darth Maul",
     picture: "assets/images/darth-maul.png",
-    description: "Always looking for a master",
+    description: "A formidable warrior strong with dark side trained by Darth Sidious, possessing deadly skills in lightstaber combat. A mastermind who plotted his return to power.",
     strongAgainst: "Prefairs Green and blue",
     colorProcentages: {
       red: 15,
