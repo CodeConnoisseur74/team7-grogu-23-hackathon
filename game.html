@@ -74,12 +74,12 @@
 
                   </div>
                 </div>
-                <div class="col-6 p-3 ">
+                <div class="col-6 p-3">
                   <div class="villain-portfolio bg-white">
-                    <img src="" class="h-100 w-100 " id="villain-image">
+                    <img src="assets/images/heroes/shadow.png" id="villain-image">
                   </div>
                   <div class="h-20 text-center villain-desc">
-                    <h4 id="villian-title">{villain.name}</h4>
+                    <h5 id="villian-title">{villain.name}</h5>
                     <p id="villian-description">Villain Description</p>
                   </div>
               </div>
@@ -466,28 +466,28 @@
           </div>
         </div>
       </div>
-      <!-------------------- Extra Modal2 ------------------->
+      <!-------------------- Extra Menu ------------------->
       <button
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal2"
+        data-bs-target="#modalMenu"
       >
-        Extra Modal 2
+        Menu
       </button>
 
       <div
         class="modal fade"
-        id="exampleModal2"
+        id="modalMenu"
         tabindex="-1"
-        aria-labelledby="exampleModal2Label"
+        aria-labelledby="modalMenuLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title fs-5" id="exampleModal2Label">
-                Modal2 title
+              <h5 class="modal-title fs-5 " id="modalMenuLabel">
+                Menu
               </h5>
               <button
                 type="button"
@@ -496,11 +496,17 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body" id="modal2-modal-body">...</div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn btn-warning">
-                Confirm Selection
-              </button>
+            <div class="modal-body text-center" id="Menu-modal-body">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="game.html">Game</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="highscores.html">Highscores</a>
+                </li>
             </div>
           </div>
         </div>

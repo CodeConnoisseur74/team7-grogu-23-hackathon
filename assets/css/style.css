@@ -1,6 +1,10 @@
 /*============================Import fonts============================*/
 @import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap");
 
+html {
+  font-size: calc(15px + 0.390625vw);
+}
+
 /*============================Global style============================*/
 * {
   padding: 0;
@@ -335,7 +339,6 @@ h2 {
 /*===========================Villain Image & Description===========================*/
 
 .villain-portfolio {
-  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -345,8 +348,9 @@ h2 {
   margin: 5px 0;
   padding: 5px;
   width: 100%;
-  height: 20%;
   font-size: 16px;
+
+
 }
 
 #villian-description{
@@ -354,8 +358,8 @@ h2 {
 }
 
 #villain-image{
-  height: 90%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   background-color: white;
 }
 
