@@ -19,10 +19,37 @@ function rollDices() {
   for (let color of colors) {
     for (let i = 0; i < data[color]; i++) {
       const diceRoll = randomInt(1, 6);
-      const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++ };
+
+      let diceWord;
+      switch (diceRoll) {
+        case 1:
+          diceWord = "one";
+          break;
+        case 2:
+          diceWord = "two";
+          break;
+        case 3:
+          diceWord = "three";
+          break;
+        case 4:
+          diceWord = "four";
+          break;
+        case 5:
+          diceWord = "five";
+          break;
+        case 6:
+          diceWord = "six";
+          break;
+        default:
+          "";
+      }
+
+      const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++, dicePhrase: diceWord };
       currentDiceBoard.push(object);
     }
   }
+  console.log(currentDiceBoard);
+  renderDiceBoard();
 }
 
 // clears up dice array and html
@@ -73,3 +100,30 @@ function conventDice() {
   clearBlender();
   currentGameSettings.diceId++;
 }
+
+function renderDiceBoard() {
+  for (let i = 0; i < currentDiceBoard.length; i++) {
+    const mainDiv = document.createElement("div");
+    mainDiv.classList.add("dice");
+    mainDiv.classList.add(`dice-${currentDiceBoard[i].color}`);
+    mainDiv.setAttribute("draggable", "true");
+    mainDiv.setAttribute("data-dice-ammount", currentDiceBoard[i].roll);
+    mainDiv.setAttribute("data-dice-id", currentDiceBoard[i].id);
+    mainDiv.innerHTML = `<i class="fa-solid fa-dice-${currentDiceBoard[i].dicePhrase}"></i>`;
+    diceArea.appendChild(mainDiv);
+  }
+}
+
+// for (let i = 0; i < villianChoice.length; i++) {
+//   const mainDiv = document.createElement("a");
+//   const pictureDiv = document.createElement("div");
+//   const descriptionDiv = document.createElement("div");
+//   mainDiv.setAttribute("onclick", `renderVillian(${i})`);
+//   mainDiv.classList.add("villain-modal-description");
+
+//   descriptionDiv.innerHTML = villianChoice[i].description;
+
+//   mainDiv.appendChild(pictureDiv);
+//   mainDiv.appendChild(descriptionDiv);
+//   villainModalBoddy.appendChild(mainDiv);
+// }

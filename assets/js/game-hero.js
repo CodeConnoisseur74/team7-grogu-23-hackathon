@@ -182,74 +182,68 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
-// --------------------------------------------------
-// const currentVillanData = {
-//   colorProcentages: {
-//     red: 30,
-//     blue: 30,
-//     green: 20,
-//     yellow: 20,
-//     black: 0,
-//   },
-//   rewardProcentage: { color: 50, black: 20, health: 10, extraStorage: 20 },
-//   colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
-// };
+function generateRewardObjects() {
+  rewardsArray = [];
+  const red = currentVillainData.colorProcentages.red;
+  const blue = currentVillainData.colorProcentages.blue;
+  const green = currentVillainData.colorProcentages.green;
+  const yellow = currentVillainData.colorProcentages.yellow;
+  const extraBlackStorage = currentVillainData.colorProcentages.extraBlackStorage;
 
-// const rewardData = {
-//   color: {
-//     amount: 2,
-//     colorType: { red: 25, blue: 30, green: 10, yellow: 35 },
-//   },
-//   black: {
-//     amount: 1,
-//   },
-//   health: {
-//     amount: 10,
-//   },
-//   extraStorage: {
-//     amount: 20,
-//   },
-// };
+  for (let i = 0; i < 3; i++) {
+    const randomNo = randomInt(0, 100);
 
-// function generateRewardObjects() {
-//   rewardsArray = [];
-//   const red = currentVillainData.colorProcentages.red;
-//   const blue = currentVillainData.colorProcentages.blue;
-//   const green = currentVillainData.colorProcentages.green;
-//   const yellow = currentVillainData.colorProcentages.yellow;
-//   const black = currentVillainData.colorProcentages.black;
+    let rewardType;
+    if (randomNo < color) {
+      rewardType = "color";
+    } else if (randomNo < color + black) {
+      rewardType = "black";
+    } else if (randomNo < color + black + health) {
+      rewardType = "health";
+    } else {
+      rewardType = "extraStorage";
+    }
 
-//   for (let i = 0; i < 3; i++) {
-//     const randomNo = randomInt(0, 100);
+    const randomNo2 = randomInt(0, 100);
+    let color;
+    let cycles = 0;
+    rewardType == "color" ? (cycles = 2) : "";
+    rewardType == "extraStorage" ? (cycles = 1) : "";
 
-//     let rewardType;
-//     if (randomNo < color) {
-//       rewardType = "color";
-//     } else if (randomNo < color + black) {
-//       rewardType = "black";
-//     } else if (randomNo < color + black + health) {
-//       rewardType = "health";
-//     } else {
-//       rewardType = "extraStorage";
-//     }
+    for (let i = 0; i < cycles; i++) {
+      if (randomNo2 < color) {
+        color.push("red");
+      } else if (randomNo < red + blue) {
+        color.push("blue");
+      } else if (randomNo < red + blue + green) {
+        color.push("green");
+      } else {
+        color.push("yellow");
+      }
+    }
 
-//     let color;
-//     if (rewardType == "color" || rewardType == "extraStorage") {
-//       if (randomNo < color) {
-//         color = "red";
-//       } else if (randomNo < red + blue) {
-//         color = "blue";
-//       } else if (randomNo < red + blue + green) {
-//         color = "green";
-//       } else if (randomNo < red + blue + green + yellow) {
-//         color = "yellow";
-//       } else {
-//         color = "black";
-//       }
-//     }
-//     rewardsArray.push();
-//   }
-// }
+    if (rewardType == "black") {
+      const reward = `render`;
+      rewardsArray.push(reward);
+    } else if (rewardType == "health") {
+      const reward = `redner`;
+      rewardsArray.push(reward);
+    } else if (rewardType == "color") {
+      const reward = ` <div>   <div>  rewardType[0];</div>   <div> rewardType[1];</div>   </div>`;
+      rewardsArray.push(reward);
+    } else if (rewardType == "extraStorage") {
+      const reward = ` <div>      rewardType[0];   </div>`;
+      rewardsArray.push(reward);
+    }
+
+    //extraStorag
+    rewardType[0];
+
+    //color:
+    rewardType[0];
+    rewardType[1];
+  }
+}
 
 // ----------------------------------------------------------------
 
