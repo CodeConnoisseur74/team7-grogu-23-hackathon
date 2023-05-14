@@ -100,7 +100,7 @@ h2 {
 }
 
 /*============================Background Image============================*/
-#stars {
+.stars {
   background: url("../images/stars_background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
