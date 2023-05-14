@@ -4,9 +4,9 @@
 
 const draggables = document.getElementsByClassName("dice");
 const combatBox = document.getElementsByClassName("combat-box");
-const blenderField = document.querySelector("#blender-field");
-const diceField = document.querySelector("#dice-field");
-const screen = document.querySelector("#game-screen");
+const blenderField = document.querySelector("#blender-area");
+const diceField = document.querySelector("#dice-area");
+const screen = document.querySelector("#game-size-container");
 
 // game square coorodinates that are used with drag start
 let diceCoordinates = {};
