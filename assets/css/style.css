@@ -144,7 +144,7 @@ h2 {
   border-radius: 10px;
   width: 70px;
   display: inline-block;
-  height: 70px;
+  height: fit-content;
   border: 2px solid black;
   margin: 5px;
   color: #fff;
@@ -197,14 +197,6 @@ h2 {
   border: 1px solid black;
   padding: 1px 1px;
   border-radius: 5px;
-}
-
-.dice {
-  min-width: 40px;
-  display: inline-block;
-  height: fit-content;
-  border: 2px solid black;
-  margin: 5px;
 }
 
 .blender-area {
