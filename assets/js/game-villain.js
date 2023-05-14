@@ -11,8 +11,8 @@ const villainlist = [
   {
     name: "Darth Veder",
     picture: "assets/images/villians/darth-vader.png",
-    description: "A high ranking Jedi Knight who fought for Galactic Republic, he has borderline personality disorder and he is commander of sith",
-    strongAgainst: "Prefairs Blue and Red",
+    description: "A high ranking Jedi Knight who fought for Galactic Republic.",
+    strongAgainst: "Prefers Blue and Red",
     colorProcentages: {
       red: 30,
       blue: 30,
@@ -20,7 +20,7 @@ const villainlist = [
       yellow: 20,
       black: 0,
     },
-    rewardProcentage: { color: 45, black: 20, health: 10, extraStorage: 20, extraBlackStorage: 5 },
+    rewardProcentage: { color: 35, black: 10, health: 20, extraStorage: 20, extraBlackStorage: 15 },
     colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
     minimum: 5,
     maximum: 7,
@@ -28,8 +28,8 @@ const villainlist = [
   {
     name: "Emperor Palpatine",
     picture: "assets/images/villians/emperor-palpatine.png",
-    description: "He is Kylo Ren's secret master. A Dark lord of the sith who plans to destroy Jedi and take permanenet control of the galaxy.",
-    strongAgainst: "Prefairs Green and Yellow",
+    description: "A Dark lord who plans to destroy Jedi and take permanenet control of the galaxy.",
+    strongAgainst: "Prefers Green and Yellow",
     colorProcentages: {
       red: 15,
       blue: 10,
@@ -37,7 +37,7 @@ const villainlist = [
       yellow: 35,
       black: 0,
     },
-    rewardProcentage: { color: 50, black: 20, health: 10, extraStorage: 20 },
+    rewardProcentage: { color: 40, black: 10, health: 10, extraStorage: 20, extraBlackStorage: 20 },
     colorReward: {
       red: 25,
       blue: 30,
@@ -50,7 +50,7 @@ const villainlist = [
   {
     name: "General Grievous",
     picture: "assets/images/villians/general-grievous.png",
-    description: "General of the Kaleesh Army during the Huk War. Extremely proficient lightstaber wielder and notorious for visual design and powerful presence.",
+    description: "Extremely proficient lightstaber, notorious for visual design and powerful presence.",
     strongAgainst: "Prefers Yellow and Red",
     colorProcentages: {
       red: 35,
@@ -59,7 +59,7 @@ const villainlist = [
       yellow: 45,
       black: 0,
     },
-    rewardProcentage: { color: 30, black: 20, health: 40, extraStorage: 10 },
+    rewardProcentage: { color: 30, black: 10, health: 30, extraStorage: 15, extraBlackStorage: 15 },
     colorReward: {
       red: 35,
       blue: 20,
@@ -72,8 +72,8 @@ const villainlist = [
   {
     name: "Darth Maul",
     picture: "assets/images/villians/darth-maul.png",
-    description: "A formidable warrior strong with dark side trained by Darth Sidious, possessing deadly skills in lightstaber combat. A mastermind who plotted his return to power.",
-    strongAgainst: "Prefairs Green and blue",
+    description: "A formidable warrior strong with dark side. A mastermind who plotted his return to power.",
+    strongAgainst: "Prefers Green and blue",
     colorProcentages: {
       red: 15,
       blue: 30,
@@ -81,7 +81,7 @@ const villainlist = [
       yellow: 15,
       black: 0,
     },
-    rewardProcentage: { color: 30, black: 30, health: 10, extraStorage: 10 },
+    rewardProcentage: { color: 20, black: 15, health: 25, extraStorage: 25, extraBlackStorage: 15 },
     colorReward: {
       red: 15,
       blue: 30,
@@ -94,8 +94,8 @@ const villainlist = [
   {
     name: "Stormtrooper",
     picture: "assets/images/villians/stormtrooper.png",
-    description: "Aims to serve the empire to the best of their ability and restore the galactic empire. They later served the first order as foot soldiers.",
-    strongAgainst: "Prefairs yellow and red",
+    description: "Aims to restore the galactic empire. They later served the first order as foot soldiers.",
+    strongAgainst: "Prefers yellow and red",
     colorProcentages: {
       red: 35,
       blue: 20,
@@ -103,7 +103,7 @@ const villainlist = [
       yellow: 30,
       black: 0,
     },
-    rewardProcentage: { color: 40, black: 20, health: 20, extraStorage: 20 },
+    rewardProcentage: { color: 30, black: 10, health: 20, extraStorage: 20 , extraBlackStorage: 20},
     colorReward: {
       red: 30,
       blue: 20,
