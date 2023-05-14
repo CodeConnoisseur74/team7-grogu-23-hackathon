@@ -14,9 +14,24 @@ body {
   font-weight: 300;
   color: whitesmoke !important;
   overflow-x: hidden;
+  background: url("../images/stars_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /*=============================Header Style=============================*/
+
+.row {
+  height: 100%;
+}
+.col-8,
+.col-4 {
+  background-color: #00ca00;
+  border: #000 1px solid;
+  height: 50%;
+}
 
 h1 {
   font-family: "Poller One", cursive;
@@ -82,7 +97,12 @@ header li a {
   background-color: rgba(0, 26, 255, 0.6);
 }
 
-/*==================End of Navbar=====================*/
+#game-size-container {
+  background-color: #00ca00;
+  aspect-ratio: 4/3;
+  max-width: 100vw;
+  max-height: 100vh;
+}
 
 /*=======================Modal======================*/
 
@@ -97,15 +117,6 @@ header li a {
 h2 {
   font-family: "Marmelad", sans-serif;
   color: whitesmoke;
-}
-
-/*============================Background Image============================*/
-.stars {
-  background: url("../images/stars_background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 /*============================Dice Container============================*/
@@ -123,9 +134,10 @@ h2 {
 }
 
 .dice-area {
-  min-width: 80%;
-  min-height: 150px;
+  width: 100%;
+  height: 100%;
   border: 1px solid black;
+  background-color: aqua;
   margin-top: 10px;
   border-radius: 5px;
   display: flex;
@@ -221,6 +233,10 @@ h2 {
   border: 1px solid black;
   border-radius: 20px;
   margin-top: 10px;
+}
+
+#game-button-area {
+  height: 100%;
 }
 
 #roll-dice {
@@ -366,11 +382,6 @@ h2 {
   align-items: center;
 }
 
-.hero-portfolio img {
-  max-width: 50%;
-  height: auto;
-}
-
 .btn-wrapper {
   display: flex;
   flex-direction: column;
@@ -433,9 +444,15 @@ h2 {
   margin-right: 5px;
 }
 
+#game-hero-img {
+  height: 80%;
+  width: 100%;
+  background-color: aqua;
+}
+
 .health-container {
-  width: 80%;
-  height: 60px;
+  width: 90%;
+  height: 20%;
   border: 2px solid #ffffff;
   margin: auto;
   display: flex;
@@ -477,9 +494,6 @@ footer {
   }
   .hero-portfolio img {
     width: 250px;
-  }
-  .health-container {
-    width: 200px;
   }
   .dice-area {
     max-width: 50%;
@@ -537,8 +551,8 @@ footer {
 }
 
 .healthBar {
-  width: 200px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   background-color: grey;
   position: relative;
 }
@@ -547,23 +561,23 @@ footer {
   width: 50%;
   height: 100%;
   background-color: rgb(17, 65, 17);
+  position: absolute;
 }
 
 .health-heart,
 #health-points {
   color: white;
-  z-index: 10;
   position: absolute;
 }
 
 .health-heart {
-  top: 25%;
-  left: 2%;
+  top: 20%;
+  left: 5%;
 }
 
 #health-points {
-  top: 25%;
-  right: 2%;
+  top: -10%;
+  right: 5%;
 }
 
 /*  --------------------------   Hero section END ------------------------ */
