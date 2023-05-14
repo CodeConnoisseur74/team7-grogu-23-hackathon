@@ -103,7 +103,6 @@ function choseRandomVillain() {
   let intList = []
   for (let i = 0; i < 2; i++) {
     let generatedInt = randomInt(0, villainlist.length - 1);
-
     while (generatedInt in intList){generatedInt = randomInt(0, villainlist.length - 1)};
     intList.push(generatedInt);
   }
@@ -154,10 +153,12 @@ function renderVillian(index) {
 }
 
 function renderVillianGameProfile() {
-  let villianImage = document.getElementById("villian-image");
+  let villianImage = document.getElementById("villain-image");
   let villianDescription = document.getElementById("villian-description");
-  villianImage.innerHTML = currentVillainData.picture;
+  let villianTitle = document.getElementById("villian-title");
+  villianImage.setAttribute("src", currentVillainData.picture)
   villianDescription.innerHTML = currentVillainData.description;
+  villianTitle.innerHTML = currentVillainData.name;
 }
 
 function decideRectangleSize() {
