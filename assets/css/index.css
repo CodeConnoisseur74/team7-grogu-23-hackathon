@@ -13,8 +13,9 @@
 
 body {
   /* font-family: 'Star Wars', sans-serif; */
-  font-family: "Hind Guntur", sans-serif;
-  font-weight: 300;
+  font-family: 'Star Wars', sans-serif;
+  font-weight: 200;
+  letter-spacing: 2px;
   /* color: whitesmoke !important; */
   overflow-x: hidden;
 }
