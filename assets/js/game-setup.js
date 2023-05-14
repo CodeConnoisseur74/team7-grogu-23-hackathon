@@ -12,7 +12,7 @@ const gameSettings = {
 };
 //-------------------------------------Fix later----------------------
 // Loaded game settings
-const currentGameSettings = {};
+const currentGameSettings = gameSettings;
 
 // Is used to find out random number
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
