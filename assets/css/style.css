@@ -140,26 +140,21 @@ h2 {
   flex-direction: row;
 }
 
-
 .dice-red {
   background-color: red;
-  color: red;
+  border: red 0.0000000000000001 solid;
 }
 .dice-blue {
   background-color: blue;
-  color: blue;
 }
 .dice-green {
   background-color: green;
-  color: green;
 }
 .dice-yellow {
   background-color: yellow;
-  color: yellow;
 }
 .dice-black {
   background-color: black;
-  color: black;
 }
 
 .dice-one,
@@ -176,12 +171,11 @@ h2 {
   padding: 1px 1px;
 }
 
-
 .dice {
   width: 7vmin;
   height: 7vmin;
   margin: 5px;
-  padding: 0.5vmin;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,6 +183,7 @@ h2 {
 }
 
 .dice > svg {
+  margin: 0.7vmin;
   stroke: #fff;
   fill: #fff;
 }
@@ -196,7 +191,6 @@ h2 {
 .dice.dice-yellow > svg {
   stroke: #000000;
   fill: #000000;
-
 }
 
 .blender-area {

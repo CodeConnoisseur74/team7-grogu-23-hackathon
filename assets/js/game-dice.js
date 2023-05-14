@@ -28,6 +28,7 @@ function rollDices() {
   }
   console.log(currentDiceBoard);
   renderDiceBoard();
+  callAllDragables();
 }
 
 // clears up dice array and html
