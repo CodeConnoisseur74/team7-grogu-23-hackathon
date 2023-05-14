@@ -228,7 +228,7 @@ function generateRewardObjects() {
     } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
       rewardType = "extraStorage";
     } else {
-        rewardType = "extraBlackStoragePrc";
+        rewardType = "extraBlackStorage";
       }
 
     const randomNo2 = randomInt(0, 100);
@@ -239,15 +239,15 @@ function generateRewardObjects() {
 
     for (let i = 0; i<cycles; i++) {
         if(randomNo2 < redRew) {
-            diceColors.push("redRew");
+            diceColors.push("red");
         } else if (randomNo2 < redRew + blueRew) {
-            diceColors.push("blueRew");
+            diceColors.push("blue");
         } else if (randomNo2 < redRew + blueRew + greenRew) {
-            diceColors.push("blueRew");
+            diceColors.push("blue");
         } else if (randomNo2 < redRew + blueRew + greenRew + yellowRew) {
-            diceColors.push("yellowRew");
+            diceColors.push("yellow");
         } else {
-            diceColors.push("blackRew");
+            diceColors.push("black");
         }
     }
     let reward;
@@ -261,18 +261,18 @@ function generateRewardObjects() {
         </div>`;
     } else if(rewardType =="color"){
         reward = `
-        <div class= "reward-dice ${color[0]}" id="${color[0]}-reward-dice"></div>
-        <div class= "reward-dice ${color[0]}" id="${color[0]}></div>`;
+        <div class= "reward-dice ${diceColors[0]}" id="${diceColors[0]}-reward-dice"></div>
+        <div class= "reward-dice ${diceColors[0]}" id="${diceColors[0]}></div>`;
     } else if(rewardType =="extraStorage"){
         reward = `
-        <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>
-        <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>`;
+        <div class= "reward-space ${diceColors[0]}" id="${diceColors[0]}-reward-slot"></div>
+        <div class= "reward-space ${diceColors[0]}" id="${diceColors[0]}-reward-slot"></div>`;
     };
     rewardsArray.push(reward);
 
     }
 
-    console.log(rewarsdArray)
+    console.log(rewardsArray)
   }
 
 //----------------------------------------------------------------
