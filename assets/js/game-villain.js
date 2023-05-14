@@ -20,7 +20,7 @@ const villainlist = [
       yellow: 20,
       black: 0,
     },
-    rewardProcentage: { color: 50, black: 20, health: 10, extraStorage: 20 },
+    rewardProcentage: { color: 45, black: 20, health: 10, extraStorage: 20, extraBlackStorage: 5 },
     colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
     minimum: 5,
     maximum: 7,
