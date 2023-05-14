@@ -19,7 +19,7 @@
 <body id="stars">
 <div class="row">
   <header>
-    <h1>StarWars <br />Battle Dice</h1>
+    <h1 class="logo">StarWars <br />Battle Dice</h1>
     <nav class="navbar navbar-expand-lg">
       <button class="navbar-toggler bg-light mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -70,7 +70,7 @@
     <div class="row vh-90">
       <div class="container dice-container col-xl-5 col-12 section">
         <div class="row">
-          <div class="col-md-7 dice-wrapper">
+          <div class="col-md-7 col-8 dice-wrapper">
             <div class="dice-area text-center" id="dice-area">
               <div class="dice" draggable="true">
                 <p>1</p>
@@ -147,7 +147,7 @@
             </div>
             <button id="roll-dice" class="text-center mt-5 gentle-hover-shake" onclick="rollDices()">Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice</button>
           </div>
-          <div class="col-3 blender-wrapper">
+          <div class="col-md-5 col-4 blender-wrapper">
             <div class="blender-area text-center text-dark" id="blender-area">Blender Area</div>
             <button class="blend-dice-btn text-center">Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice</button>
           </div>
@@ -156,8 +156,9 @@
       <!--Villain Container-->
       <div class="container villain-container col-xl-5 col-12 section">
         <div class="row">
-          <div class="col-5 box-container " id="fighting-point-field">
-            <div class="row box-row top-box-row" >
+          <div class="col-md-5 col-7 box-container" id="fighting-point-field">
+            <div class="row box-row top-box-row">
+              <div id="droppable" class="col-6 box-by-two text-center">
               <!--  Filled in with rendering -->
                 <div class="dice" draggable="true">
                   <p>2</p>
@@ -165,8 +166,8 @@
               
             </div>
           </div>
-          <div class="col-6 villain-portfolio">
-            <img class="villain-img" id="villian-image" alt="" />
+          <div class="col-md-6 col-5 villain-portfolio">
+            <img class="villain-img" src="assets/images/darth-vader.png" alt="" id="villian-image" />
             <div class="text-center villain-desc">
               <h4>{villain.name}</h4>
               <p id="villian-description">Villain Description</p>
@@ -174,16 +175,26 @@
           </div>
         </div>
       </div>
-      <!---------------------------Hero Container -------------------->
-      <div class="row">
+      <!---------------------------Hero Container-------------------->
+      <div class="row hero-row g-0">
         <div class="col-xl-5 col-12 container hero-container section">
           <div class="row">
             <div class="col-5 btn-wrapper">
-              <div class="hero-powers" id="red"><span class="badge bg-danger power-badges" id="red-power">0/6</span></div>
-              <div class="hero-powers" id="blue"><span class="badge bg-primary power-badges" id="blue-power">0/6</span></div>
-              <div class="hero-powers" id="green"> <span class="badge bg-success power-badges" id="green-power">0/6</span></div>
-              <div class="hero-powers" id="yellow"><span class="badge bg-warning power-badges" id="yellow-power">0/6</span></div>
-              <div class="hero-powers" id="black"><span class="badge bg-dark power-badges" id="black-power">0/6</span></div>
+              <button class="colour-btn" value="red" id="red-power" data-sound="red_blaster.mp3">
+                Blaster<span class="colour-amount">/6</span>
+              </button>
+              <button class="colour-btn" value="blue" id="blue-power" data-sound="blue_lightsaber.mp3">
+                Lightsaber<span class="colour-amount">/6</span>
+              </button>
+              <button class="colour-btn" value="green" id="green-power" data-sound="green_chewie.mp3">
+                Chewbacca<span class="colour-amount">/6</span>
+              </button>
+              <button class="colour-btn" value="yellow" id="yellow-power" data-sound="yellow_engine_flyby.mp3">
+                Force Power<span class="colour-amount">/6</span>
+              </button>
+              <button class="colour-btn" value="black" id="black-power" data-sound="black_droid.mp3">
+                Droid<span class="colour-amount">/6</span>
+              </button>
             </div>
             <div class="col-7 hero-portfolio">
             <img src="" id ="game-hero-img" alt=""/>
