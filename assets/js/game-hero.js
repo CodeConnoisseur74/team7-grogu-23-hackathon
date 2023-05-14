@@ -103,7 +103,7 @@ function renderModalHeroes() {
   let modalInner = "";
   for (let i in heroesData) {
     modalInner += `
-        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" id="${heroesData[i].name}">
+        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" onclick= renderHeroGameProfile(${i}) id="${heroesData[i].name}">
             <img src="${heroesData[i].image}" class="d-block hero-img m-auto text-center" alt="Image of ${heroesData[i].name}">
             <h5 class="w-100 d-block m-auto text-center">${heroesData[i].name}</h5>
             <p class="w-100 d-block m-auto text-center">${heroesData[i].description}</p>
