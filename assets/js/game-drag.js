@@ -2,7 +2,7 @@
 
 // this is a a file that deals with drag and drop functions
 
-const draggables = document.getElementsByClassName("dice");
+let draggables = document.getElementsByClassName("dice");
 const combatBox = document.getElementsByClassName("combat-box");
 const blenderField = document.querySelector("#blender-area");
 const diceField = document.querySelector("#dice-area");
@@ -25,9 +25,13 @@ function preventOnDragStart(draggables) {
   }
 }
 
+function callAllDragables() {
+  draggables = document.getElementsByClassName("dice");
+  addNewEventListeners("reset");
+  findDropBoxesCenters();
+}
+
 // add to main loading page
-findDropBoxesCenters();
-addNewEventListeners("add");
 
 // Requires remove/add/reset action to work. effects draggable squares
 function addNewEventListeners(action) {
@@ -55,12 +59,15 @@ function addNewEventListeners(action) {
 
 // reacts when the pointers is pressed on one of the shapes
 function onPointerDown(e) {
-  console.log(e);
-  e.target.setPointerCapture(e.pointerId);
+  // e.target.setPointerCapture(e.pointerId);
   diceCoordinates = {};
 
-  draggableEL = e.target;
+  draggableEL = getTargetElement(e);
+
   const rect = draggableEL.getBoundingClientRect();
+
+  draggableEL.style.width = JSON.parse(JSON.stringify(rect.width)) + `px`;
+  draggableEL.style.height = JSON.parse(JSON.stringify(rect.height)) + `px`;
 
   draggableEL.style.position = "absolute";
   draggableEL.style.zIndex = 1000;
@@ -143,9 +150,10 @@ function pointerup(e) {
   addNewEventListeners(`reset`);
 
   // drops dice inside new element
+  const dropTarget = getTargetElement(e);
 
   const matchedActiveSquares = findingMacthingSquares(pointerX, pointerY);
-  if (matchedActiveSquares[1]) matchedActiveSquares[0].appendChild(e.target);
+  if (matchedActiveSquares[1]) matchedActiveSquares[0].appendChild(dropTarget);
   // cleaning up data after drag ended
   diceCoordinates = {};
   document.removeEventListener("pointermove", pointerMove);
@@ -232,4 +240,18 @@ function findingMacthingSquares(mouseX, mouseY) {
   });
   const dropableOrNot = !(matchedActiveSquares === "");
   return [matchedActiveSquares, dropableOrNot];
+}
+
+function getTargetElement(e) {
+  let targetElement;
+  if (e.target.tagName == "div") {
+    targetElement = e.target;
+  } else if (e.target.tagName == "svg") {
+    targetElement = e.target.parentElement;
+  } else if (e.target.tagName == "circle" || e.target.tagName == "path") {
+    targetElement = e.target.parentElement.parentElement;
+  } else {
+    console.error("Error no dragable elemnt was found ");
+  }
+  return targetElement;
 }
