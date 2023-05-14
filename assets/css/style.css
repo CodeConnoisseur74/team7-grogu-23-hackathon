@@ -613,3 +613,47 @@ footer {
 }
 
 /*  --------------------------   Vilain section End------------------------ */
+
+/*============================ Game Modal Style ============================*/
+
+/*============================ General Game Modal Style ============================*/
+.modal-content{
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.modal-title{
+  color: white;
+}
+
+/*============================ Reward Modal Style ============================*/
+
+#confirm-reward-btn{
+  width: fit-content;
+}
+
+#reward-container {
+  border: inset black 1px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#reward-container h5{
+  text-align: center;
+}
+
+#reward-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+/*============================ Hero Modal Style ============================*/
+
+.modal-content .hero-img{
+  max-height: 200px;
+}
+

@@ -26,7 +26,7 @@ let heroesData = [
     maxLife: 30,
     currentLife: 20,
     image: "assets/images/grogu.png",
-    description: "",
+    description: "Grogu Description",
   },
   {
     name: "Mandalorian",
@@ -47,7 +47,7 @@ let heroesData = [
     maxLife: 30,
     currentLife: 30,
     image: "assets/images/mandalorian.png",
-    description: "",
+    description: "Mandalorian description",
   },
   {
     name: "R2-D2",
@@ -68,7 +68,7 @@ let heroesData = [
     maxLife: 30,
     currentLife: 30,
     image: "assets/images/r2-d2.png",
-    description: "",
+    description: "R2-D2 Description",
   },
   {
     name: "Rey",
@@ -89,7 +89,7 @@ let heroesData = [
     maxLife: 30,
     currentLife: 30,
     image: "assets/images/rey.png",
-    description: "",
+    description: "Rey Description",
   },
 ];
 
@@ -104,8 +104,9 @@ function renderModalHeroes() {
   for (let i in heroesData) {
     modalInner += `
         <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" id="${heroesData[i].name}">
-            <img src="${heroesData[i].image}" class="d-block mx-auto" alt="Image of ${heroesData[i].name}">
-            <p class="mx-auto d-block">${heroesData[i].name}<br>${heroesData[i].description}</p>
+            <img src="${heroesData[i].image}" class="d-block hero-img m-auto text-center" alt="Image of ${heroesData[i].name}">
+            <h5 class="w-100 d-block m-auto text-center">${heroesData[i].name}</h5>
+            <p class="w-100 d-block m-auto text-center">${heroesData[i].description}</p>
         </div>`;
   }
   modalContent.innerHTML = modalInner;

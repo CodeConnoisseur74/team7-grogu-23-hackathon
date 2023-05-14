@@ -10,7 +10,7 @@ let currentVillainData = {};
 const villainlist = [
   {
     name: "Darth Veder",
-    picture: "link to the picture",
+    picture: "assets/images/darth-vader.png",
     description: "Comander of sith",
     strongAgainst: "Prefairs Blue and Red",
     colorProcentages: {
@@ -27,7 +27,7 @@ const villainlist = [
   },
   {
     name: "Emperor Palpatine",
-    picture: "link to the picture2",
+    picture: "assets/images/emperor-palpatine.png",
     description: "Living a double life",
     strongAgainst: "Prefairs Green and Yellow",
     colorProcentages: {
@@ -49,7 +49,7 @@ const villainlist = [
   },
   {
     name: "General Grievous",
-    picture: "link to the picture3",
+    picture: "assets/images/general-grievous.png",
     description: "Notorious for visual design and powerful presence",
     strongAgainst: "Preferes Yellow and Red",
     colorProcentages: {
@@ -71,7 +71,7 @@ const villainlist = [
   },
   {
     name: "Darth Maul",
-    picture: "link to the picture4",
+    picture: "assets/images/darth-maul.png",
     description: "Always looking for a master",
     strongAgainst: "Prefairs Green and blue",
     colorProcentages: {
@@ -101,21 +101,31 @@ let villianChoice = [];
 function choseRandomVillain() {
   villianChoice = [];
   for (let i = 0; i < 2; i++) {
-    villianChoice.push(villainlist[randomInt(0, villainlist.length - 1)]);
+    let generatedInt = randomInt(0, villainlist.length - 1);
+    while (generatedInt in villianChoice){generatedInt = randomInt(0, villainlist.length - 1)};
+    console.log(generatedInt)  
+    villianChoice.push(villainlist[generatedInt]);
   }
 }
 
 function renderVillainModal() {
-  villainModalBoddy.inner = "";
+  villainModalBoddy.innerHTML = "";
   choseRandomVillain();
   for (let i = 0; i < villianChoice.length; i++) {
-    const mainDiv = document.createElement("a");
-    const pictureDiv = document.createElement("div");
+    console.log(i)
+    const mainDiv = document.createElement("div");
+    const pictureDiv = document.createElement("img");
     const descriptionDiv = document.createElement("div");
     mainDiv.setAttribute("onclick", `renderVillian(${i})`);
-    mainDiv.classList.add("villain-modal-description");
+    let activeImage = (i == 0 ? "active" : "not-active");
+    mainDiv.classList.add("carousel-item", `${activeImage}`, "villain-modal-description");
 
     descriptionDiv.innerHTML = villianChoice[i].description;
+    descriptionDiv.classList.add("w-100", "d-block", "m-auto")
+
+    pictureDiv.setAttribute("src", villianChoice[i].picture);
+    pictureDiv.classList.add("d-block", "hero-img", "m-auto", "text-center");
+  
 
     mainDiv.appendChild(pictureDiv);
     mainDiv.appendChild(descriptionDiv);
