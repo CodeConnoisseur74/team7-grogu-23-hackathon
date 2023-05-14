@@ -345,16 +345,22 @@ h2 {
   align-items: center;
 }
 
-.villain-img {
-  max-width: 60%;
-  height: auto;
+.villain-desc {
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+  
 }
 
-.villain-desc {
-  border: 1px solid black;
-  margin: 5px 0;
-  width: fit-content;
-  font-size: 16px;
+#villian-description{
+  margin: 0;
+}
+
+#villain-image{
+  height: 80%;
+  width: 80%;
+  background-color: white;
 }
 
 /*============================Hero Container============================*/

@@ -60,19 +60,23 @@
           <div class="row">
             <!-- villain section -->
             <div class="col-8">
+             
               <div class="row">
+             
                 <div class="col-6">
-                  <div class="col-md-6 col box-container" id="fighting-point-field"></div>
-                </div>
-                <div class="col-6">
-                  <div id="villian-image">
-                    <img src="assets/images/heroes/shadow.png" alt="silhouette image" />
-                  </div>
-                  <div class="text-center villain-desc">
-                    <h4>{villain.name}</h4>
-                    <p id="villain-description">Villain Description</p>
+                  <div class="col-md-6 col box-container" id="fighting-point-field">
                   </div>
                 </div>
+                <div class="col-6 p-3">
+                  <div class="villain-portfolio bg-white">
+                    <img src="assets/images/heroes/shadow.png" id="villain-image">
+
+                  </div>
+                  <div class="h-20 text-center villain-desc">
+                    <h5 id="villian-title">{villain.name}</h5>
+                    <p id="villian-description">Villain Description</p>
+                  </div>
+              </div>
               </div>
             </div>
             <!-- Hero section -->
@@ -252,7 +256,7 @@
         aria-labelledby="reward-modal"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark">
             <div class="modal-header">
               <h5 class="modal-title fs-5" id="rewardModalLabel">Congratulation on Defeating the Opponent!</h5>
@@ -269,7 +273,7 @@
               <div class="row" id="reward-container">
                 <h5>Click to select your reward!</h5>
                 <div id="reward-wrapper">
-                  <p>Rewards are stated here</p>
+                  
                 </div>
                 <button type="button" class="btn btn btn-warning" data-bs-dismiss="modal" id="confirm-reward-btn">
                   Confirm Selection
@@ -317,8 +321,10 @@
           </div>
         </div>
       </div>
+
       <!-------------------- Extra Modal ------------------->
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameOverModal">
+
         Game Lost
       </button>
 
@@ -331,30 +337,60 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="modal1-modal-body">
-              <p>Well played,</p>
+              <p> You lost the game! <br> Try again or return to main menu.</p>
             </div>
             <div class="modal-footer">
+
               <button type="button" class="btn btn btn-warning">Main Menu</button>
               <button type="button" class="btn btn btn-warning">New Game</button>
+
             </div>
           </div>
         </div>
       </div>
-      <!-------------------- Extra Modal2 ------------------->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-        Extra Modal 2
+
+      <!-------------------- Extra Menu ------------------->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#modalMenu"
+      >
+        Menu
       </button>
 
-      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="modalMenu"
+        tabindex="-1"
+        aria-labelledby="modalMenuLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title fs-5" id="exampleModal2Label">Modal2 title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title fs-5 " id="modalMenuLabel">
+                Menu
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-            <div class="modal-body" id="modal2-modal-body">...</div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn btn-warning">Confirm Selection</button>
+            <div class="modal-body text-center" id="Menu-modal-body">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="game.html">Game</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="highscores.html">Highscores</a>
+                </li>
+
             </div>
           </div>
         </div>
