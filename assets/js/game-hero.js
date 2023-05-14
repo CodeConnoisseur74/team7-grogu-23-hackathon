@@ -260,7 +260,7 @@ function generateRewards() {
 }
 
 // //REWARD MODAL AND GENERATION
-// generateRewards();
+generateRewards();
 
 // ----------------------------------------------------------------
 
