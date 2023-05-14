@@ -18,7 +18,8 @@ const currentGameSettings = gameSettings;
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 window.addEventListener("load", () => {
-  // call
+  addNewEventListeners("add");
+  findDropBoxesCenters();
 });
 
 function endRound() {
