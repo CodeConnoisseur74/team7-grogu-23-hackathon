@@ -140,19 +140,6 @@ h2 {
   flex-direction: row;
 }
 
-.dice {
-  border-radius: 10px;
-  width: 70px;
-  display: inline-block;
-  height: fit-content;
-  border: 2px solid black;
-  margin: 5px;
-  color: #fff;
-  text-decoration: none !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .dice-red {
   background-color: red;
@@ -175,12 +162,12 @@ h2 {
   color: black;
 }
 
-.fa-dice-one,
-.fa-dice-two,
-.fa-dice-three,
-.fa-dice-four,
-.fa-dice-five,
-.fa-dice-six {
+.dice-one,
+.dice-two,
+.dice-three,
+.dice-four,
+.dice-five,
+.dice-six {
   font-size: 3rem;
   color: inherit;
   border: 2px solid white;
@@ -189,19 +176,32 @@ h2 {
   padding: 1px 1px;
 }
 
-.dice-yellow > .fa-solid {
-  background-color: black;
-  border: 2px solid black;
-  min-width: 80%;
-  max-height: 150px;
-  border: 1px solid black;
-  padding: 1px 1px;
-  border-radius: 5px;
+
+.dice {
+  width: 7vmin;
+  height: 7vmin;
+  margin: 5px;
+  padding: 0.5vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
+}
+
+.dice > svg {
+  stroke: #fff;
+  fill: #fff;
+}
+
+.dice.dice-yellow > svg {
+  stroke: #000000;
+  fill: #000000;
+
 }
 
 .blender-area {
   width: 100%;
-  min-height: 100px;
+
   border: 2px solid #fff;
   border-radius: 20px;
   margin-top: 10px;
@@ -262,17 +262,16 @@ h2 {
 }
 
 /*====================================Villain Container===============================*/
+
 .villain-container {
   background-color: rgba(179, 37, 42, 0.7);
   border-radius: 5px;
   min-height: fit-content;
 }
 
-.box-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#fighting-point-field {
+  height: 100%;
+  background-color: rgb(255, 127, 206);
 }
 
 .box-row {
@@ -498,10 +497,6 @@ footer {
     width: 100%;
   }
 
-  .dice {
-    margin: 2px;
-  }
-
   .blender-area {
     min-height: 150px;
   }
@@ -669,7 +664,6 @@ footer {
   background-color: yellowgreen;
 }
 
-.villain-modal-description{
+.villain-modal-description {
   color: white;
 }
-

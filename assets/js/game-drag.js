@@ -131,7 +131,7 @@ function pointerup(e) {
   diceField.classList.remove(`highlighted-square`);
 
   draggableEL.style.removeProperty("position");
-  draggableEL.style.removeProperty("zIndex");
+  draggableEL.style.removeProperty("z-index");
   draggableEL.style.removeProperty("left");
   draggableEL.style.removeProperty("top");
   draggableEL = "";
