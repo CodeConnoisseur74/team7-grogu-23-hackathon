@@ -10,9 +10,9 @@ let currentVillainData = {};
 const villainlist = [
   {
     name: "Darth Veder",
-    picture: "assets/images/darth-vader.png",
-    description: "Comander of sith",
-    strongAgainst: "Prefairs Blue and Red",
+    picture: "assets/images/villians/darth-vader.png",
+    description: "A high ranking Jedi Knight who fought for Galactic Republic.",
+    strongAgainst: "Prefers Blue and Red",
     colorProcentages: {
       red: 30,
       blue: 30,
@@ -20,16 +20,16 @@ const villainlist = [
       yellow: 20,
       black: 0,
     },
-    rewardProcentage: { color: 45, black: 20, health: 10, extraStorage: 20, extraBlackStorage: 5 },
+    rewardProcentage: { color: 35, black: 10, health: 20, extraStorage: 20, extraBlackStorage: 15 },
     colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
     minimum: 5,
     maximum: 7,
   },
   {
     name: "Emperor Palpatine",
-    picture: "assets/images/emperor-palpatine.png",
-    description: "Living a double life",
-    strongAgainst: "Prefairs Green and Yellow",
+    picture: "assets/images/villians/emperor-palpatine.png",
+    description: "A Dark lord who plans to destroy Jedi and take permanenet control of the galaxy.",
+    strongAgainst: "Prefers Green and Yellow",
     colorProcentages: {
       red: 15,
       blue: 10,
@@ -37,7 +37,7 @@ const villainlist = [
       yellow: 35,
       black: 0,
     },
-    rewardProcentage: { color: 50, black: 20, health: 10, extraStorage: 20 },
+    rewardProcentage: { color: 40, black: 10, health: 10, extraStorage: 20, extraBlackStorage: 20 },
     colorReward: {
       red: 25,
       blue: 30,
@@ -49,9 +49,9 @@ const villainlist = [
   },
   {
     name: "General Grievous",
-    picture: "assets/images/general-grievous.png",
-    description: "Notorious for visual design and powerful presence",
-    strongAgainst: "Preferes Yellow and Red",
+    picture: "assets/images/villians/general-grievous.png",
+    description: "Extremely proficient lightstaber, notorious for visual design and powerful presence.",
+    strongAgainst: "Prefers Yellow and Red",
     colorProcentages: {
       red: 35,
       blue: 10,
@@ -59,7 +59,7 @@ const villainlist = [
       yellow: 45,
       black: 0,
     },
-    rewardProcentage: { color: 30, black: 20, health: 40, extraStorage: 10 },
+    rewardProcentage: { color: 30, black: 10, health: 30, extraStorage: 15, extraBlackStorage: 15 },
     colorReward: {
       red: 35,
       blue: 20,
@@ -71,9 +71,9 @@ const villainlist = [
   },
   {
     name: "Darth Maul",
-    picture: "assets/images/darth-maul.png",
-    description: "Always looking for a master",
-    strongAgainst: "Prefairs Green and blue",
+    picture: "assets/images/villians/darth-maul.png",
+    description: "A formidable warrior strong with dark side. A mastermind who plotted his return to power.",
+    strongAgainst: "Prefers Green and blue",
     colorProcentages: {
       red: 15,
       blue: 30,
@@ -81,12 +81,34 @@ const villainlist = [
       yellow: 15,
       black: 0,
     },
-    rewardProcentage: { color: 30, black: 30, health: 10, extraStorage: 10 },
+    rewardProcentage: { color: 20, black: 15, health: 25, extraStorage: 25, extraBlackStorage: 15 },
     colorReward: {
       red: 15,
       blue: 30,
       green: 30,
       yellow: 25,
+    },
+    minimum: 5,
+    maximum: 7,
+  },
+  {
+    name: "Stormtrooper",
+    picture: "assets/images/villians/stormtrooper.png",
+    description: "Aims to restore the galactic empire. They later served the first order as foot soldiers.",
+    strongAgainst: "Prefers yellow and red",
+    colorProcentages: {
+      red: 35,
+      blue: 20,
+      green: 15,
+      yellow: 30,
+      black: 0,
+    },
+    rewardProcentage: { color: 30, black: 10, health: 20, extraStorage: 20 , extraBlackStorage: 20},
+    colorReward: {
+      red: 30,
+      blue: 20,
+      green: 20,
+      yellow: 30,
     },
     minimum: 5,
     maximum: 7,

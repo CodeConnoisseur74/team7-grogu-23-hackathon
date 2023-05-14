@@ -25,8 +25,8 @@ let heroesData = [
     },
     maxLife: 30,
     currentLife: 20,
-    image: "assets/images/grogu.png",
-    description: "Grogu Description",
+    image: "assets/images/heroes/grogu.png",
+    description: "A male force-sensitive to Mandalorian belonging to the same mysterious species as legendary Grand Master Yoda",
   },
   {
     name: "Mandalorian",
@@ -46,8 +46,8 @@ let heroesData = [
     },
     maxLife: 30,
     currentLife: 30,
-    image: "assets/images/mandalorian.png",
-    description: "Mandalorian description",
+    image: "assets/images/heroes/mandalorian.png",
+    description: "A bounty hunter originally hired to capture Grogu, Mandalorian instead protects him from the fallen Galactic Empire and becomes a father figure for him.",
   },
   {
     name: "R2-D2",
@@ -67,8 +67,8 @@ let heroesData = [
     },
     maxLife: 30,
     currentLife: 30,
-    image: "assets/images/r2-d2.png",
-    description: "R2-D2 Description",
+    image: "assets/images/heroes/r2-d2.png",
+    description: "He is an astromech droid who served Jedi Knight Skywalker during the clone wars. He always knew that he needed to keep his friends safe and he stopped at nothing to achieve that goal which made him a true hero.",
   },
   {
     name: "Rey",
@@ -88,8 +88,8 @@ let heroesData = [
     },
     maxLife: 30,
     currentLife: 30,
-    image: "assets/images/rey.png",
-    description: "Rey Description",
+    image: "assets/images/heroes/rey.png",
+    description: "Adopts the name Rey Skywalker to honor her mentors, an amazing force-sensitive bloodline of the Sheev Palpatine. As the last remaining Jedi, she makes it her mission to rebuild the Jedi order.",
   },
 ];
 

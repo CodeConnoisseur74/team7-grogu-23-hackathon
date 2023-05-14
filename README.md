@@ -1,5 +1,5 @@
-# 🥣 **Name** 👽 
-## *desc*
+# STAR DICE 
+## **The Dice Battlefront**
 
 ![image info](https://ui.dev/amiresponsive)
 
@@ -26,7 +26,7 @@ Villain:
 - Size 4 range 4-24
 
 Start of the game
-- Player chooses one of many Heroes to play for all the game.
+- Player chooses one of two villian randomly selected at the start of the game.
 
 
 Start of turn 
@@ -71,11 +71,11 @@ End of round
 - Life restoration
 - Some more ides can be implemented in a future
 
-Example 1: reward could be a choice of 2 dice (1 blue and 1 red) OR 2 dice (1 yellow and 1 red) OR 1 extra space for blue
+Example 1: Reward could be a choice of 2 dice (1 blue and 1 red) OR 2 dice (1 yellow and 1 red) OR 1 extra space for blue
 
-Example 2:  reward could be a choice of 2 dice (1 green and 1 yellow) OR 2 dice (2 yellow) OR 1 black dice
+Example 2:  Reward could be a choice of 2 dice (1 green and 1 yellow) OR 2 dice (2 yellow) OR 1 black dice
 
-Example 2: reward could be health restoration (7 points) OR 2 dice (1 green and 1 blue) OR 1 extra space for green dice
+Example 2: Reward could be health restoration (7 points) OR 2 dice (1 green and 1 blue) OR 1 extra space for green dice
 
 
 
@@ -86,12 +86,16 @@ Game rounds:
 
 ### Deployed link
 
-[Click here to play!](https://www.example.com)
+[Click here to play!](https://codeconnoisseur74.github.io/team7-grogu-23-hackathon/)
 
 ## Credits
 
-* [Be sure to credit any assets that are not yours](https://www.example.com)
-Sound effects: https://pixabay.com/sound-effects/search/star%20wars/
+* [Sound effects](https://pixabay.com/sound-effects/search/star%20wars/)
+* [Images Source](https://pixabay.com/)
+* [Images Source](https://www.pexels.com/)
+* [Images Source](https://www.kindpng.com/)
+
+### Team Members
 
 | Name                | LinkedIn                                                                                    | GitHub                                                                                    |
 |---------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
