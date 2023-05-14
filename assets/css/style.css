@@ -119,6 +119,9 @@ h2 {
   border: 1px solid black;
   margin-top: 10px;
   border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .dice {
@@ -129,6 +132,10 @@ h2 {
   border: 2px solid black;
   margin: 5px;
   color: #fff;
+  text-decoration: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dice-red {
@@ -137,15 +144,19 @@ h2 {
 }
 .dice-blue {
   background-color: blue;
+  color: blue;
 }
 .dice-green {
   background-color: green;
+  color: green;
 }
 .dice-yellow {
   background-color: yellow;
+  color: yellow;
 }
 .dice-black {
   background-color: black;
+  color: black;
 }
 
 .fa-dice-one,
@@ -160,6 +171,12 @@ h2 {
   background-color: white;
   padding: 0;
   border-radius: 0.5rem;
+  padding: 0px 3px;
+}
+
+.dice-yellow > .fa-solid {
+  background-color: black;
+  border: 2px solid black;
 }
 
 .blender-area {
