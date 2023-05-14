@@ -36,6 +36,10 @@ nav {
   font-size: 30px;
 }
 
+.lightsaber {
+  max-height: 50px;
+}
+
 .rule-container {
   min-height: 90vh;
   background-color: rgba(0, 0, 0, 0.5);
@@ -57,4 +61,21 @@ h1, footer {
 footer > ul > li > a {
   color: #FFE81F !important;
   font-family: "Hind Guntur", sans-serif;
+}
+
+@media screen and (max-width:600px) {
+  .lightsaber {
+    display: none;
+  }
+
+  body {
+    font-size: 0.8rem;
+    font-family: sans-serif;
+  }
+}
+
+@media screen and (max-width:440px) {
+  body {
+    font-size: 0.6rem;
+  }
 }
