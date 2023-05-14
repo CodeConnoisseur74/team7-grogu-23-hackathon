@@ -1,0 +1,37 @@
+/*============================Import fonts============================*/
+@import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap");
+
+/*============================Global style============================*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hind Guntur", sans-serif;
+    font-weight: 300;
+    color: whitesmoke !important;
+    overflow-x: hidden;
+  }
+
+  .stars {
+    background: url("../images/stars_background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+  }
+
+  .rule-container {
+    background-color: beige;
+    min-height: 90vh;
+    color: #000;
+  }
+  
