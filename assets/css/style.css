@@ -122,11 +122,44 @@ h2 {
 }
 
 .dice {
-  width: 40px;
+  border-radius: 10px;
+  width: 70px;
   display: inline-block;
-  height: 40px;
+  height: 70px;
   border: 2px solid black;
   margin: 5px;
+  color: #fff;
+}
+
+.dice-red {
+  background-color: red;
+  color: red;
+}
+.dice-blue {
+  background-color: blue;
+}
+.dice-green {
+  background-color: green;
+}
+.dice-yellow {
+  background-color: yellow;
+}
+.dice-black {
+  background-color: black;
+}
+
+.fa-dice-one,
+.fa-dice-two,
+.fa-dice-three,
+.fa-dice-four,
+.fa-dice-five,
+.fa-dice-six {
+  font-size: 3rem;
+  color: inherit;
+  border: 2px solid white;
+  background-color: white;
+  padding: 0;
+  border-radius: 0.5rem;
 }
 
 .blender-area {

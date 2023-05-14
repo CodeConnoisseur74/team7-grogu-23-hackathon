@@ -8,6 +8,9 @@
 
   <meta name="description" content="Starwars themed dice game." />
   <meta name="keywords" content="#" />
+  
+       <!--Font Awesome-->
+      <script defer src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
   <!--Main CSS-->
   <link rel="stylesheet" href="assets/css/style.css" />
   <!--Bootstrap-->
@@ -72,83 +75,19 @@
         <div class="row">
           <div class="col-md-7 dice-wrapper">
             <div class="dice-area text-center" id="dice-area">
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>1</p>
-              </div>
-              <div class="dice" draggable="true">
-                <p>2</p>
-              </div>
+  <!-- Rendered after dice roll -->
             </div>
             <button id="roll-dice" class="text-center mt-5 gentle-hover-shake" onclick="rollDices()">Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice</button>
           </div>
           <div class="col-3 blender-wrapper">
-            <div class="blender-area text-center text-dark" id="blender-area">Blender Area</div>
+            <div class="blender-area text-center text-dark" id="blender-area">
+              <div class="dice dice-blue" draggable="true" data-dice-ammount="6" data-dice-id="6"><i class="fa-regular fa-dice-six"></i></div>
+              <div class="dice dice-blue" draggable="true" data-dice-ammount="4" data-dice-id="7"><i class="fa-regular fa-dice-six"></i></div>
+            </div>
+              
+              
+              
+              
             <button class="blend-dice-btn text-center">Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice</button>
           </div>
         </div>
@@ -275,8 +214,7 @@
       crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-      <!--Font Awesome-->
-      <script src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
+ 
 </body>
 
 </html>
