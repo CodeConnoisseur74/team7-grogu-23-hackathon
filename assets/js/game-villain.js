@@ -10,7 +10,7 @@ let currentVillainData = {};
 const villainlist = [
   {
     name: "Darth Veder",
-    picture: "assets/images/darth-vader.png",
+    picture: "assets/images/villians/darth-vader.png",
     description: "A high ranking Jedi Knight who fought for Galactic Republic, he has borderline personality disorder and he is commander of sith",
     strongAgainst: "Prefairs Blue and Red",
     colorProcentages: {
@@ -27,7 +27,7 @@ const villainlist = [
   },
   {
     name: "Emperor Palpatine",
-    picture: "assets/images/emperor-palpatine.png",
+    picture: "assets/images/villians/emperor-palpatine.png",
     description: "He is Kylo Ren's secret master. A Dark lord of the sith who plans to destroy Jedi and take permanenet control of the galaxy.",
     strongAgainst: "Prefairs Green and Yellow",
     colorProcentages: {
@@ -49,7 +49,7 @@ const villainlist = [
   },
   {
     name: "General Grievous",
-    picture: "assets/images/general-grievous.png",
+    picture: "assets/images/villians/general-grievous.png",
     description: "General of the Kaleesh Army during the Huk War. Extremely proficient lightstaber wielder and notorious for visual design and powerful presence.",
     strongAgainst: "Prefers Yellow and Red",
     colorProcentages: {
@@ -71,7 +71,7 @@ const villainlist = [
   },
   {
     name: "Darth Maul",
-    picture: "assets/images/darth-maul.png",
+    picture: "assets/images/villians/darth-maul.png",
     description: "A formidable warrior strong with dark side trained by Darth Sidious, possessing deadly skills in lightstaber combat. A mastermind who plotted his return to power.",
     strongAgainst: "Prefairs Green and blue",
     colorProcentages: {
@@ -87,6 +87,28 @@ const villainlist = [
       blue: 30,
       green: 30,
       yellow: 25,
+    },
+    minimum: 5,
+    maximum: 7,
+  },
+  {
+    name: "Stormtrooper",
+    picture: "assets/images/villians/stormtrooper.png",
+    description: "Aims to serve the empire to the best of their ability and restore the galactic empire. They later served the first order as foot soldiers.",
+    strongAgainst: "Prefairs yellow and red",
+    colorProcentages: {
+      red: 35,
+      blue: 20,
+      green: 15,
+      yellow: 30,
+      black: 0,
+    },
+    rewardProcentage: { color: 40, black: 20, health: 20, extraStorage: 20 },
+    colorReward: {
+      red: 30,
+      blue: 20,
+      green: 20,
+      yellow: 30,
     },
     minimum: 5,
     maximum: 7,
