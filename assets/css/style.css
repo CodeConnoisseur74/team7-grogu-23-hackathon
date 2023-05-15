@@ -621,6 +621,10 @@ footer {
   color: #000;
 }
 
+.villain-modal-description > img {
+  width: 100%;
+}
+
 .red-area {
   background-color: red;
 }

@@ -1,6 +1,6 @@
 "use strict";
 const fightingField = document.getElementById("fighting-point-field");
-const villainModalBoddy = document.querySelector("#villain-modal-boddy");
+const villainModalBody = document.querySelector("#villain-modal-body");
 // this is a a file that deals with villain modifications
 
 // ..............................................................................................
@@ -182,7 +182,7 @@ function choseRandomVillain() {
 }
 
 function renderVillainModal() {
-  villainModalBoddy.innerHTML = "";
+  villainModalBody.innerHTML = "";
   choseRandomVillain();
   for (let i = 0; i < villianChoice.length; i++) {
     const mainDiv = document.createElement("div");
@@ -206,7 +206,7 @@ function renderVillainModal() {
     mainDiv.appendChild(pictureDiv);
     mainDiv.appendChild(titleDiv);
     mainDiv.appendChild(descriptionDiv);
-    villainModalBoddy.appendChild(mainDiv);
+    villainModalBody.appendChild(mainDiv);
   }
 }
 renderVillainModal();
