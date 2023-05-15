@@ -68,7 +68,7 @@
                   </div>
                 </div>
                 <div class="col-6 p-3">
-                  <div class="villain-portfolio bg-white">
+                  <div class="villain-portfolio">
                     <img src="assets/images/heroes/shadow.png" id="villain-image">
 
                   </div>
@@ -179,16 +179,17 @@
             </div>
             <div class="col-4">
               <div id="game-button-area">
-                <p id="score-points">replace this with render score points</p>
-                <button class="blend-dice-btn text-center" onclick="blendDice()">
-                  Menu<span class="icon"><i class="fa-solid fa-blender"></i></span>
-                </button>
-                <button id="roll-dice" class="blend-dice-btn text-center" onclick="blendDice()">
+                <p> High Score Here!</p>
+                <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="blendDice()">
                   Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice
                 </button>
-                <button id="roll-dice" class="blend-dice-btn text-center" onclick="rollDices()">
+                <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="rollDices()">
                   Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice
                 </button>
+                <button type="button" class="text-center in-game-btn" data-bs-toggle="modal" data-bs-target="#modalMenu">
+                  <span class="icon"><i class="fa-solid fa-bars"></i></span> Menu</button>
+                <button type="button" class="text-center in-game-btn" onclick="endRound()">
+                  <span class="icon"><i class="fa-solid fa-share"></span></i>End turn</button>
               </div>
             </div>
           </div>
@@ -245,7 +246,7 @@
               </button>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn m-auto btn btn-warning">Confirm Selection</button>
+              <button type="button" class="btn m-auto btn btn-warning" data-bs-dismiss="modal">Confirm Selection</button>
             </div>
           </div>
         </div>
@@ -296,7 +297,6 @@
 
 
       <button type="button" class="btn btn btn-warning" data-bs-toggle="modal" data-bs-target="#villainModal">
-
         Select Villain
       </button>
 
@@ -334,13 +334,13 @@
               </button>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn m-auto btn-warning">Confirm Selection</button>
+              <button type="button" class="btn btn m-auto btn-warning" data-bs-dismiss="modal">Confirm Selection</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-------------------- Extra Modal ------------------->
+      <!-------------------- Game Over Modal ------------------->
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameOverModal">
 
         Game Lost
@@ -368,14 +368,6 @@
       </div>
 
       <!-------------------- Extra Menu ------------------->
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#modalMenu"
-      >
-        Menu
-      </button>
 
       <div
         class="modal fade"
@@ -415,11 +407,11 @@
       </div>
     </main>
     <!-- JS -->
-    <script src="assets/js/game-setup.js"></script>
-    <script src="assets/js/game-hero.js"></script>
-    <script src="assets/js/game-villain.js"></script>
-    <script src="assets/js/game-dice.js"></script>
-    <script src="assets/js/game-drag.js"></script>
+    <script defer src="assets/js/game-setup.js"></script>
+    <script defer src="assets/js/game-villain.js"></script>
+    <script defer src="assets/js/game-hero.js"></script>
+    <script defer src="assets/js/game-dice.js"></script>
+    <script defer src="assets/js/game-drag.js"></script>
     <!--Bootstrap-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

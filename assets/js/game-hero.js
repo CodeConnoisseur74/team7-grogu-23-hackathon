@@ -184,26 +184,10 @@ function clearHeroProfile() {
 }
 
 // GENERATE REWARDS
-let currentVillainData = {
-    name: "Darth Veder",
-    picture: "assets/images/villians/darth-vader.png",
-    description: "A high ranking Jedi Knight who fought for Galactic Republic.",
-    strongAgainst: "Prefers Blue and Red",
-    colorProcentages: {
-      red: 30,
-      blue: 30,
-      green: 20,
-      yellow: 20,
-      black: 0,
-    }, rewardProcentage: { color: 35, black: 10, health: 20, extraStorage: 20, extraBlackStorage: 15 },
-    colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
-    minimum: 5,
-    maximum: 7,
-}
-
 
 function generateRewardObjects() {
   let rewardsArray = [];
+
   const colorPrc = currentVillainData.rewardProcentage.color;
   const blackPrc = currentVillainData.rewardProcentage.black;
   const healthPrc = currentVillainData.rewardProcentage.health;
@@ -217,7 +201,6 @@ function generateRewardObjects() {
 
   for (let i = 0; i < 3; i++) {
     const randomNo = randomInt(0, 100);
-
     let rewardType;
     if (randomNo < colorPrc) {
       rewardType = "color";
@@ -253,7 +236,7 @@ function generateRewardObjects() {
     let reward;
     if(rewardType == "black") {
         reward = `
-        <div class= "reward- black" id="black-reward-dice"></div>`;
+        <div class= "reward- black" id="black-reward-dice" onclick="addRewardsToHero(${})"></div>`;
     } else if(rewardType ==`health`) {
         reward = `
         <div class= "reward-life" id="currentLife">
@@ -272,7 +255,7 @@ function generateRewardObjects() {
 
     }
 
-    console.log(rewardsArray)
+    console.log(rewardsArray[0])
   }
 
 //----------------------------------------------------------------
