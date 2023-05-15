@@ -210,8 +210,11 @@ function renderVillainModal() {
   }
 }
 
-function renderVillian(index) {
-  if (index == 0 || index == 1) currentVillainData = villianChoice[index];
+function saveVillainData(index) {
+  currentVillainData = villianChoice[index];
+}
+
+function renderVillian() {
   renderVillianGameProfile();
   const sizeArray = decideRectangleSize(); // Change later
   generateVillainGameStats(sizeArray);

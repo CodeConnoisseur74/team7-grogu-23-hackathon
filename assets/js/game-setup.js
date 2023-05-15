@@ -115,8 +115,9 @@ function selectVillain() {
     const contains = villainHTMLArray[i].classList.contains("active");
     if (contains) {
       activeVillain = villainHTMLArray[i].getAttribute("data-villain-id");
+      saveVillainData(activeVillain);
       setLocalStorage();
-      renderVillian(activeVillain);
+      renderVillian();
     }
   }
 
