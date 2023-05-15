@@ -736,9 +736,6 @@ footer {
 
 /*============================ Hero Modal Style ============================*/
 
-.modal-content .hero-img {
-  max-height: 200px;
-}
 
 .villain-modal-description {
   color: white;
