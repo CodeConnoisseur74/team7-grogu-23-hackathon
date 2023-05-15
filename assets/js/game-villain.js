@@ -211,7 +211,7 @@ function renderVillainModal() {
 }
 
 function renderVillian(index) {
-  currentVillainData = villianChoice[index];
+  if (index == 0 || index == 1) currentVillainData = villianChoice[index];
   renderVillianGameProfile();
   const sizeArray = decideRectangleSize(); // Change later
   generateVillainGameStats(sizeArray);
@@ -223,6 +223,7 @@ function renderVillianGameProfile() {
   let villianImage = document.getElementById("villain-image");
   let villianDescription = document.getElementById("villian-description");
   let villianTitle = document.getElementById("villian-title");
+  console.log(currentVillainData);
   villianImage.setAttribute("src", currentVillainData.picture);
   villianDescription.innerHTML = currentVillainData.description;
   villianTitle.innerHTML = currentVillainData.name;
@@ -249,6 +250,7 @@ function decideRectangleSize() {
 function generateVillainGameStats(array) {
   currentVillainData.squareSizes = array;
   currentVillainData.colorChoices = [];
+  console.log(currentVillainData);
   const red = currentVillainData.colorProcentages.red;
   const blue = currentVillainData.colorProcentages.blue;
   const green = currentVillainData.colorProcentages.green;

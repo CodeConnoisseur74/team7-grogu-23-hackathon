@@ -130,10 +130,16 @@ document.querySelectorAll(".selectHero").forEach((occurence) => {
 //UPDATE HERO DATA
 //This function initiates the hero profile update
 function renderHeroGameProfile(index) {
-  currentGameHeroData = heroesData[index];
-  renderHeroPowers();
-  renderHeroLife();
-  renderHeroImg();
+  if (index) {
+    renderHeroPowers();
+    renderHeroLife();
+    renderHeroImg();
+  } else {
+    currentGameHeroData = heroesData[index];
+    renderHeroPowers();
+    renderHeroLife();
+    renderHeroImg();
+  }
 }
 
 //Function that renders power stats
@@ -200,30 +206,30 @@ function generateRewardObjects() {
   rewardWrapper.innerHTML = completeRewardHtml;
 }
 
-function getRewardType() {
-  const colorPrc = currentVillainData.rewardProcentage.color;
-  const blackPrc = currentVillainData.rewardProcentage.black;
-  const healthPrc = currentVillainData.rewardProcentage.health;
-  const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
-  const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
+// function getRewardType() {
+//   const colorPrc = currentVillainData.rewardProcentage.color;
+//   const blackPrc = currentVillainData.rewardProcentage.black;
+//   const healthPrc = currentVillainData.rewardProcentage.health;
+//   const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
+//   const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
 
-  let randomNo = randomInt(0, 100);
-  let rewardType;
+//   let randomNo = randomInt(0, 100);
+//   let rewardType;
 
-  if (randomNo < colorPrc) {
-    rewardType = "color";
-  } else if (randomNo < colorPrc + blackPrc) {
-    rewardType = "black";
-  } else if (randomNo < colorPrc + blackPrc + healthPrc) {
-    rewardType = "health";
-  } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
-    rewardType = "extraStorage";
-  } else {
-    rewardType = "extraBlackStorage";
-  }
+//   if (randomNo < colorPrc) {
+//     rewardType = "color";
+//   } else if (randomNo < colorPrc + blackPrc) {
+//     rewardType = "black";
+//   } else if (randomNo < colorPrc + blackPrc + healthPrc) {
+//     rewardType = "health";
+//   } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
+//     rewardType = "extraStorage";
+//   } else {
+//     rewardType = "extraBlackStorage";
+//   }
 
-  return rewardType;
-}
+//   return rewardType;
+// }
 
 function getDiceColor(rewardType) {
   const redRew = currentVillainData.colorReward.red;

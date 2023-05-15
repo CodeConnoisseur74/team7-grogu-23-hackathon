@@ -100,7 +100,6 @@ function blendDice() {
 }
 
 function renderDiceBoard() {
-  diceArea.innerHTML = "";
   for (let i = 0; i < currentDiceBoard.length; i++) {
     const mainDiv = createDiceHtml(currentDiceBoard[i]);
     diceArea.appendChild(mainDiv);

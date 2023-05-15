@@ -17,12 +17,24 @@ const gameSettings = {
 };
 //-------------------------------------Fix later----------------------
 // Loaded game settings
-const currentGameSettings = gameSettings;
+let currentGameSettings;
 
 // Is used to find out random number
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 window.addEventListener("load", () => {
+  if (!getLocalStorage()) {
+    currentGameSettings = gameSettings;
+  } else {
+    currentGameSettings = getLocalStorage()[0];
+    currentGameHeroData = getLocalStorage()[1];
+    currentVillainData = getLocalStorage()[2];
+    currentDiceBoard = getLocalStorage()[3];
+    renderDiceBoard();
+    renderHeroGameProfile(true);
+    renderVillian();
+  }
+
   addNewEventListeners("add");
   callAllDropables();
   renderModalHeroes();
@@ -72,7 +84,10 @@ function selectHeroButton() {
     }
   }
   for (let i = 0; i < heroesData.length; i++) {
-    if (heroesData[i].name == activeHero) renderHeroGameProfile(i);
+    if (heroesData[i].name == activeHero) {
+      renderHeroGameProfile(i);
+      setLocalStorage();
+    }
   }
 }
 
@@ -94,13 +109,48 @@ function calculateScoreAndHealth() {
 
 function selectVillain() {
   const villainHTMLArray = document.getElementsByClassName("villain-modal-description");
+
   let activeVillain;
   for (let i = 0; i < villainHTMLArray.length; i++) {
     const contains = villainHTMLArray[i].classList.contains("active");
     if (contains) {
       activeVillain = villainHTMLArray[i].getAttribute("data-villain-id");
+      setLocalStorage();
       renderVillian(activeVillain);
     }
   }
+
   currentGameSettings.rollAvialable = true;
+}
+
+// ===========================================  LOCAL STORAGE =============================================================================
+
+// used during the game to update and store game data to upload later
+function setLocalStorage() {
+  // Game settings
+  localStorage.setItem(`currentGameSettings`, JSON.stringify(currentGameSettings));
+
+  // Hero Data
+  localStorage.setItem(`currentGameHeroData`, JSON.stringify(currentGameHeroData));
+
+  // Villain Data
+  localStorage.setItem(`currentVillainData`, JSON.stringify(currentVillainData));
+
+  // Dice data
+  localStorage.setItem(`currentDiceBoard`, JSON.stringify(currentDiceBoard));
+}
+
+// used when game is loaded
+function getLocalStorage() {
+  const currentGameSettings = JSON.parse(localStorage.getItem(`currentGameSettings`));
+
+  const currentGameHeroData = JSON.parse(localStorage.getItem(`currentGameHeroData`));
+
+  const currentVillainData = JSON.parse(localStorage.getItem(`currentVillainData`));
+
+  const currentDiceBoard = JSON.parse(localStorage.getItem(`currentDiceBoard`));
+
+  if (!currentGameSettings || !currentGameHeroData || !currentVillainData || !currentDiceBoard) return;
+
+  return [currentGameSettings, currentGameHeroData, currentVillainData, currentDiceBoard];
 }
