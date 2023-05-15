@@ -757,3 +757,12 @@ footer {
     font-size: 0.6rem;
   }
 }
+
+/*============================Menu Modal=============================*/
+.menu-link:hover {
+  color: #ffee00;
+}
+
+.new-game {
+  cursor: pointer;
+}
