@@ -191,8 +191,10 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
+
 function generateRewardObjects() {
   let rewardsArray = [];
+
   const colorPrc = currentVillainData.rewardProcentage.color;
   const blackPrc = currentVillainData.rewardProcentage.black;
   const healthPrc = currentVillainData.rewardProcentage.health;
@@ -206,7 +208,6 @@ function generateRewardObjects() {
 
   for (let i = 0; i < 3; i++) {
     const randomNo = randomInt(0, 100);
-
     let rewardType;
     if (randomNo < colorPrc) {
       rewardType = "color";
@@ -217,8 +218,9 @@ function generateRewardObjects() {
     } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
       rewardType = "extraStorage";
     } else {
-      rewardType = "extraBlackStoragePrc";
-    }
+        rewardType = "extraBlackStorage";
+      }
+
 
     const randomNo2 = randomInt(0, 100);
     let diceColors = [];
@@ -226,38 +228,44 @@ function generateRewardObjects() {
     rewardType == "color" ? (cycles = 2) : "";
     rewardType == "extraStorage" ? (cycles = 1) : "";
 
-    for (let i = 0; i < cycles; i++) {
-      if (randomNo2 < redRew) {
-        diceColors.push("redRew");
-      } else if (randomNo2 < redRew + blueRew) {
-        diceColors.push("blueRew");
-      } else if (randomNo2 < redRew + blueRew + greenRew) {
-        diceColors.push("blueRew");
-      } else if (randomNo2 < redRew + blueRew + greenRew + yellowRew) {
-        diceColors.push("yellowRew");
-      } else {
-        diceColors.push("blackRew");
-      }
+
+    for (let i = 0; i<cycles; i++) {
+        if(randomNo2 < redRew) {
+            diceColors.push("red");
+        } else if (randomNo2 < redRew + blueRew) {
+            diceColors.push("blue");
+        } else if (randomNo2 < redRew + blueRew + greenRew) {
+            diceColors.push("blue");
+        } else if (randomNo2 < redRew + blueRew + greenRew + yellowRew) {
+            diceColors.push("yellow");
+        } else {
+            diceColors.push("black");
+        }
     }
     let reward;
-    if (rewardType == "black") {
-      reward = `
-        <div class= "reward- black" id="black-reward-dice"></div>`;
-    } else if (rewardType == `health`) {
-      reward = `
+    if(rewardType == "black") {
+        reward = `
+        <div class= "reward- black" id="black-reward-dice" onclick="addRewardsToHero(${})"></div>`;
+    } else if(rewardType ==`health`) {
+        reward = `
         <div class= "reward-life" id="currentLife">
             <i class="fa-solid fa-heart"> +10 </i>
         </div>`;
-    } else if (rewardType == "color") {
-      reward = `
-        <div class= "reward-dice ${color[0]}" id="${color[0]}-reward-dice"></div>
-        <div class= "reward-dice ${color[0]}" id="${color[0]}></div>`;
-    } else if (rewardType == "extraStorage") {
-      reward = `
-        <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>
-        <div class= "reward-space ${color[0]}" id="${color[0]}-reward-slot"></div>`;
-    }
+    } else if(rewardType =="color"){
+        reward = `
+        <div class= "reward-dice ${diceColors[0]}" id="${diceColors[0]}-reward-dice"></div>
+        <div class= "reward-dice ${diceColors[0]}" id="${diceColors[0]}></div>`;
+    } else if(rewardType =="extraStorage"){
+        reward = `
+        <div class= "reward-space ${diceColors[0]}" id="${diceColors[0]}-reward-slot"></div>
+        <div class= "reward-space ${diceColors[0]}" id="${diceColors[0]}-reward-slot"></div>`;
+    };
     rewardsArray.push(reward);
+
+    }
+
+    console.log(rewardsArray[0])
+
   }
 
   console.log(rewarsdArray);

@@ -169,9 +169,11 @@ function choseRandomVillain() {
   let intList = [];
   for (let i = 0; i < 2; i++) {
     let generatedInt = randomInt(0, villainlist.length - 1);
-    while (generatedInt in intList) {
-      generatedInt = randomInt(0, villainlist.length - 1);
-    }
+
+    while (intList.includes(generatedInt)){
+      generatedInt = randomInt(0, villainlist.length - 1)
+    };
+
     intList.push(generatedInt);
   }
   for (let i of intList) {

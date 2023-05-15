@@ -168,8 +168,11 @@ h2 {
 }
 
 .blender-area {
+
+
   width: 10vmin;
   height: 40vmin;
+
   border: 2px solid #fff;
   border-radius: 20px;
   margin-top: 10px;
@@ -208,30 +211,34 @@ h2 {
   border: 2px solid #ff0000;
 }
 
-.blend-dice-btn {
-  width: 90%;
-  height: 60px;
-  border: 1px solid black;
-  border-radius: 20px;
-  margin-top: 10px;
-}
-
 #game-button-area {
   height: 100%;
-}
-
-#roll-dice {
-  width: 40%;
-  border-radius: 30px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #fff;
-  background: transparent;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.3rem;
 }
 
 .icon {
   padding: 0 5px;
+}
+
+
+.in-game-btn {
+    width: 100%;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px outset black;
+    background: transparent;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.in-game-btn:hover {
+  border: 2px inset black;
+  background: rgb(0, 0, 0, 0.1);
 }
 
 .gentle-hover-shake:hover {
@@ -362,7 +369,6 @@ h2 {
 #villain-image {
   height: 80%;
   width: 80%;
-  background-color: white;
 }
 
 /*============================Hero Container============================*/

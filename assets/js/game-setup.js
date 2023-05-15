@@ -23,13 +23,14 @@ window.addEventListener("load", () => {
 });
 
 function endRound() {
-  calculateHealth(); // Not done yet
-  calculateScoreGained(); // Not done yet
-  renderGameScore(); // Not done yet
-  addGameLevel();
-  clearVillainProfile();
-  updateHeroGameProfile(); // Not done yet
-  renderHeroStats(); // Not done yet
+  generateRewardObjects()
+  // calculateHealth(); // Not done yet
+  // calculateScoreGained(); // Not done yet
+  // renderGameScore(); // Not done yet
+  // addGameLevel();
+  // clearVillainProfile();
+  // updateHeroGameProfile(); // Not done yet
+  // renderHeroStats(); // Not done yet
 }
 
 function addGameLevel() {
