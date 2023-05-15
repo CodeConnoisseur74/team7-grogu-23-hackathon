@@ -10,7 +10,7 @@ const blenderHiglight = document.getElementsByClassName("blender-area");
 // -------------------------------------------------
 let currentDiceBoard = [];
 
-let currentBlender = [3, 4];
+let currentBlender;
 
 let blenderResult;
 
@@ -30,7 +30,6 @@ function rollDices() {
       currentDiceBoard.push(object);
     }
   }
-  console.log(currentDiceBoard);
   renderDiceBoard();
   callAllDragables();
 }
@@ -74,13 +73,14 @@ function sortArrayByColor() {
 
 // turns dice in the blender to average of 2 dice in to 1 black
 function blendDice() {
+  updateBlenderArray();
+
   if (currentBlender.length === 2) {
     const blackDice = { color: "black", id: currentGameSettings.diceId };
-    const sum = currentBlender.reduce((a, cV) => a + cV, 0);
-    blackDice.roll = Math.floor(sum / currentBlender.length);
+    const sum = parseInt(currentBlender[0]) + parseInt(currentBlender[1]);
+    blackDice.roll = Math.floor(sum / 2);
     const diceWord = setDicePhrase(blackDice.roll);
     blackDice.dicePhrase = diceWord;
-
     const diceHtml = createDiceHtml(blackDice);
 
     blenderOutcome.appendChild(diceHtml);
@@ -168,4 +168,14 @@ function dicePath(diceRoll) {
       "";
   }
   return diceSVG;
+}
+
+function updateBlenderArray() {
+  currentBlender = [];
+  const dices = blenderArea.getElementsByClassName("dice");
+  for (let i = 0; i < dices.length; i++) {
+    const diceSize = dices[i].getAttribute("data-dice-ammount");
+    currentBlender.push(diceSize);
+    console.log(diceSize);
+  }
 }
