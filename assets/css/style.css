@@ -284,6 +284,7 @@ h2 {
   background-color: rgba(179, 37, 42, 0.7);
   border-radius: 5px;
   min-height: fit-content;
+  margin-top: 5px !important;
 }
 
 .box-container {
@@ -390,7 +391,7 @@ h2 {
 .hero-container {
   background-color: rgba(33, 184, 33, 0.7);
   border-radius: 5px;
-  margin-top: 80px !important;
+  margin-top: 5px !important;
   min-height: 350px;
 }
 
@@ -528,6 +529,17 @@ footer {
   .nav-links li {
     display: block;
   }
+  .villain-desc {
+    font-size: 0.8rem;
+  }
+  
+  #game-button-area {
+    font-size: 0.8rem;
+  }
+  
+  .in-game-btn {
+    font-size: 0.8rem;
+  }
 }
 
 @media only screen and (max-width: 990px) {
@@ -538,12 +550,7 @@ footer {
     width: 100%;
   }
 }
-.villain-container {
-  margin-top: 5px !important;
-}
-.hero-container {
-  margin-top: 5px !important;
-}
+
 .villain-img {
   width: 40%;
 }
@@ -726,8 +733,6 @@ footer {
   justify-content: space-between;
 }
 
-.reward-dice
-
 /*============================ Hero Modal Style ============================*/
 
 .modal-content .hero-img {
@@ -736,4 +741,19 @@ footer {
 
 .villain-modal-description {
   color: white;
+}
+
+
+@media only screen and (max-width: 990px) {
+  .villain-desc {
+    font-size: 0.6rem;
+  }
+  
+  #game-button-area {
+    font-size: 0.6rem;
+  }
+  
+  .in-game-btn {
+    font-size: 0.6rem;
+  }
 }
