@@ -225,9 +225,6 @@ function getRewardType() {
   return rewardType;
 }
 
-  return rewardType;
-}
-    
 function getDiceColor(rewardType) {
   const redRew = currentVillainData.colorReward.red;
   const blueRew = currentVillainData.colorReward.blue;
@@ -290,40 +287,39 @@ function saveRewardChoices(main, secondary) {
   console.log(rewardOfChoice);
 }
 
-// function updateHeroData() {
-//   let redPower = currentGameHeroData.diceAmount.red;
-//   let bluePower = currentGameHeroData.diceAmount.blue;
-//   let greenPower = currentGameHeroData.diceAmount.green;
-//   let yellowPower = currentGameHeroData.diceAmount.yellow;
-//   let blackPower = currentGameHeroData.diceAmount.black;
+function updateHeroData() {
+  let redPower = currentGameHeroData.diceAmount.red;
+  let bluePower = currentGameHeroData.diceAmount.blue;
+  let greenPower = currentGameHeroData.diceAmount.green;
+  let yellowPower = currentGameHeroData.diceAmount.yellow;
+  let blackPower = currentGameHeroData.diceAmount.black;
 
-//   let redLimit = currentGameHeroData.diceLimit.red;
-//   let blueLimit = currentGameHeroData.diceLimit.blue;
-//   let greenLimit = currentGameHeroData.diceLimit.green;
-//   let yellowLimit = currentGameHeroData.diceLimit.yellow;
-//   let blackLimit = currentGameHeroData.diceLimit.black;
-
-//   let life = currentGameHeroData.currentLife;
+  let redLimit = currentGameHeroData.diceLimit.red;
+  let blueLimit = currentGameHeroData.diceLimit.blue;
+  let greenLimit = currentGameHeroData.diceLimit.green;
+  let yellowLimit = currentGameHeroData.diceLimit.yellow;
+  let blackLimit = currentGameHeroData.diceLimit.black;
 
   let life = currentGameHeroData.currentLife;
-  
-  if (rewardOfChoice.includes("black")){
+
+  if (rewardOfChoice.includes("black")) {
     blackPower += 1;
-    if (blackPower>blackLimit){
-      blackPower = blackLimit; 
-    }} else if (rewardOfChoice.includes("diceLimit")){
-      let limitType = (rewardOfChoice[0]) + "Limit";
-      ConsoleLog(limitType);
-      limitType+= 1; 
-    } else if (rewardOfChoice.includes("currentLife")){
-      life += 10;
-    };elif (rewardOfChoice.includes("diceLimit")){
-      let limitType = (rewardOfChoice[0]) + "Limit";
-      ConsoleLog(limitType);
-      limitType+= 1;}}
     if (blackPower > blackLimit) {
       blackPower = blackLimit;
     }
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  } else if (rewardOfChoice.includes("currentLife")) {
+    life += 10;
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  }
+  if (blackPower > blackLimit) {
+    blackPower = blackLimit;
   } else if (rewardOfChoice.includes("diceLimit")) {
     let limitType = rewardOfChoice[0] + "Limit";
     ConsoleLog(limitType);

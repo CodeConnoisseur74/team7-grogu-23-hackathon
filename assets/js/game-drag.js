@@ -63,8 +63,9 @@ function addNewEventListeners(action) {
 
 // reacts when the pointers is pressed on one of the shapes
 function onPointerDown(e) {
+  console.log("pointerDown");
+  e.preventDefault();
   // temporary
-  selectHeroButton();
 
   diceCoordinates = {};
 
@@ -76,7 +77,7 @@ function onPointerDown(e) {
   draggableEL.style.height = JSON.parse(JSON.stringify(rect.height)) + `px`;
 
   draggableEL.style.position = "absolute";
-  draggableEL.style.zIndex = 1000;
+  draggableEL.style.zIndex = 200;
 
   // allows pointermove function to set position of shape
   diceCoordinates.draggableOffsetX = e.pageX - rect.left;
@@ -123,6 +124,8 @@ function recordDiceCenter(element) {
 
 // pointerMove purpose is to find the pointer location on the screen
 function pointerMove(e) {
+  console.log("pointerMove");
+  e.preventDefault();
   for (let i = 0; i < combatBox.length; i++) {
     combatBox[i].classList.remove(`highlighted-square`);
   }
@@ -131,8 +134,6 @@ function pointerMove(e) {
 
   draggableEL.style.left = e.pageX - diceCoordinates.draggableOffsetX + `px`;
   draggableEL.style.top = e.pageY - diceCoordinates.draggableOffsetY + `px`;
-
-  e.preventDefault();
 
   checkCenterBoxes(e);
 }
@@ -199,7 +200,7 @@ function findDropBoxesCenters() {
 
   const info2 = recodDropDimentions(blenderField);
   info2.color = "universal";
-  info2.spaceCheck = 2;
+  info2.spaceCheck = checkForSpace(blenderField, true);
   info2.diceScore = 0;
   dropBoxesCenters.push(info2);
   const info3 = recodDropDimentions(diceField);
@@ -307,8 +308,14 @@ function checkDropAreaColor(element) {
   return color;
 }
 
-function checkForSpace(element) {
-  const space = element.classList[0].split("-")[1];
+function checkForSpace(element, blender) {
+  let space;
+  if (blender) {
+    space = 1;
+  } else {
+    space = element.classList[0].split("-")[1];
+  }
+
   const ammount = element.children.length;
 
   return parseInt(space) + 1 > ammount;
