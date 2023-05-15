@@ -1,229 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="Starwars themed dice game." />
-    <meta name="keywords" content="#" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Font Awesome-->
-    <script defer src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
- 
-    <!--Bootstrap-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    
-       <!--Main CSS-->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    
-    <title>StarWars Battle Dice</title>
-  </head>
+  <meta name="description" content="Starwars themed dice game." />
+  <meta name="keywords" content="#" />
 
-  <body>
-   
+  <!--Font Awesome-->
+  <script defer src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
 
-    <main>
-      <div class="container">
-        <div id="game-size-container">
-          <div class="row">
-            <!-- villain section -->
-            <div class="col-8">
-             
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+
+  <!--Main CSS-->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <title>StarWars Battle Dice</title>
+</head>
+
+<body>
+
+
+  <main>
+    <div class="container">
+      <div id="game-size-container">
+        <div class="row">
+          <!-- villain section -->
+          <div class="col-8">
+
+            <div class="row">
+
+              <div class="col-6">
+                <div class="box-container" id="fighting-point-field">
+                </div>
+              </div>
+              <div class="col-6 p-3">
+                <div class="villain-portfolio">
+                  <img src="assets/images/heroes/shadow.png" id="villain-image">
+
+                </div>
+                <div class="h-20 text-center villain-desc">
+                  <h5 id="villian-title">{villain.name}</h5>
+                  <p id="villian-description">Villain Description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hero section -->
+          <div class="col-4">
+            <div class="hero-portfolio">
+              <img src="assets/images/heroes/shadow.png" id="game-hero-img" alt="silhouette image" />
+            </div>
+            <div class="power-wrapper">
               <div class="row">
-
-                <div class="col-6">
-                  <div class="box-container" id="fighting-point-field">
+                <div class="col-4 full-height">
+                  <div class="power-container" id="red">
+                    <span class="badge bg-danger power-badges" id="red-power">0/6</span>
+                  </div>
+                  <div class="power-container" id="blue">
+                    <span class="badge bg-primary power-badges" id="blue-power">0/6</span>
                   </div>
                 </div>
-                <div class="col-6 p-3">
-                  <div class="villain-portfolio">
-                    <img src="assets/images/heroes/shadow.png" id="villain-image">
+                <div class="col-4 full-height">
+                  <div class="power-container" id="green">
+                    <span class="badge bg-success power-badges" id="green-power">0/6</span>
+                  </div>
+                  <div class="power-container" id="yellow">
+                    <span class="badge bg-warning power-badges" id="yellow-power">0/6</span>
+                  </div>
+                </div>
+                <div class="col-4 full-height">
+                  <div class="power-container" id="black">
+                    <span class="badge bg-dark power-badges" id="black-power">0/6</span>
+                  </div>
 
-                  </div>
-                  <div class="h-20 text-center villain-desc">
-                    <h5 id="villian-title">{villain.name}</h5>
-                    <p id="villian-description">Villain Description</p>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <!-- Hero section -->
-            <div class="col-4">
-              <div class="hero-portfolio">
-                <img src="assets/images/heroes/shadow.png" id="game-hero-img" alt="silhouette image" />
-              </div>
-              <div class="power-wrapper">
-                <div class="row">
-                  <div class="col-4 full-height">
-                    <div class="power-container" id="red">
-                      <span class="badge bg-danger power-badges" id="red-power">0/6</span>
-                    </div>
-                    <div class="power-container" id="blue">
-                      <span class="badge bg-primary power-badges" id="blue-power">0/6</span>
-                    </div>
-                  </div>
-                  <div class="col-4 full-height">
-                    <div class="power-container" id="green">
-                      <span class="badge bg-success power-badges" id="green-power">0/6</span>
-                    </div>
-                    <div class="power-container" id="yellow">
-                      <span class="badge bg-warning power-badges" id="yellow-power">0/6</span>
-                    </div>
-                  </div>
-                  <div class="col-4 full-height">
-                    <div class="power-container" id="black">
-                      <span class="badge bg-dark power-badges" id="black-power">0/6</span>
-                    </div>
-
-                    <div class="health-container">
-                      <div class="healthBar">
-                        <div id="healthRemaining"></div>
-                        <i class="fa-solid fa-heart health-heart"></i>
-                        <p id="health-points">0/0</p>
-                      </div>
+                  <div class="health-container">
+                    <div class="healthBar">
+                      <div id="healthRemaining"></div>
+                      <i class="fa-solid fa-heart health-heart"></i>
+                      <p id="health-points">0/0</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Dice container -->
-            <div class="col-8">
-              <div class="row">
-                <div class="col-10 dice-container">
-                  <div class="dice-area text-center" id="dice-area">
-                    <!-- Rendered after dice roll -->
-                  </div>
+          </div>
+          <!-- Dice container -->
+          <div class="col-8">
+            <div class="row">
+              <div class="col-10 dice-container">
+                <div class="dice-area text-center" id="dice-area">
+                  <!-- Rendered after dice roll -->
                 </div>
-                <div class="col-2 blender-container">
-    
+              </div>
+              <div class="col-2 blender-container">
 
-                    <div class="blender-area text-center text-dark"  draggable="false">
-                      <div id="blender-area" draggable="false">
-                        <div
-                        class="dice dice-red"
-                        id="dice-id-55"
 
-                        draggable="true"
-                        data-dice-ammount="3"
-                        data-dice-id="55 "
-                      >
-                        <svg
-                          draggable="false"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="bi bi-dice-1"
-                          viewBox="0 0 16 16"
-                        >
-                          <circle draggable="false" cx="8" cy="8" r="1.5" />
-                          <path
-                            draggable="false"
-                            d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"
-                          />
-                        </svg>
-                        </div>
-                        <div
-                        class="dice dice-red"
-                        draggable="true"
-                        data-dice-ammount="5"
-                        data-dice-id="56 "
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="bi bi-dice-5"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"
-                          />
-                          <path
-                            d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
-                          />
-                        </svg>
-                        </div>
-                      </div>
-                      <div id="blender-outcome"></div>
+                <div class="blender-area text-center text-dark" draggable="false">
+                  <div id="blender-area" draggable="false">
+                    <div class="dice dice-red" id="dice-id-55" draggable="true" data-dice-ammount="3"
+                      data-dice-id="55 ">
+                      <svg draggable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dice-1"
+                        viewBox="0 0 16 16">
+                        <circle draggable="false" cx="8" cy="8" r="1.5" />
+                        <path draggable="false"
+                          d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z" />
+                      </svg>
                     </div>
-                  
+                    <div class="dice dice-red" draggable="true" data-dice-ammount="5" data-dice-id="56 ">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dice-5"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z" />
+                        <path
+                          d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div id="blender-outcome"></div>
                 </div>
+
               </div>
             </div>
-            <div class="col-4">
-              <div id="game-button-area">
-                <p> High Score Here!</p>
-                <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="blendDice()">
-                  Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice
-                </button>
-                <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="rollDices()">
-                  Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice
-                </button>
-                <button type="button" class="text-center in-game-btn" data-bs-toggle="modal" data-bs-target="#modalMenu">
-                  <span class="icon"><i class="fa-solid fa-bars"></i></span> Menu</button>
-                <button type="button" class="text-center in-game-btn" onclick="endRound()">
-                  <span class="icon"><i class="fa-solid fa-share"></span></i>End turn</button>
-              </div>
+          </div>
+          <div class="col-4">
+            <div id="game-button-area">
+              <p> High Score Here!</p>
+              <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="blendDice()">
+                Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice
+              </button>
+              <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="rollDices()">
+                Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice
+              </button>
+              <button type="button" class="text-center in-game-btn" data-bs-toggle="modal" data-bs-target="#modalMenu">
+                <span class="icon"><i class="fa-solid fa-bars"></i></span> Menu</button>
+              <button type="button" class="text-center in-game-btn" onclick="endRound()">
+                <span class="icon"><i class="fa-solid fa-share"></span></i>End turn</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-------------------- MODALS ------------------->
+    <!-------------------- MODALS ------------------->
 
-      <!-------------------- Hero Modal------------------->
+    <!-------------------- Hero Modal------------------->
+    <div class="pt-1">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectHeroModal">
         Choose a hero
       </button>
-      <div
-        class="modal fade hero-selection"
-        id="selectHeroModal"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="selectHeroModal"
-        aria-hidden="true"
-      >
+      <div class="modal fade hero-selection" id="selectHeroModal" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="selectHeroModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark">
             <div class="modal-header">
               <h5 class="modal-title fs-5" id="select-hero-modal">Choose a Hero</h5>
-              <button
-                type="button"
-                class="btn-close btn-close-white"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                aria-label="Close"></button>
             </div>
             <div id="carouselExample" class="carousel slide">
               <div class="carousel-inner" id="modal-heroes">
                 <!-- Carousel from js -->
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="prev"
-              >
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="next"
-              >
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn m-auto btn btn-warning" onclick="selectHeroButton()" data-bs-dismiss="modal" >Confirm Selection</button>
+              <button type="button" class="btn m-auto btn btn-warning" onclick="selectHeroButton()"
+                data-bs-dismiss="modal">Confirm Selection</button>
             </div>
           </div>
         </div>
@@ -234,13 +190,8 @@
       </button>
 
       <!-- Modal -->
-      <div
-        class="modal fade select-rewards"
-        id="select-reward-modal"
-        tabindex="-1"
-        aria-labelledby="reward-modal"
-        aria-hidden="true"
-      >
+      <div class="modal fade select-rewards" id="select-reward-modal" tabindex="-1" aria-labelledby="reward-modal"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark">
             <div class="modal-header">
@@ -258,7 +209,7 @@
               <div class="row" id="reward-container">
                 <h5>Click to select your reward!</h5>
                 <div id="reward-wrapper">
-                  
+
                 </div>
                 <button type="button" class="btn btn btn-warning" data-bs-dismiss="modal" id="confirm-reward-btn">
                   Confirm Selection
@@ -278,13 +229,7 @@
       </button>
 
       <!-- Modal -->
-      <div
-        class="modal fade"
-        id="villainModal"
-        tabindex="-1"
-        aria-labelledby="villainModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="villainModal" tabindex="-1" aria-labelledby="villainModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
@@ -299,11 +244,13 @@
                 <!-- Carousel from js -->
               </div>
 
-              <button class="carousel-control-prev" type="button" data-bs-target="#villainCarousel" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#villainCarousel"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#villainCarousel" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#villainCarousel"
+                data-bs-slide="next">
 
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
 
@@ -311,7 +258,8 @@
               </button>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn m-auto btn-warning" data-bs-dismiss="modal">Confirm Selection</button>
+              <button type="button" class="btn btn m-auto btn-warning" data-bs-dismiss="modal">Confirm
+                Selection</button>
             </div>
           </div>
         </div>
@@ -346,25 +294,14 @@
 
       <!-------------------- Extra Menu ------------------->
 
-      <div
-        class="modal fade"
-        id="modalMenu"
-        tabindex="-1"
-        aria-labelledby="modalMenuLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="modalMenu" tabindex="-1" aria-labelledby="modalMenuLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-header">
               <h5 class="modal-title fs-5 " id="modalMenuLabel">
                 Menu
               </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center" id="Menu-modal-body">
               <ul class="navbar-nav">
@@ -385,32 +322,28 @@
           </div>
         </div>
       </div>
-    </main>
-    <!-- JS -->
-    <script defer src="assets/js/game-setup.js"></script>
+    </div>
+  </main>
+  <!-- JS -->
+  <script defer src="assets/js/game-setup.js"></script>
 
-    <script defer src="assets/js/game-villain.js"></script>
-    <script defer src="assets/js/game-hero.js"></script>
+  <script defer src="assets/js/game-villain.js"></script>
+  <script defer src="assets/js/game-hero.js"></script>
 
-    <script defer src="assets/js/game-dice.js"></script>
-    <script defer src="assets/js/game-drag.js"></script>
-    <!--Bootstrap-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
-  </body>
+  <script defer src="assets/js/game-dice.js"></script>
+  <script defer src="assets/js/game-drag.js"></script>
+  <!--Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/0fc8d7e1ea.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
