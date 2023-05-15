@@ -3,8 +3,8 @@
 // this is a a file that deals with drag and drop functions
 
 let draggables = document.getElementsByClassName("dice");
-const combatBox = document.getElementsByClassName("combat-box");
-const blenderField = document.querySelector("#blender-area");
+let combatBox = document.getElementsByClassName("combat-box");
+const blenderField = document.getElementById("blender-area");
 const diceField = document.querySelector("#dice-area");
 const screen = document.querySelector("#game-size-container");
 
@@ -28,6 +28,10 @@ function preventOnDragStart(draggables) {
 function callAllDragables() {
   draggables = document.getElementsByClassName("dice");
   addNewEventListeners("reset");
+}
+
+function callAllDropables() {
+  combatBox = document.getElementsByClassName("combat-box");
   findDropBoxesCenters();
 }
 
@@ -75,6 +79,9 @@ function onPointerDown(e) {
   // allows pointermove function to set position of shape
   diceCoordinates.draggableOffsetX = e.pageX - rect.left;
   diceCoordinates.draggableOffsetY = e.pageY - rect.top;
+
+  draggableEL.style.left = e.pageX - diceCoordinates.draggableOffsetX + `px`;
+  draggableEL.style.top = e.pageY - diceCoordinates.draggableOffsetY + `px`;
 
   // recording shapeWindow element to use once element is droped otside dropable places
   diceCoordinates.parent = draggableEL.parentElement;
@@ -138,7 +145,7 @@ function pointerup(e) {
   diceField.classList.remove(`highlighted-square`);
 
   draggableEL.style.removeProperty("position");
-  draggableEL.style.removeProperty("z-index");
+  draggableEL.style.zIndex = "auto";
   draggableEL.style.removeProperty("left");
   draggableEL.style.removeProperty("top");
   draggableEL = "";
@@ -255,3 +262,5 @@ function getTargetElement(e) {
   }
   return targetElement;
 }
+
+function checkCorrectArea() {}
