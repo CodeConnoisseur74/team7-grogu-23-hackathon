@@ -1,7 +1,7 @@
 # STAR DICE 
-## **STAR WARS BATTLE DICE**
+## **Star Wars Dice Battlefield**
 
-![image info](https://ui.dev/amiresponsive)
+![main battlefield](/assets/images/README_screenshots/battlefield.png)
 
 ## Game rules:
 
@@ -23,68 +23,61 @@ Villain:
 - Each rectangle can be 1-4 dice wide, instructing how many dice can be used to fight it.
 - A rectangle, the size of one dice, can contain a fighting power number between 1-6.
 - The bigger rectangles muliply their range, accoring to their size: 
-    - Size  of 2 dice ranges between 2-12 fighting points
+    - Size of 2 dice ranges between 2-12 fighting points
     - Size of 3 dice ranges between 3-18 fighting points
     - Size of 4 dice ranges between 4-24 fighting points
 
+![main battlefield](/assets/images/README_screenshots/villain-battlefield.png)
 
-### 3) Begin the game
+### 3) Begin the game:
 
-Start of turn 
+I) Start of turn:
+
 - The player clicks "ROLL DICE" button.
 - If the player starts with a dice total of, for example, 3 red, 1 blue, 2 green, 1 yellow - they will roll all the dice at once.
 - After the dice are rolled, a random number is given for each dice. The total will be, of course, between 1-6.
 - For the sake of this example, let's say the player gets these number totals: 
-- 5, 2, 4
-- 1 blue with number (5)
-- 2 green with number (3, 6)
-- 1 yellow with number (3)
+    - 3 red: 5, 2, 4
+    - 1 blue: 5
+    - 2 green: 3, 6
+    - 1 yellow: 3
 
 
-Player choice
-- The player uses rolled dice to match villains fighting points 
-- Example: villain has a red rectangle of 3 spaces with the number 10 (possibly between 3-18) player uses his rolled dices of red combined (5, 2, 4) to make 11 essentially defending from villain with having more than required points
-- Also, the villain has a rectangle of blue of 2 spaces with the number 7. Player uses blue dice he has of (5) to fill in but he does not have enough blue dices to fill and match no 7  and having 5/7
-- Villain also has the yellow square of 1 space with number 4 and the player can use his yellow dice of (3) to fight back making ¾
-- Every point that is not filled at the end of the turn is deducted from the player's hitpoints in this example 5/7 blue  score player would lose 2 life points plus ¾ player would lose 1 life point. 
-- For every fighting point fight player gets a point for his high score in total 11/10 = 10 points, 5/7= 5 points,¾ = 3 points, total 18 points
-- Additionally every point that is over the limit rewards double points 11/10 = 1 over limit = 2 extra points.
-- Total high score points 20
-- Finally, the villain has no green fight points, and since the player has 2 green leftover dice of (3, 6) he has few choices: 
-- Either keep the dices and use it on the next game round, essentially having next turn 4 green dices, 2 from round 1 and 2 from round 2
-- The player also can choose to throw 2 dice into a bucket and get the average (lowered down) number of both dice in black color For Example  (3, 6) green would turn into (4) black, (see below for black dice)
-- With (4) black, in hand player has now a choice to use it maybe instead of yellow or add it extra to blue making 4/4 yellow, and save yellow dice for a later round or 5+4/7 for blue making 9/7, in both cases saving some life points and earning extra points
+II) Player's choice:
 
-
-
-Black dice
-- The bucket can take any mix-or-match colors, not necessarily 2 of the same color. For example, you can mix one blue and one red and get black dice instead.
-- Black dice are more valuable because they can be used on any color, unlike others that have to match. Black would also be able to use in the buckets to turn into another black. For example, you can throw in tho a bucket (1) black and (6) red to get (3) black and use it to cover some space that requires 3 or 2
-
-
-
-End of round
-- Once a player has made all decisions he can end round and this happens:
-- All high score points are calculated as per the previous explanation
-- The reward is given to a player. The choices should be made at this point regarding what reward the player can take of either: of 3 choices
-- 2 standard color dices (chosen at random, some opponents have bigger chances for specific colors),
-- 1 additional space for dice storage (chosen random color out of all 5 colors)
-- 1 black dice
-- Life restoration
-- Some more ides can be implemented in a future
-
-Example 1: Reward could be a choice of 2 dice (1 blue and 1 red) OR 2 dice (1 yellow and 1 red) OR 1 extra space for blue
-
-Example 2:  Reward could be a choice of 2 dice (1 green and 1 yellow) OR 2 dice (2 yellow) OR 1 black dice
-
-Example 2: Reward could be health restoration (7 points) OR 2 dice (1 green and 1 blue) OR 1 extra space for green dice
+- Our Hero (the player) uses their rolled dice totals to match their Villain's fighting points.
+- Example: Villain has a red rectangle of 3 spaces with the number 10 (or any possible random total, between 3-18) player uses their red dice (5, 2, 4) to total together 11 fighting points. Since, in this example, the Villain had only 10 red fighting points, our Hero gains a successful defeat.
+- In the same turn, we see that the Villain has a 2 blue rectangles, with a total of 7 fighting points. The player would use their blue dice (5), but we see they do not have enough blue dice to fill both and match the 7 oposing fighting points. They have only enough for 5/7.
+- The Villain also has a yellow square of 1 space, with 4 fighting points. The player can use their yellow dice total (3) to fight back. But, again, they only have 3 fighting points to match their opponenet's 4.
+- Every point that is not matched and defeated at the end of the turn is deducted from the player's total hitpoints. In this example, they could only match 5 of 7 blue = score player would lose 2 life points. Yellow matched 3 of 4 fighting points = player would lose 1 life point. 
+- For every fighting point matched and defeated, the player gets a point for their high score. In this example, a total of 11/10 = 10 points, 5/7 = 5 points, 3/4 = 3 points: total of 18 points.
+- Every point that is over the limit of needed fighting points rewards the player with double points 11/10 (1 over limit) = 2 points.
+- This example player's total high score is 20 points!
+- Finally, the villain has no green rectangles (therefore, no green fighting points), and since the player has 2 green leftover dice (3, 6) they have a few choices: 
+    - Either keep the dice and use them on the next game round, essentially having next turn 4 green dices, 2 from round 1 and 2 from round 2
+    - Or the player can throw the 2 excess dice into a the blender and get their combined average in a black colored dice. For Example (3, 6) green would turn into (4) black.
+- If the player chooses to use the blender and now has a black (4) in hand, they now have a choice to use it as, essentially, a wild card. 
+    - For example, they can use it insead of their other yellow one that only totaled 3 points. This would match their opponent's yellow fighting points and now have 4/4 yellow. They could, then, save their yellow (3) dice for a later round. 
+    - Or they could add it to their other blue dice: 5+4/7. This would give them a total of 9/7 needed fighting points.
+    - In both cases saving some life points and earning extra points
 
 
 
-Game rounds:
-- Start of every round opponent is given 6 random color fighting points plus 1 extra for each round so (round 5 will be 11 in total). 
-- Each fighting point can be individual or blended together 1-4 squares making up the total sum of 11 as per previous example
+Black dice:
+- The blender can take any mix-and-match colors, not limited to 2 of the same color. For example, a player could mix one blue and one red and get black dice in return for that combination.
+- Black dice are more valuable because they can be used as any color, unlike the others which have to match their opponent's fighting points. Black dice can also be used in the blender in combination with its own or any other color to produce another black.
 
+
+III) End of round:
+- Once a player is satisfied with their decisions, they can choose to end the round.
+- All high score points are automatically calculated, as per the previous explanation.
+- The player is then presented with a choice of reward for surviving the round! Hooray!
+    1) 2 standard color dice (chosen at random)
+    2) 1 additional space for dice storage container (chosen at random)
+    3) 1 black dice
+    4) 10 life points
+
+![main battlefield](/assets/images/README_screenshots/menu.png)
 
 ### Deployed link
 
@@ -101,7 +94,7 @@ Game rounds:
 
 | Name                | LinkedIn                                                                                    | GitHub                                                                                    |
 |---------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| Sherry Andrews Bhutia          | [<img src="https://skillicons.dev/icons?i=linkedin" height="20px" alt="LinkedIn" />](https://www.linkedin.com/in/sherry-andrews-bhutia/)           | [<img src="https://skillicons.dev/icons?i=github" height="20px" alt="GitHub" />](https://github.com/CodeConnoisseur74)           |
+| Sherry Andres Bhutia           | [<img src="https://skillicons.dev/icons?i=linkedin" height="20px" alt="LinkedIn" />](https://www.linkedin.com/in/sherry-andrews-bhutia/)           | [<img src="https://skillicons.dev/icons?i=github" height="20px" alt="GitHub" />](https://github.com/CodeConnoisseur74)           |
 | Berat Zorlu         | [<img src="https://skillicons.dev/icons?i=linkedin" height="20px" alt="LinkedIn" />](https://www.linkedin.com/in/berat-zorlu/)                 | [<img src="https://skillicons.dev/icons?i=github" height="20px" alt="GitHub" />](https://github.com/beratzorlu)                 |
 | Niclas Tanskanen | [<img src="https://skillicons.dev/icons?i=linkedin" height="20px" alt="LinkedIn" />](https://www.linkedin.com/in/niclastanskanen/)           | [<img src="https://skillicons.dev/icons?i=github" height="20px" alt="GitHub" />](https://github.com/niclastanskanen)           |
 | Danni Power       | [<img src="https://skillicons.dev/icons?i=linkedin" height="20px" alt="LinkedIn" />](https://www.linkedin.com/in/danni-power-44a4601b5/)         | [<img src="https://skillicons.dev/icons?i=github" height="20px" alt="GitHub" />](https://github.com/Dmp-86)                       |
