@@ -25,7 +25,7 @@ let heroesData = [
     currentLife: 20,
     image: "assets/images/heroes/grogu.png",
     description:
-      "A male force-sensitive to Mandalorian belonging to the same mysterious species as legendary Grand Master Yoda",
+      "A male force-sensitive to Mandalorian belonging to the same mysterious species as legendary Grand Master yoda",
   },
   {
     name: "Mandalorian",
