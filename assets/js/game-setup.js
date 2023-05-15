@@ -13,7 +13,7 @@ const gameSettings = {
   currentHealth: 30,
   volume: 0,
   diceArrangment: "size",
-  rollAvialable: true,
+  rollAvialable: false,
 };
 //-------------------------------------Fix later----------------------
 // Loaded game settings
@@ -102,4 +102,5 @@ function selectVillain() {
       renderVillian(activeVillain);
     }
   }
+  currentGameSettings.rollAvialable = true;
 }
