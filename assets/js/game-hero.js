@@ -224,19 +224,7 @@ function getRewardType() {
 
   return rewardType;
 }
-    if (randomNo < colorPrc) {
-            rewardType = "color";
-        } else if (randomNo < colorPrc + blackPrc) {
-            rewardType = "black";
-        } else if (randomNo < colorPrc + blackPrc + healthPrc) {
-            rewardType = "health";
-        } else {
-            rewardType = "extraStorage";
-        }
-  
-    return rewardType;
-  }
-
+    
 function getDiceColor(rewardType) {
   const redRew = currentVillainData.colorReward.red;
   const blueRew = currentVillainData.colorReward.blue;
@@ -323,11 +311,8 @@ function updateHeroData() {
       ConsoleLog(limitType);
       limitType+= 1; 
     } else if (rewardOfChoice.includes("currentLife")){
-      currentGameHeroData.currentLife +=;
-      let limitType = (rewardOfChoice[0]) + "Limit";
-      ConsoleLog(limitType);
-      limitType+= 1;
+      life += 10;
     };elif (rewardOfChoice.includes("diceLimit")){
       let limitType = (rewardOfChoice[0]) + "Limit";
       ConsoleLog(limitType);
-      limitType+= 1;}
+      limitType+= 1;}}
