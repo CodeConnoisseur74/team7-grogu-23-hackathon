@@ -5,10 +5,15 @@
 // Starting game settings
 const gameSettings = {
   score: 0,
-  level: 5,
+  highestScore: 0,
+  lastScore: 0,
+  level: 1,
   diceId: 1,
+  LastHealthLoss: 0,
+  currentHealth: 30,
   volume: 0,
   diceArrangment: "size",
+  rollAvialable: true,
 };
 //-------------------------------------Fix later----------------------
 // Loaded game settings
@@ -21,15 +26,15 @@ window.addEventListener("load", () => {
   addNewEventListeners("add");
   callAllDropables();
   renderModalHeroes();
+  renderVillainModal();
 });
 
 function endRound() {
   generateRewardObjects();
-  // calculateHealth(); // Not done yet
-  // calculateScoreGained(); // Not done yet
+  calculateScoreAndHealth();
   // renderGameScore(); // Not done yet
-  // addGameLevel();
-  // clearVillainProfile();
+  addGameLevel();
+  clearVillainProfile();
   // updateHeroGameProfile(); // Not done yet
   // renderHeroStats(); // Not done yet
 }
@@ -68,5 +73,33 @@ function selectHeroButton() {
   }
   for (let i = 0; i < heroesData.length; i++) {
     if (heroesData[i].name == activeHero) renderHeroGameProfile(i);
+  }
+}
+
+function calculateScoreAndHealth() {
+  let score = 0;
+  let healthLoss = 0;
+
+  for (let i = 0; i < dropBoxesCenters; i++) {
+    score += dropBoxesCenters.diceScore;
+    const total = parseInt(dropBoxesCenters.requiredScore) - dropBoxesCenters.diceScore;
+    // either get exta points or lose  health
+    total > 0 ? (score += total * 2) : (healthLoss += total);
+  }
+  currentGameSettings.LastHealthLoss = healthLoss;
+  currentGameSettings.currentHealth += healthLoss;
+
+  lastScore += score;
+}
+
+function selectVillain() {
+  const villainHTMLArray = document.getElementsByClassName("villain-modal-description");
+  let activeVillain;
+  for (let i = 0; i < villainHTMLArray.length; i++) {
+    const contains = villainHTMLArray[i].classList.contains("active");
+    if (contains) {
+      activeVillain = villainHTMLArray[i].getAttribute("data-villain-id");
+      renderVillian(activeVillain);
+    }
   }
 }
