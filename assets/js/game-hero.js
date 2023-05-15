@@ -26,7 +26,8 @@ let heroesData = [
     maxLife: 30,
     currentLife: 20,
     image: "assets/images/heroes/grogu.png",
-    description: "A male force-sensitive to Mandalorian belonging to the same mysterious species as legendary Grand Master Yoda",
+    description:
+      "A male force-sensitive to Mandalorian belonging to the same mysterious species as legendary Grand Master Yoda",
   },
   {
     name: "Mandalorian",
@@ -47,7 +48,8 @@ let heroesData = [
     maxLife: 30,
     currentLife: 30,
     image: "assets/images/heroes/mandalorian.png",
-    description: "A bounty hunter originally hired to capture Grogu, Mandalorian instead protects him from the fallen Galactic Empire and becomes a father figure for him.",
+    description:
+      "A bounty hunter originally hired to capture Grogu, Mandalorian instead protects him from the fallen Galactic Empire and becomes a father figure for him.",
   },
   {
     name: "R2-D2",
@@ -68,7 +70,8 @@ let heroesData = [
     maxLife: 30,
     currentLife: 30,
     image: "assets/images/heroes/r2-d2.png",
-    description: "He is an astromech droid who served Jedi Knight Skywalker during the clone wars. He always knew that he needed to keep his friends safe and he stopped at nothing to achieve that goal which made him a true hero.",
+    description:
+      "He is an astromech droid who served Jedi Knight Skywalker during the clone wars. He always knew that he needed to keep his friends safe and he stopped at nothing to achieve that goal which made him a true hero.",
   },
   {
     name: "Rey",
@@ -89,7 +92,8 @@ let heroesData = [
     maxLife: 30,
     currentLife: 30,
     image: "assets/images/heroes/rey.png",
-    description: "Adopts the name Rey Skywalker to honor her mentors, an amazing force-sensitive bloodline of the Sheev Palpatine. As the last remaining Jedi, she makes it her mission to rebuild the Jedi order.",
+    description:
+      "Adopts the name Rey Skywalker to honor her mentors, an amazing force-sensitive bloodline of the Sheev Palpatine. As the last remaining Jedi, she makes it her mission to rebuild the Jedi order.",
   },
 ];
 
@@ -103,8 +107,12 @@ function renderModalHeroes() {
   let modalInner = "";
   for (let i in heroesData) {
     modalInner += `
-        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" onclick= renderHeroGameProfile(${i}) id="${heroesData[i].name}">
-            <img src="${heroesData[i].image}" class="d-block hero-img m-auto text-center" alt="Image of ${heroesData[i].name}">
+        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" onclick= renderHeroGameProfile(${i}) id="${
+      heroesData[i].name
+    }">
+            <img src="${heroesData[i].image}" class="d-block hero-img m-auto text-center" alt="Image of ${
+      heroesData[i].name
+    }">
             <h5 class="w-100 d-block m-auto text-center">${heroesData[i].name}</h5>
             <p class="w-100 d-block m-auto text-center">${heroesData[i].description}</p>
         </div>`;
@@ -183,7 +191,6 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
-// GENERATE REWARDS
 
 function generateRewardObjects() {
     let completeRewardHtml = [];
@@ -224,6 +231,7 @@ function generateRewardObjects() {
             rewardType = "extraBlackStorage";
         }
 
+
     return rewardType;
   }
 
@@ -238,6 +246,7 @@ function generateRewardObjects() {
 
     rewardType == "color" ? (cycles = 2) : "";
     rewardType == "extraStorage" ? (cycles = 1) : "";
+
 
     for (let i = 0; i<cycles; i++) {
         let randomNo2 = randomInt(0, 100);
@@ -281,7 +290,11 @@ function generateRewardObjects() {
         reward = `<div class= "reward-space black" id="black-reward-slot"></div>`
     }
     return reward;
+
   }
+
+  console.log(rewarsdArray);
+}
 
 
 //----------------------------------------------------------------

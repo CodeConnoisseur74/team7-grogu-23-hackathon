@@ -5,7 +5,7 @@
 // Starting game settings
 const gameSettings = {
   score: 0,
-  level: 0,
+  level: 5,
   diceId: 1,
   volume: 0,
   diceArrangment: "size",
