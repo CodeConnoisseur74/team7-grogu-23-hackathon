@@ -96,6 +96,21 @@ h2 {
 
 /*============================Dice Container============================*/
 
+.points-badge {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25% !important;
+  z-index: 50;
+}
+
+.score-points {
+  font-size: 0.7rem;
+}
+
 .dice-wrapper {
   display: flex;
   flex-direction: column;
@@ -478,7 +493,6 @@ footer {
   background-color: aqua;
 }
 
-
 .dice-b-red {
   border: red 1px solid;
   background-color: #0000002a;
@@ -511,22 +525,19 @@ footer {
   border-radius: 15%;
 }
 
-.reward-option{
+.reward-option {
   padding: 20px;
   border: #000 outset 2px;
   height: fit-content;
   border-radius: 10px;
-} 
+}
 
-.stack-top{
+.stack-top {
   position: relative;
   z-index: 9;
   bottom: 50px;
   left: 30px;
 }
-
-
-
 
 /*========================Media Queries===========================*/
 
