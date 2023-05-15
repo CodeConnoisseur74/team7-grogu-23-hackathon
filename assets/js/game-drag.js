@@ -162,12 +162,15 @@ function pointerup(e) {
 
   const matchedActiveSquares = findingMacthingSquares(pointerX, pointerY);
 
-  if (matchedActiveSquares[1]) matchedActiveSquares[0].appendChild(dropTarget);
+  if (matchedActiveSquares[1]) {
+    matchedActiveSquares[0].appendChild(dropTarget);
+    callAllDropables();
+    renderFightingBadges();
+  }
   // cleaning up data after drag ended
   diceCoordinates = {};
   document.removeEventListener("pointermove", pointerMove);
 
-  callAllDropables();
   draggableEL = "";
 
   // cleaning up data after drag ended
@@ -188,15 +191,21 @@ function findDropBoxesCenters() {
 
     info.color = checkDropAreaColor(combatBox[i]);
     info.spaceCheck = checkForSpace(combatBox[i]);
+    info.diceScore = calculateBoxesScore(combatBox[i])[0];
+    info.requiredScore = calculateBoxesScore(combatBox[i])[1];
 
     dropBoxesCenters.push(info);
   }
 
   const info2 = recodDropDimentions(blenderField);
   info2.color = "universal";
+  info2.spaceCheck = 2;
+  info2.diceScore = 0;
   dropBoxesCenters.push(info2);
   const info3 = recodDropDimentions(diceField);
   info3.color = "universal";
+  info3.spaceCheck = Math.pow(10, 100);
+  info3.diceScore = 0;
   dropBoxesCenters.push(info3);
 }
 
@@ -302,5 +311,16 @@ function checkForSpace(element) {
   const space = element.classList[0].split("-")[1];
   const ammount = element.children.length;
 
-  return parseInt(space) > ammount;
+  return parseInt(space) + 1 > ammount;
+}
+
+function calculateBoxesScore(element) {
+  let childrenSum = 0;
+  const divs = element.getElementsByTagName("div");
+
+  for (let i = 0; i < divs.length; i++) {
+    childrenSum += parseInt(divs[i].getAttribute("data-dice-ammount"));
+  }
+  const parentSum = element.getAttribute("data-area-no");
+  return [childrenSum, parentSum];
 }
