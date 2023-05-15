@@ -170,9 +170,9 @@ function choseRandomVillain() {
   for (let i = 0; i < 2; i++) {
     let generatedInt = randomInt(0, villainlist.length - 1);
 
-    while (intList.includes(generatedInt)){
-      generatedInt = randomInt(0, villainlist.length - 1)
-    };
+    while (intList.includes(generatedInt)) {
+      generatedInt = randomInt(0, villainlist.length - 1);
+    }
 
     intList.push(generatedInt);
   }
@@ -287,8 +287,28 @@ function renderFightingPointRectangle() {
   const dataColors = currentVillainData.colorChoices;
   let renderData = "";
   for (let i = 0; i < dataNumbers.length; i++) {
-    renderData += ` <div class="size-${dataSquares[i]} ${dataColors[i]}-area combat-box" data-area-no="${dataNumbers[i]}"></div>`;
+    renderData += ` <div class="size-${dataSquares[i]} ${dataColors[i]}-area combat-box position-relative" data-area-no="${dataNumbers[i]}"></div>`;
   }
   fightingField.innerHTML = renderData;
   callAllDropables();
+  renderFightingBadges();
+}
+
+function renderFightingBadges() {
+  for (let i = 0; i < dropBoxesCenters.length; i++) {
+    if (dropBoxesCenters[i].element.classList[2] == "combat-box") {
+      const dice = dropBoxesCenters[i].diceScore;
+      const total = dropBoxesCenters[i].requiredScore;
+
+      if (dropBoxesCenters[i].element.children.length == 0) {
+        dropBoxesCenters[
+          i
+        ].element.innerHTML = `<span class="position-absolute top-0 start-100 translate-middle points-badge bg-danger border border-light rounded-circle">
+    <span class="score-points"> ${dice}/${total}</span>
+  </span>`;
+      } else {
+        dropBoxesCenters[i].element.getElementsByTagName("span")[1].innerHTML = `${dice}/${total}`;
+      }
+    }
+  }
 }

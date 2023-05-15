@@ -1,8 +1,6 @@
 "use strict";
 
 //HERO OBJECTS
-//Declare the current hero object
-let currentGameHeroData = {};
 
 //Declare hero data objects that is accessed when generating
 // the data for the selected hero.
@@ -76,11 +74,11 @@ let heroesData = [
   {
     name: "Rey",
     diceAmount: {
-      red: "3",
-      blue: "1",
-      green: "2",
-      yellow: "5",
-      black: "1",
+      red: 3,
+      blue: 1,
+      green: 2,
+      yellow: 5,
+      black: 1,
     },
     diceLimit: {
       red: 6,
@@ -97,19 +95,19 @@ let heroesData = [
   },
 ];
 
+//Declare the current hero object
+let currentGameHeroData;
+
 //SELECT HERO FUNCTIONALITIES
 
 //When html is dowloaded the modal HTML is dowloaded using the heroesData object
-renderModalHeroes();
 
 function renderModalHeroes() {
   const modalContent = document.getElementById("modal-heroes");
   let modalInner = "";
   for (let i in heroesData) {
     modalInner += `
-        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" onclick= renderHeroGameProfile(${i}) id="${
-      heroesData[i].name
-    }">
+        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" id="${heroesData[i].name}">
             <img src="${heroesData[i].image}" class="d-block hero-img m-auto text-center" alt="Image of ${
       heroesData[i].name
     }">
@@ -131,14 +129,8 @@ document.querySelectorAll(".selectHero").forEach((occurence) => {
 
 //UPDATE HERO DATA
 //This function initiates the hero profile update
-function renderHeroGameProfile(hero) {
-  let heroObject = {};
-  for (let i of heroesData) {
-    if (i.name == hero) {
-      heroObject = i;
-    }
-  }
-  currentGameHeroData = heroObject;
+function renderHeroGameProfile(index) {
+  currentGameHeroData = heroesData[index];
   renderHeroPowers();
   renderHeroLife();
   renderHeroImg();
@@ -191,34 +183,47 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
-
 function generateRewardObjects() {
-    let completeRewardHtml = [];
+  let completeRewardHtml = [];
 
-    for (let i = 0; i < 3; i++) {
-        let rewardType = getRewardType();
-        console.log(rewardType)
-        let colorArray = getDiceColor(rewardType);
-        console.log(colorArray)
-        let rewardHtml = generateRewardHtml(colorArray,rewardType);  
-        
-        completeRewardHtml += rewardHtml
-    }
-    console.log(completeRewardHtml)
-    let rewardWrapper = document.getElementById("reward-wrapper");
-    rewardWrapper.innerHTML= completeRewardHtml;
+  for (let i = 0; i < 3; i++) {
+    let rewardType = getRewardType();
+    console.log(rewardType);
+    let colorArray = getDiceColor(rewardType);
+    console.log(colorArray);
+    let rewardHtml = generateRewardHtml(colorArray, rewardType);
+
+    completeRewardHtml += rewardHtml;
+  }
+  console.log(completeRewardHtml);
+  let rewardWrapper = document.getElementById("reward-wrapper");
+  rewardWrapper.innerHTML = completeRewardHtml;
 }
 
-  function getRewardType(){
-    const colorPrc = currentVillainData.rewardProcentage.color;
-    const blackPrc = currentVillainData.rewardProcentage.black;
-    const healthPrc = currentVillainData.rewardProcentage.health;
-    const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
-    const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
+function getRewardType() {
+  const colorPrc = currentVillainData.rewardProcentage.color;
+  const blackPrc = currentVillainData.rewardProcentage.black;
+  const healthPrc = currentVillainData.rewardProcentage.health;
+  const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
+  const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
 
-    let randomNo = randomInt(0, 100);
-    let rewardType;
+  let randomNo = randomInt(0, 100);
+  let rewardType;
 
+  if (randomNo < colorPrc) {
+    rewardType = "color";
+  } else if (randomNo < colorPrc + blackPrc) {
+    rewardType = "black";
+  } else if (randomNo < colorPrc + blackPrc + healthPrc) {
+    rewardType = "health";
+  } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
+    rewardType = "extraStorage";
+  } else {
+    rewardType = "extraBlackStorage";
+  }
+
+  return rewardType;
+}
     if (randomNo < colorPrc) {
             rewardType = "color";
         } else if (randomNo < colorPrc + blackPrc) {
@@ -232,33 +237,32 @@ function generateRewardObjects() {
     return rewardType;
   }
 
-  function getDiceColor(rewardType){
-    const redRew = currentVillainData.colorReward.red;
-    const blueRew = currentVillainData.colorReward.blue;
-    const greenRew = currentVillainData.colorReward.green;
-    const yellowRew = currentVillainData.colorReward.yellow;
+function getDiceColor(rewardType) {
+  const redRew = currentVillainData.colorReward.red;
+  const blueRew = currentVillainData.colorReward.blue;
+  const greenRew = currentVillainData.colorReward.green;
+  const yellowRew = currentVillainData.colorReward.yellow;
 
-    let diceColors = [];
-    let cycles = 0;
+  let diceColors = [];
+  let cycles = 0;
 
-    rewardType == "color" ? (cycles = 2) : "";
-    rewardType == "extraStorage" ? (cycles = 1) : "";
+  rewardType == "color" ? (cycles = 2) : "";
+  rewardType == "extraStorage" ? (cycles = 1) : "";
 
-
-    for (let i = 0; i<cycles; i++) {
-        let randomNo2 = randomInt(0, 100);
-        if(randomNo2 < redRew) {
-            diceColors.push("red");
-        } else if (randomNo2 < redRew + blueRew) {
-            diceColors.push("blue");
-        } else if (randomNo2 < redRew + blueRew + greenRew) {
-            diceColors.push("blue");
-        } else {
-            diceColors.push("yellow");
-        } 
+  for (let i = 0; i < cycles; i++) {
+    let randomNo2 = randomInt(0, 100);
+    if (randomNo2 < redRew) {
+      diceColors.push("red");
+    } else if (randomNo2 < redRew + blueRew) {
+      diceColors.push("blue");
+    } else if (randomNo2 < redRew + blueRew + greenRew) {
+      diceColors.push("blue");
+    } else {
+      diceColors.push("yellow");
     }
-    return diceColors;
   }
+  return diceColors;
+}
 
   function generateRewardHtml(colorArray,rewardType){
     let reward ="";
