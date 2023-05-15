@@ -9,7 +9,7 @@ let currentVillainData = {};
 
 const villainlist = [
   {
-    name: "Darth Veder",
+    name: "Darth Vader",
     picture: "assets/images/villians/darth-vader.png",
     description: "A high ranking Jedi Knight who fought for Galactic Republic.",
     strongAgainst: "Prefers Blue and Red",
@@ -92,9 +92,9 @@ const villainlist = [
     maximum: 7,
   },
   {
-    name: "200IQ Stormtrooper",
+    name: "200 iQ Stormtrooper",
     picture: "assets/images/villians/stormtrooper.png",
-    description: "Managed to hit a Jedi with his blaster and dodged closing door.",
+    description: "Managed to hit a Jedi with his blaster and dodged a closing door.",
     strongAgainst: "Prefers yellow and red",
     colorProcentages: {
       red: 35,
