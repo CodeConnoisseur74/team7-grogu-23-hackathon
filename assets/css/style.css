@@ -1,5 +1,6 @@
 /*============================Import fonts============================*/
-@import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap"); */
+@import url("https://fonts.cdnfonts.com/css/star-wars");
 
 /*============================Global style============================*/
 * {
@@ -10,8 +11,9 @@
 }
 
 body {
-  font-family: "Hind Guntur", sans-serif;
-  font-weight: 300;
+  /* font-family: "Hind Guntur", sans-serif; */
+  font-family: "Star Wars", sans-serif;
+  font-weight: 900;
   color: whitesmoke !important;
   overflow-x: hidden;
   background: url("../images/stars_background.jpg") no-repeat center center fixed;
@@ -19,7 +21,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 10px;
 }
 
 /*=============================Header Style=============================*/
@@ -29,7 +30,6 @@ body {
 }
 .col-8,
 .col-4 {
-  background-color: #00ca00;
   height: 50%;
 }
 
@@ -72,11 +72,12 @@ header li a {
 }
 
 #game-size-container {
-  background-color: #00ca00;
+  background-color: rgba(14, 41, 75, 0.7);
   aspect-ratio: 4/3;
   max-width: 100vw;
   max-height: 100vh;
   touch-action: none;
+  padding: 10px;
 }
 
 /*=======================Modal======================*/
@@ -120,13 +121,14 @@ h2 {
 .dice-area {
   width: 100%;
   height: 95%;
-  border: 1px solid black;
-  background-color: aqua;
+  border: 2px outset black;
+  background-color: rgba(180, 180, 180, 0.3);
   margin-top: 10px;
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  border-radius: 20px;
 }
 
 .dice-red {
@@ -282,6 +284,7 @@ h2 {
   background-color: rgba(179, 37, 42, 0.7);
   border-radius: 5px;
   min-height: fit-content;
+  margin-top: 5px !important;
 }
 
 .box-container {
@@ -293,11 +296,12 @@ h2 {
 
 #fighting-point-field {
   height: 100%;
-  background-color: rgb(255, 127, 206);
-
+  background-color: rgba(180, 180, 180, 0.3);
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  border: 2px outset black;
+  border-radius: 20px;
 }
 
 .box-row {
@@ -387,7 +391,7 @@ h2 {
 .hero-container {
   background-color: rgba(33, 184, 33, 0.7);
   border-radius: 5px;
-  margin-top: 80px !important;
+  margin-top: 5px !important;
   min-height: 350px;
 }
 
@@ -424,7 +428,6 @@ h2 {
 #game-hero-img {
   height: 90%;
   width: 100%;
-  background-color: aqua;
 }
 
 .section {
@@ -443,12 +446,6 @@ footer {
 }
 
 /*========================Rewards===========================*/
-
-#game-hero-img {
-  height: 90%;
-  width: 100%;
-  background-color: aqua;
-}
 
 .dice-b-red {
   border: red 1px solid;
@@ -521,6 +518,17 @@ footer {
   .nav-links li {
     display: block;
   }
+  .villain-desc {
+    font-size: 0.8rem;
+  }
+  
+  #game-button-area {
+    font-size: 0.8rem;
+  }
+  
+  .in-game-btn {
+    font-size: 0.8rem;
+  }
 }
 
 @media only screen and (max-width: 990px) {
@@ -531,12 +539,7 @@ footer {
     width: 100%;
   }
 }
-.villain-container {
-  margin-top: 5px !important;
-}
-.hero-container {
-  margin-top: 5px !important;
-}
+
 .villain-img {
   width: 40%;
 }
@@ -606,8 +609,16 @@ footer {
 /*  --------------------------   Hero section END ------------------------ */
 
 /*  --------------------------   Villain section Start------------------------ */
+.carousel-item > img {
+  width: 100%;
+}
+
 .villain-modal-description {
   color: #000;
+}
+
+.villain-modal-description > img {
+  width: 100%;
 }
 
 .red-area {
@@ -641,6 +652,7 @@ footer {
 .yellow-area.highlighted-square {
   background-color: lightyellow;
 }
+
 
 .black-area {
   background-color: rgb(0, 0, 0);
@@ -711,8 +723,6 @@ footer {
   justify-content: space-between;
 }
 
-.reward-dice
-
 /*============================ Hero Modal Style ============================*/
 
 .modal-content .hero-img {
@@ -721,4 +731,28 @@ footer {
 
 .villain-modal-description {
   color: white;
+}
+
+
+@media only screen and (max-width: 990px) {
+  .villain-desc {
+    font-size: 0.6rem;
+  }
+  
+  #game-button-area {
+    font-size: 0.6rem;
+  }
+  
+  .in-game-btn {
+    font-size: 0.6rem;
+  }
+}
+
+/*============================Menu Modal=============================*/
+.menu-link:hover {
+  color: #ffee00;
+}
+
+.new-game {
+  cursor: pointer;
 }

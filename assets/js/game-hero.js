@@ -25,7 +25,7 @@ let heroesData = [
     currentLife: 20,
     image: "assets/images/heroes/grogu.png",
     description:
-      "A male force-sensitive to Mandalorian belonging to the same mysterious species as legendary Grand Master Yoda",
+      "A male force-sensitive to Mandalorian belonging to the same mysterious species as legendary Grand Master yoda",
   },
   {
     name: "Mandalorian",
@@ -130,10 +130,16 @@ document.querySelectorAll(".selectHero").forEach((occurence) => {
 //UPDATE HERO DATA
 //This function initiates the hero profile update
 function renderHeroGameProfile(index) {
-  currentGameHeroData = heroesData[index];
-  renderHeroPowers();
-  renderHeroLife();
-  renderHeroImg();
+  if (index) {
+    renderHeroPowers();
+    renderHeroLife();
+    renderHeroImg();
+  } else {
+    currentGameHeroData = heroesData[index];
+    renderHeroPowers();
+    renderHeroLife();
+    renderHeroImg();
+  }
 }
 
 //Function that renders power stats
@@ -197,31 +203,31 @@ function generateRewardObjects() {
   rewardWrapper.innerHTML = completeRewardHtml;
 }
 
-function getRewardType() {
-  const colorPrc = currentVillainData.rewardProcentage.color;
-  const blackPrc = currentVillainData.rewardProcentage.black;
-  const healthPrc = currentVillainData.rewardProcentage.health;
-  const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
-  const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
+// function getRewardType() {
+//   const colorPrc = currentVillainData.rewardProcentage.color;
+//   const blackPrc = currentVillainData.rewardProcentage.black;
+//   const healthPrc = currentVillainData.rewardProcentage.health;
+//   const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
+//   const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
 
-  let randomNo = randomInt(0, 100);
-  let rewardType;
+//   let randomNo = randomInt(0, 100);
+//   let rewardType;
 
-  if (randomNo < colorPrc) {
-    rewardType = "color";
-  } else if (randomNo < colorPrc + blackPrc) {
-    rewardType = "black";
-  } else if (randomNo < colorPrc + blackPrc + healthPrc) {
-    rewardType = "health";
-  } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
-    rewardType = "extraStorage";
-  } else {
-    rewardType = "extraBlackStorage";
-  }
+//   if (randomNo < colorPrc) {
+//     rewardType = "color";
+//   } else if (randomNo < colorPrc + blackPrc) {
+//     rewardType = "black";
+//   } else if (randomNo < colorPrc + blackPrc + healthPrc) {
+//     rewardType = "health";
+//   } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
+//     rewardType = "extraStorage";
+//   } else {
+//     rewardType = "extraBlackStorage";
+//   }
 
-  return rewardType;
-}
-    
+//   return rewardType;
+// }
+
 function getDiceColor(rewardType) {
   const redRew = currentVillainData.colorReward.red;
   const blueRew = currentVillainData.colorReward.blue;
@@ -249,33 +255,33 @@ function getDiceColor(rewardType) {
   return diceColors;
 }
 
-  function generateRewardHtml(colorArray,rewardType){
-    let reward ="";
-    if(rewardType == "black") {
-        reward = `
+function generateRewardHtml(colorArray, rewardType) {
+  let reward = "";
+  if (rewardType == "black") {
+    reward = `
         <div class= "reward-life reward-option" id="currentLife" onclick="saveRewardChoices('black', null)" >
             Black Dice <div class= "dice-black dice" id="black-reward-dice" ">
         </div>`;
-    } else if(rewardType ==`health`) {
-        reward = `
+  } else if (rewardType == `health`) {
+    reward = `
         <div class= "reward-life reward-option" id="currentLife" onclick="saveRewardChoices('currentLife', null)">Life
             <i class="fa-solid fa-heart"> +10 </i>
         </div>`;
-    } else if(rewardType =="color"){
-        reward = `
+  } else if (rewardType == "color") {
+    reward = `
         <div class= "reward-option" onclick="saveRewardChoices('${colorArray[0]}', '${colorArray[1]}')">
             <div class= "dice-${colorArray[0]} dice stack" id="${colorArray[0]}-reward-dice"> Dice 1</div>
             <div class= "dice-${colorArray[1]} dice stack-top" id="${colorArray[1]}-reward-dice">Dice 2</div>
-        </div>`
-    } else {
-        reward = `
+        </div>`;
+  } else {
+    reward = `
         <div class= "reward-option" onclick="saveRewardChoices('${colorArray[0]}', 'diceLimit')">
           <div class= "dice-b-${colorArray[0]} dice" id="${colorArray[0]}-reward-storage">Extra Space</div>
         </div>`;
-    }
-    return reward;
+    ;
   }
-
+  return reward;
+}
 
 //----------------------------------------------------------------
 let rewardOfChoice;
@@ -296,7 +302,7 @@ function saveRewardChoices(main, secondary) {
 
 
   rewardOfChoice = [main, secondary];
-  updateHeroData();
+  updateHeroData();;
 }
 
 function updateHeroData() {
@@ -309,8 +315,8 @@ function updateHeroData() {
 
   let life = currentGameHeroData.currentLife;
   let maxLife = currentGameHeroData.maxLife;
-  
-  if (rewardOfChoice.includes("black")){
+
+  if (rewardOfChoice.includes("black")) {
     console.log("rewardOfChoice")
     blackPower += 1;
     if (blackPower>currentGameHeroData.diceLimit.black){
@@ -343,3 +349,34 @@ function updateHeroData() {
         console.log(diceRemaining.i)
       }}}
   }
+    if (blackPower > blackLimit) {
+      blackPower = blackLimit;
+    }
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  } else if (rewardOfChoice.includes("currentLife")) {
+    life += 10;
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  }
+  if (blackPower > blackLimit) {
+    blackPower = blackLimit;
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  } else if (rewardOfChoice.includes("currentLife")) {
+    currentGameHeroData.currentLife += "";
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  }
+}

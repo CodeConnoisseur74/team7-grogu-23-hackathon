@@ -1,15 +1,13 @@
 "use strict";
 const fightingField = document.getElementById("fighting-point-field");
-const villainModalBoddy = document.querySelector("#villain-modal-boddy");
+const villainModalBody = document.querySelector("#villain-modal-body");
 // this is a a file that deals with villain modifications
 
 // ..............................................................................................
 
-let currentVillainData = {};
-
 const villainlist = [
   {
-    name: "Darth Veder",
+    name: "Darth Vader",
     picture: "assets/images/villians/darth-vader.png",
     description: "A high ranking Jedi Knight who fought for Galactic Republic.",
     strongAgainst: "Prefers Blue and Red",
@@ -92,9 +90,9 @@ const villainlist = [
     maximum: 7,
   },
   {
-    name: "200IQ Stormtrooper",
+    name: "200 iQ Stormtrooper",
     picture: "assets/images/villians/stormtrooper.png",
-    description: "Managed to hit a Jedi with his blaster and dodged closing door.",
+    description: "Managed to hit a Jedi with his blaster and dodged a closing door.",
     strongAgainst: "Prefers yellow and red",
     colorProcentages: {
       red: 35,
@@ -159,6 +157,8 @@ const villainlist = [
   },
 ];
 
+let currentVillainData = {};
+
 /**
  * chooses villian randomly from the list provided
  * pushes two villian onto the choice list
@@ -182,14 +182,14 @@ function choseRandomVillain() {
 }
 
 function renderVillainModal() {
-  villainModalBoddy.innerHTML = "";
+  villainModalBody.innerHTML = "";
   choseRandomVillain();
   for (let i = 0; i < villianChoice.length; i++) {
     const mainDiv = document.createElement("div");
     const pictureDiv = document.createElement("img");
     const titleDiv = document.createElement("h5");
     const descriptionDiv = document.createElement("div");
-    mainDiv.setAttribute("onclick", `renderVillian(${i})`);
+    mainDiv.setAttribute("data-villain-id", `${i}`);
     let activeImage = i == 0 ? "active" : "not-active";
     mainDiv.classList.add("carousel-item", `${activeImage}`, "villain-modal-description");
 
@@ -206,13 +206,15 @@ function renderVillainModal() {
     mainDiv.appendChild(pictureDiv);
     mainDiv.appendChild(titleDiv);
     mainDiv.appendChild(descriptionDiv);
-    villainModalBoddy.appendChild(mainDiv);
+    villainModalBody.appendChild(mainDiv);
   }
 }
-renderVillainModal();
 
-function renderVillian(index) {
+function saveVillainData(index) {
   currentVillainData = villianChoice[index];
+}
+
+function renderVillian() {
   renderVillianGameProfile();
   const sizeArray = decideRectangleSize(); // Change later
   generateVillainGameStats(sizeArray);
@@ -224,6 +226,7 @@ function renderVillianGameProfile() {
   let villianImage = document.getElementById("villain-image");
   let villianDescription = document.getElementById("villian-description");
   let villianTitle = document.getElementById("villian-title");
+  console.log(currentVillainData);
   villianImage.setAttribute("src", currentVillainData.picture);
   villianDescription.innerHTML = currentVillainData.description;
   villianTitle.innerHTML = currentVillainData.name;
@@ -250,6 +253,7 @@ function decideRectangleSize() {
 function generateVillainGameStats(array) {
   currentVillainData.squareSizes = array;
   currentVillainData.colorChoices = [];
+  console.log(currentVillainData);
   const red = currentVillainData.colorProcentages.red;
   const blue = currentVillainData.colorProcentages.blue;
   const green = currentVillainData.colorProcentages.green;

@@ -7,32 +7,39 @@ const blenderArea = document.querySelector("#blender-area");
 const blenderOutcome = document.querySelector("#blender-outcome");
 const blenderHiglight = document.getElementsByClassName("blender-area");
 
+const DICES_PER_PAGE = 30;
+
 // -------------------------------------------------
 let currentDiceBoard = [];
 
-let currentBlender = [3, 4];
+let currentBlender;
 
 let blenderResult;
 
+let currentPage = 1;
+
+
 // takes hero avialable dices, rolls them and pushes to dice array
 function rollDices() {
-  const data = currentGameHeroData.diceAmount;
+  if (currentGameSettings.rollAvialable) {
+    const data = currentGameHeroData.diceAmount;
 
-  const colors = ["red", "blue", "green", "yellow", "black"];
+    const colors = ["red", "blue", "green", "yellow", "black"];
 
-  for (let color of colors) {
-    for (let i = 0; i < data[color]; i++) {
-      const diceRoll = randomInt(1, 6);
+    for (let color of colors) {
+      for (let i = 0; i < data[color]; i++) {
+        const diceRoll = randomInt(1, 6);
 
-      const diceWord = setDicePhrase(diceRoll);
+        const diceWord = setDicePhrase(diceRoll);
 
-      const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++, dicePhrase: diceWord };
-      currentDiceBoard.push(object);
+        const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++, dicePhrase: diceWord };
+        currentDiceBoard.push(object);
+      }
     }
+    renderDiceBoard();
+    callAllDragables();
   }
-  console.log(currentDiceBoard);
-  renderDiceBoard();
-  callAllDragables();
+  currentGameSettings.rollAvialable = false;
 }
 
 // clears up dice array and html
@@ -74,13 +81,14 @@ function sortArrayByColor() {
 
 // turns dice in the blender to average of 2 dice in to 1 black
 function blendDice() {
+  updateBlenderArray();
+
   if (currentBlender.length === 2) {
     const blackDice = { color: "black", id: currentGameSettings.diceId };
-    const sum = currentBlender.reduce((a, cV) => a + cV, 0);
-    blackDice.roll = Math.floor(sum / currentBlender.length);
+    const sum = parseInt(currentBlender[0]) + parseInt(currentBlender[1]);
+    blackDice.roll = Math.floor(sum / 2);
     const diceWord = setDicePhrase(blackDice.roll);
     blackDice.dicePhrase = diceWord;
-
     const diceHtml = createDiceHtml(blackDice);
 
     blenderOutcome.appendChild(diceHtml);
@@ -96,13 +104,61 @@ function blendDice() {
   }
 }
 
-function renderDiceBoard() {
+
+
+function renderDicePage(pageNumber) {
   diceArea.innerHTML = "";
-  for (let i = 0; i < currentDiceBoard.length; i++) {
+  const startIndex = (pageNumber - 1) * DICES_PER_PAGE;
+  const endIndex = Math.min(startIndex + DICES_PER_PAGE, currentDiceBoard.length);
+  for (let i = startIndex; i < endIndex; i++) {
+
     const mainDiv = createDiceHtml(currentDiceBoard[i]);
     diceArea.appendChild(mainDiv);
   }
 }
+
+function renderDiceBoard() {
+  diceArea.innerHTML = "";
+  const totalPages = Math.ceil(currentDiceBoard.length / DICES_PER_PAGE);
+  let currentPage = 1;
+  renderDicePage(currentPage);
+  if (totalPages > 1) {
+    const pagination = document.createElement("div");
+    pagination.classList.add("pagination");
+    for (let i = 1; i <= totalPages; i++) {
+      const pageLink = document.createElement("a");
+      pageLink.href = "#";
+      pageLink.textContent = i;
+      if (i === currentPage) {
+        pageLink.classList.add("active");
+      }
+      pageLink.addEventListener("click", function() {
+        currentPage = i;
+        renderDicePage(currentPage);
+        const activeLink = pagination.querySelector(".active");
+        if (activeLink) {
+          activeLink.classList.remove("active");
+        }
+        pageLink.classList.add("active");
+      });
+      pagination.appendChild(pageLink);
+    }
+    diceArea.appendChild(pagination);
+  }
+}
+
+
+function createPaginationHtml() {
+  const totalPages = Math.ceil(currentDiceBoard.length / DICES_PER_PAGE);
+  let html = "";
+  for (let i = 1; i <= totalPages; i++) {
+    const isActive = i === currentPage ? "active" : "";
+    html += `<button class="${isActive}" onclick="currentPage = ${i}; renderDiceBoard()">${i}</button>`;
+  }
+  return html;
+}
+
+
 
 function createDiceHtml(element) {
   const mainDiv = document.createElement("div");
@@ -168,4 +224,14 @@ function dicePath(diceRoll) {
       "";
   }
   return diceSVG;
+}
+
+function updateBlenderArray() {
+  currentBlender = [];
+  const dices = blenderArea.getElementsByClassName("dice");
+  for (let i = 0; i < dices.length; i++) {
+    const diceSize = dices[i].getAttribute("data-dice-ammount");
+    currentBlender.push(diceSize);
+    console.log(diceSize);
+  }
 }

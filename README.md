@@ -1,39 +1,41 @@
 # STAR DICE 
-## **The Dice Battlefront**
+## **STAR WARS BATTLE DICE**
 
 ![image info](https://ui.dev/amiresponsive)
 
-## Game rules
+## Game rules:
 
-The player starts with chosing one of the hero profiles (4-10 choices).
-A random Villain is selected for the player.
+
+### 1) The player starts with choosing one of the hero profiles.
 
 Hero:
-- The player begins with 4 different preset colors of dice (minimum 1, maximum 3)
-- Some of the hero profiles have also black (wild) dice, in exchange for fewer of the standard ones
-- Each hero has varying sets of strengths and weaknesses
-- The amount of dice each hero can accumulate is different but the space can be given as a reward as well
-- The black dice are given either for specific heroes or later as a reward
+- The player begins with a minimum of one, maximum of 3 (out of 5 possible) different preset colors of dice, depending on which choice of hero is made.
+- Each hero has varying sets of strengths and weaknesses.
+- The amount of dice each hero can accumulate varies. An extra space can be given as a reward for winning a round.
+- Some of the hero profiles have a special black (wild) dice, in exchange for fewer of the standard colors.
+- The black dice are given either in the beginning - for specific heroes, or later - as a reward.
 
+
+### 2) A random selection of Villains is then presented for the player.
 
 Villain:
-- Has random rectangles representing fighting points based on 4 colors
-- Each rectangle can be a size of 1-4 representing how many dices maximum can be used to fight it.
-- A rectangle of 1 size number is between 1-6
-- The bigger rectangle range is multiplied by size: 
-- Size 2 range 2-12
-- Size 3 range 3-18
-- Size 4 range 4-24
+- The Villain segment contains 3 randomely colored rectangles, representing their fighting power points.
+- Each rectangle can be 1-4 dice wide, instructing how many dice can be used to fight it.
+- A rectangle, the size of one dice, can contain a fighting power number between 1-6.
+- The bigger rectangles muliply their range, accoring to their size: 
+    - Size  of 2 dice ranges between 2-12 fighting points
+    - Size of 3 dice ranges between 3-18 fighting points
+    - Size of 4 dice ranges between 4-24 fighting points
 
-Start of the game
-- Player chooses one of two villian randomly selected at the start of the game.
 
+### 3) Begin the game
 
 Start of turn 
-- The player automatically rolls the dice (or the roll dice button can be introduced)
-- For example, at the start, the player's dice amount number is 3 red, 1 blue, 2 green, 1 yellow. He rolls all the dice at once
-- After the dice are rolled random number is given for each dice between 1-6
-- In this example, player gets 3 red with numbers (5, 2, 4)
+- The player clicks "ROLL DICE" button.
+- If the player starts with a dice total of, for example, 3 red, 1 blue, 2 green, 1 yellow - they will roll all the dice at once.
+- After the dice are rolled, a random number is given for each dice. The total will be, of course, between 1-6.
+- For the sake of this example, let's say the player gets these number totals: 
+- 5, 2, 4
 - 1 blue with number (5)
 - 2 green with number (3, 6)
 - 1 yellow with number (3)
