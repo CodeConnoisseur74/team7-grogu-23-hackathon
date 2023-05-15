@@ -470,6 +470,64 @@ footer {
   text-align: center;
 }
 
+/*========================Rewards===========================*/
+
+#game-hero-img {
+  height: 90%;
+  width: 100%;
+  background-color: aqua;
+}
+
+
+.dice-b-red {
+  border: red 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-blue {
+  border: blue 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-green {
+  border: green 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-yellow {
+  border: yellow 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-black {
+  border: black 1px solid;
+  background-color: #0000002a;
+}
+
+.dice {
+  width: 7vmin;
+  height: 7vmin;
+  margin: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
+}
+
+.reward-option{
+  padding: 20px;
+  border: #000 outset 2px;
+  height: fit-content;
+  border-radius: 10px;
+} 
+
+.stack-top{
+  position: relative;
+  z-index: 9;
+  bottom: 50px;
+  left: 30px;
+}
+
+
+
+
 /*========================Media Queries===========================*/
 
 @media only screen and (max-width: 1200px) {
@@ -691,6 +749,8 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.reward-dice
 
 /*============================ Hero Modal Style ============================*/
 

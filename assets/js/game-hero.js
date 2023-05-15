@@ -184,84 +184,119 @@ function clearHeroProfile() {
 }
 
 function generateRewardObjects() {
-  let rewardsArray = [];
+    let completeRewardHtml = [];
 
-  const colorPrc = currentVillainData.rewardProcentage.color;
-  const blackPrc = currentVillainData.rewardProcentage.black;
-  const healthPrc = currentVillainData.rewardProcentage.health;
-  const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
-  const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
-
-  const redRew = currentVillainData.colorReward.red;
-  const blueRew = currentVillainData.colorReward.blue;
-  const greenRew = currentVillainData.colorReward.green;
-  const yellowRew = currentVillainData.colorReward.yellow;
-
-  for (let i = 0; i < 3; i++) {
-    const randomNo = randomInt(0, 100);
-    let rewardType;
-    if (randomNo < colorPrc) {
-      rewardType = "color";
-    } else if (randomNo < colorPrc + blackPrc) {
-      rewardType = "black";
-    } else if (randomNo < colorPrc + blackPrc + healthPrc) {
-      rewardType = "health";
-    } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
-      rewardType = "extraStorage";
-    } else {
-      rewardType = "extraBlackStorage";
+    for (let i = 0; i < 3; i++) {
+        let rewardType = getRewardType();
+        console.log(rewardType)
+        let colorArray = getDiceColor(rewardType);
+        console.log(colorArray)
+        let rewardHtml = generateRewardHtml(colorArray,rewardType);  
+        
+        completeRewardHtml += rewardHtml
     }
+    console.log(completeRewardHtml)
+    let rewardWrapper = document.getElementById("reward-wrapper");
+    rewardWrapper.innerHTML= completeRewardHtml;
+}
 
-    const randomNo2 = randomInt(0, 100);
+  function getRewardType(){
+    const colorPrc = currentVillainData.rewardProcentage.color;
+    const blackPrc = currentVillainData.rewardProcentage.black;
+    const healthPrc = currentVillainData.rewardProcentage.health;
+    const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
+    const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
+
+    let randomNo = randomInt(0, 100);
+    let rewardType;
+
+    if (randomNo < colorPrc) {
+
+            rewardType = "color";
+        } else if (randomNo < colorPrc + blackPrc) {
+            rewardType = "black";
+        } else if (randomNo < colorPrc + blackPrc + healthPrc) {
+            rewardType = "health";
+        } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
+            rewardType = "extraStorage";
+        } else {
+            rewardType = "extraBlackStorage";
+        }
+
+
+    return rewardType;
+  }
+
+  function getDiceColor(rewardType){
+    const redRew = currentVillainData.colorReward.red;
+    const blueRew = currentVillainData.colorReward.blue;
+    const greenRew = currentVillainData.colorReward.green;
+    const yellowRew = currentVillainData.colorReward.yellow;
+
+
     let diceColors = [];
     let cycles = 0;
+
     rewardType == "color" ? (cycles = 2) : "";
     rewardType == "extraStorage" ? (cycles = 1) : "";
 
-    for (let i = 0; i < cycles; i++) {
-      if (randomNo2 < redRew) {
-        diceColors.push("red");
-      } else if (randomNo2 < redRew + blueRew) {
-        diceColors.push("blue");
-      } else if (randomNo2 < redRew + blueRew + greenRew) {
-        diceColors.push("blue");
-      } else if (randomNo2 < redRew + blueRew + greenRew + yellowRew) {
-        diceColors.push("yellow");
-      } else {
-        diceColors.push("black");
-      }
+
+
+    for (let i = 0; i<cycles; i++) {
+        let randomNo2 = randomInt(0, 100);
+        if(randomNo2 < redRew) {
+            diceColors.push("red");
+        } else if (randomNo2 < redRew + blueRew) {
+            diceColors.push("blue");
+        } else if (randomNo2 < redRew + blueRew + greenRew) {
+            diceColors.push("blue");
+        } else {
+            diceColors.push("yellow");
+        } 
     }
-    let reward;
-    if (rewardType == "black") {
-      reward = `
-        <div class= "reward- black" id="black-reward-dice" onclick="addRewardsToHero(${""})"></div>`;
-    } else if (rewardType == `health`) {
-      reward = `
-        <div class= "reward-life" id="currentLife">
-            <i class="fa-solid fa-heart"> +10 </i>
-        </div>`;
-    } else if (rewardType == "color") {
-      reward = `
-        <div class= "reward-dice ${diceColors[0]}" id="${diceColors[0]}-reward-dice"></div>
-        <div class= "reward-dice ${diceColors[0]}" id="${diceColors[0]}></div>`;
-    } else if (rewardType == "extraStorage") {
-      reward = `
-        <div class= "reward-space ${diceColors[0]}" id="${diceColors[0]}-reward-slot"></div>
-        <div class= "reward-space ${diceColors[0]}" id="${diceColors[0]}-reward-slot"></div>`;
-    }
-    rewardsArray.push(reward);
+    return diceColors;
   }
 
-  console.log(rewardsArray[0]);
-}
+  function generateRewardHtml(colorArray,rewardType){
+    let reward ="";
+    if(rewardType == "black") {
+        reward = `
+        <div class= "reward-life reward-option" id="currentLife">
+            <div class= "dice-black dice" id="black-reward-dice" ">
+        </div>`;
+    } else if(rewardType ==`health`) {
+        reward = `
+        <div class= "reward-life reward-option" id="currentLife">
+            <i class="fa-solid fa-heart"> +10 </i>
+        </div>`;
+    } else if(rewardType =="color"){
+        reward = `
+        <div class= "reward-option">
+            <div class= "dice-${colorArray[0]} dice stack" id="${colorArray[0]}-reward-dice"></div>
+            <div class= "dice-${colorArray[0]} dice stack-top" id="${colorArray[0]}-reward-dice"></div>
+        </div>`
+    } else if(rewardType =="extraStorage"){
+        reward = `
+        <div class= "reward-life reward-option">
+            <div class= "dice dice-b-black" id="black-reward-slot"></div>
+        </div>`;
+    } else {
+        reward = `<div class= "reward-space black" id="black-reward-slot"></div>`
+    }
+    return reward;
 
-console.log(rewarsdArray);
+
+  }
+
+}
 
 //----------------------------------------------------------------
 
-function generateRewards() {
-  let rewardWrapper = document.getElementById("reward-wrapper");
-  for (let i = 0; i < 3; i++) {
-    rewardWrapper.innerHTML += `<div class="reward-box"></div>`;
+function generateRewards(rewardsArray) {
+  
+  console.log(rewardWrapper);
+  rewardWrapper.innerHTML = "";
+  for (let i = 0; i < (rewardsArray.length); i++) {
+    rewardWrapper.innerHTML= (rewardsArray[i]);
   }
-}
+
