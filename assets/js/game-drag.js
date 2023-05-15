@@ -2,9 +2,9 @@
 
 // this is a a file that deals with drag and drop functions
 
-const draggables = document.getElementsByClassName("dice");
-const combatBox = document.getElementsByClassName("combat-box");
-const blenderField = document.querySelector("#blender-area");
+let draggables = document.getElementsByClassName("dice");
+let combatBox = document.getElementsByClassName("combat-box");
+const blenderField = document.getElementById("blender-area");
 const diceField = document.querySelector("#dice-area");
 const screen = document.querySelector("#game-size-container");
 
@@ -25,9 +25,17 @@ function preventOnDragStart(draggables) {
   }
 }
 
+function callAllDragables() {
+  draggables = document.getElementsByClassName("dice");
+  addNewEventListeners("reset");
+}
+
+function callAllDropables() {
+  combatBox = document.querySelectorAll(".combat-box");
+  findDropBoxesCenters();
+}
+
 // add to main loading page
-findDropBoxesCenters();
-addNewEventListeners("add");
 
 // Requires remove/add/reset action to work. effects draggable squares
 function addNewEventListeners(action) {
@@ -55,12 +63,17 @@ function addNewEventListeners(action) {
 
 // reacts when the pointers is pressed on one of the shapes
 function onPointerDown(e) {
-  console.log(e);
-  e.target.setPointerCapture(e.pointerId);
+  // temporary
+  selectHeroButton();
+
   diceCoordinates = {};
 
-  draggableEL = e.target;
+  draggableEL = getTargetElement(e);
+
   const rect = draggableEL.getBoundingClientRect();
+
+  draggableEL.style.width = JSON.parse(JSON.stringify(rect.width)) + `px`;
+  draggableEL.style.height = JSON.parse(JSON.stringify(rect.height)) + `px`;
 
   draggableEL.style.position = "absolute";
   draggableEL.style.zIndex = 1000;
@@ -68,6 +81,9 @@ function onPointerDown(e) {
   // allows pointermove function to set position of shape
   diceCoordinates.draggableOffsetX = e.pageX - rect.left;
   diceCoordinates.draggableOffsetY = e.pageY - rect.top;
+
+  draggableEL.style.left = e.pageX - diceCoordinates.draggableOffsetX + `px`;
+  draggableEL.style.top = e.pageY - diceCoordinates.draggableOffsetY + `px`;
 
   // recording shapeWindow element to use once element is droped otside dropable places
   diceCoordinates.parent = draggableEL.parentElement;
@@ -131,10 +147,9 @@ function pointerup(e) {
   diceField.classList.remove(`highlighted-square`);
 
   draggableEL.style.removeProperty("position");
-  draggableEL.style.removeProperty("z-index");
+  draggableEL.style.zIndex = "auto";
   draggableEL.style.removeProperty("left");
   draggableEL.style.removeProperty("top");
-  draggableEL = "";
 
   // getting mosue cordinates during the drop
   const pointerX = e.pageX;
@@ -143,12 +158,20 @@ function pointerup(e) {
   addNewEventListeners(`reset`);
 
   // drops dice inside new element
+  const dropTarget = getTargetElement(e);
 
   const matchedActiveSquares = findingMacthingSquares(pointerX, pointerY);
-  if (matchedActiveSquares[1]) matchedActiveSquares[0].appendChild(e.target);
+
+  if (matchedActiveSquares[1]) {
+    matchedActiveSquares[0].appendChild(dropTarget);
+    callAllDropables();
+    renderFightingBadges();
+  }
   // cleaning up data after drag ended
   diceCoordinates = {};
   document.removeEventListener("pointermove", pointerMove);
+
+  draggableEL = "";
 
   // cleaning up data after drag ended
   diceCoordinates = {};
@@ -166,10 +189,24 @@ function findDropBoxesCenters() {
   for (let i = 0; i < combatBox.length; i++) {
     const info = recodDropDimentions(combatBox[i]);
 
+    info.color = checkDropAreaColor(combatBox[i]);
+    info.spaceCheck = checkForSpace(combatBox[i]);
+    info.diceScore = calculateBoxesScore(combatBox[i])[0];
+    info.requiredScore = calculateBoxesScore(combatBox[i])[1];
+
     dropBoxesCenters.push(info);
   }
-  dropBoxesCenters.push(recodDropDimentions(blenderField));
-  dropBoxesCenters.push(recodDropDimentions(diceField));
+
+  const info2 = recodDropDimentions(blenderField);
+  info2.color = "universal";
+  info2.spaceCheck = 2;
+  info2.diceScore = 0;
+  dropBoxesCenters.push(info2);
+  const info3 = recodDropDimentions(diceField);
+  info3.color = "universal";
+  info3.spaceCheck = Math.pow(10, 100);
+  info3.diceScore = 0;
+  dropBoxesCenters.push(info3);
 }
 
 function recodDropDimentions(e) {
@@ -215,6 +252,8 @@ function findingMacthingSquares(mouseX, mouseY) {
   // looping thought dragable boxes
   const eDim = diceCoordinates.elementDimentions;
 
+  const dragColor = checkDragableColor();
+
   const boxCenterX = mouseX + eDim.distanceX;
   const boxCenterY = mouseY + eDim.distanceY;
 
@@ -226,10 +265,62 @@ function findingMacthingSquares(mouseX, mouseY) {
     const condition3 = boxCenterY > e.top * 1.01;
     const condition4 = boxCenterY < e.bottom / 1.01;
 
-    if (condition1 && condition2 && condition3 && condition4) {
+    const withinArea = condition1 && condition2 && condition3 && condition4;
+
+    const boxColor = e.color;
+    const spaceCheck = e.spaceCheck;
+
+    const colorCondition = boxColor == "universal" || boxColor == dragColor || dragColor == "black";
+
+    if (withinArea && colorCondition && spaceCheck) {
       matchedActiveSquares = e.element;
     }
   });
   const dropableOrNot = !(matchedActiveSquares === "");
   return [matchedActiveSquares, dropableOrNot];
+}
+
+function getTargetElement(e) {
+  let targetElement;
+  if (e.target.tagName == "div") {
+    targetElement = e.target;
+  } else if (e.target.tagName == "svg") {
+    targetElement = e.target.parentElement;
+  } else if (e.target.tagName == "circle" || e.target.tagName == "path") {
+    targetElement = e.target.parentElement.parentElement;
+  } else {
+    console.error("Error no dragable elemnt was found ");
+  }
+  return targetElement;
+}
+
+function checkCorrectArea() {}
+
+// Records the colour of dragable dice
+function checkDragableColor() {
+  const color = draggableEL.classList[1].split("-")[1];
+  return color;
+}
+
+function checkDropAreaColor(element) {
+  const color = element.classList[1].split("-")[0];
+  return color;
+}
+
+function checkForSpace(element) {
+  const space = element.classList[0].split("-")[1];
+  const ammount = element.children.length;
+
+  return parseInt(space) + 1 > ammount;
+}
+
+function calculateBoxesScore(element) {
+  let childrenSum = 0;
+  const divs = element.getElementsByTagName("div");
+
+  for (let i = 0; i < divs.length; i++) {
+    childrenSum += parseInt(divs[i].getAttribute("data-dice-ammount"));
+  }
+  const parentSum = element.getAttribute("data-area-no");
+  return [childrenSum, parentSum];
 }

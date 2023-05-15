@@ -1,5 +1,6 @@
 /*============================Import fonts============================*/
-@import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap"); */
+@import url('https://fonts.cdnfonts.com/css/star-wars');
 
 /*============================Global style============================*/
 * {
@@ -10,8 +11,9 @@
 }
 
 body {
-  font-family: "Hind Guntur", sans-serif;
-  font-weight: 300;
+  /* font-family: "Hind Guntur", sans-serif; */
+  font-family: 'Star Wars', sans-serif;
+  font-weight: 900;
   color: whitesmoke !important;
   overflow-x: hidden;
   background: url("../images/stars_background.jpg") no-repeat center center fixed;
@@ -19,6 +21,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  padding-top: 10px;
 }
 
 /*=============================Header Style=============================*/
@@ -28,8 +31,6 @@ body {
 }
 .col-8,
 .col-4 {
-  background-color: #00ca00;
-  border: #000 1px solid;
   height: 50%;
 }
 
@@ -43,7 +44,7 @@ h1 {
 }
 
 header nav {
-  float: right;
+  float: left;
   position: relative;
   margin-top: 10px;
 }
@@ -51,32 +52,6 @@ header nav {
 header li a {
   text-decoration: none;
   color: #fff;
-}
-
-.nav-links li {
-  display: inline-block;
-  position: relative;
-  margin: 0 10px;
-  font-size: 18px;
-  padding: 5px 10px;
-}
-
-.nav-links li:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #00ca00;
-  transform-origin: bottom center;
-  transition: transform 0.25s ease-out;
-}
-
-.nav-links li:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
 }
 
 #highscore-btn {
@@ -98,11 +73,12 @@ header li a {
 }
 
 #game-size-container {
-  background-color: #00ca00;
+  background-color: rgba(14, 41, 75, 0.7);
   aspect-ratio: 4/3;
   max-width: 100vw;
   max-height: 100vh;
   touch-action: none;
+  padding: 10px;
 }
 
 /*=======================Modal======================*/
@@ -122,6 +98,21 @@ h2 {
 
 /*============================Dice Container============================*/
 
+.points-badge {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25% !important;
+  z-index: 50;
+}
+
+.score-points {
+  font-size: 0.7rem;
+}
+
 .dice-wrapper {
   display: flex;
   flex-direction: column;
@@ -132,34 +123,29 @@ h2 {
   width: 100%;
   height: 95%;
   border: 1px solid black;
-  background-color: aqua;
+  background-color: rgba(239, 239, 239, 0.5);
   margin-top: 10px;
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  border-radius: 10px;
 }
-
 
 .dice-red {
   background-color: red;
-  color: red;
 }
 .dice-blue {
   background-color: blue;
-  color: blue;
 }
 .dice-green {
   background-color: green;
-  color: green;
 }
 .dice-yellow {
   background-color: yellow;
-  color: yellow;
 }
 .dice-black {
   background-color: black;
-  color: black;
 }
 
 .dice-one,
@@ -176,12 +162,11 @@ h2 {
   padding: 1px 1px;
 }
 
-
 .dice {
   width: 7vmin;
   height: 7vmin;
   margin: 5px;
-  padding: 0.5vmin;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,6 +174,7 @@ h2 {
 }
 
 .dice > svg {
+  margin: 0.7vmin;
   stroke: #fff;
   fill: #fff;
 }
@@ -196,47 +182,77 @@ h2 {
 .dice.dice-yellow > svg {
   stroke: #000000;
   fill: #000000;
-
 }
 
 .blender-area {
-  width: 100%;
+  width: 10vmin;
+  height: 40vmin;
 
   border: 2px solid #fff;
   border-radius: 20px;
   margin-top: 10px;
-}
 
-.blender-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
-.blend-dice-btn {
-  width: 90%;
-  height: 60px;
-  border: 1px solid black;
-  border-radius: 20px;
-  margin-top: 10px;
+.blender-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#blender-outcome {
+  width: 10vmin;
+  height: 10vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#blender-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 10vmin;
+  height: 20vmin;
+}
+
+.highlight-blender {
+  border: 2px solid #ff0000;
 }
 
 #game-button-area {
   height: 100%;
-}
-
-#roll-dice {
-  width: 40%;
-  border-radius: 30px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #fff;
-  background: transparent;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.3rem;
 }
 
 .icon {
   padding: 0 5px;
+}
+
+.in-game-btn {
+  width: 100%;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px outset black;
+  background: transparent;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.in-game-btn:hover {
+  border: 2px inset black;
+  background: rgb(0, 0, 0, 0.1);
 }
 
 .gentle-hover-shake:hover {
@@ -261,7 +277,10 @@ h2 {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63050f4024d766020c8bd418ab1b96088f26f5cc
 /*====================================Combat Box===============================*/
 
 /*====================================Villain Container===============================*/
@@ -272,9 +291,20 @@ h2 {
   min-height: fit-content;
 }
 
+.box-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 #fighting-point-field {
   height: 100%;
-  background-color: rgb(255, 127, 206);
+  background-color: rgba(255, 232, 31, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border-radius: 10px;
 }
 
 .box-row {
@@ -343,16 +373,20 @@ h2 {
   align-items: center;
 }
 
-.villain-img {
-  max-width: 60%;
-  height: auto;
+.villain-desc {
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
 }
 
-.villain-desc {
-  border: 1px solid black;
-  margin: 5px 0;
-  width: fit-content;
-  font-size: 16px;
+#villian-description {
+  margin: 0;
+}
+
+#villain-image {
+  height: 80%;
+  width: 80%;
 }
 
 /*============================Hero Container============================*/
@@ -385,47 +419,8 @@ h2 {
   border-radius: 30px;
 }
 
-#red {
-  border: 1px solid red;
-}
-
-#blue {
-  border: 1px solid blue;
-}
-
-#green {
-  border: 1px solid green;
-}
-
-#yellow {
-  border: 1px solid yellow;
-}
-
-#black {
-  border: 1px solid black;
-}
-
-#red:hover {
-  background-color: red;
-}
-
-#blue:hover {
-  background-color: blue;
-  color: #fff;
-}
-
-#green:hover {
-  background-color: green;
-  color: #fff;
-}
-
-#yellow:hover {
-  background-color: yellow;
-}
-
-#black:hover {
-  background-color: black;
-  color: #fff;
+.highlighted-square {
+  background-color: yellowgreen;
 }
 
 .colour-amount {
@@ -436,7 +431,6 @@ h2 {
 #game-hero-img {
   height: 90%;
   width: 100%;
-  background-color: aqua;
 }
 
 .section {
@@ -452,6 +446,54 @@ h2 {
 footer {
   background-color: rgb(27, 27, 47, 0.9);
   text-align: center;
+}
+
+/*========================Rewards===========================*/
+
+.dice-b-red {
+  border: red 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-blue {
+  border: blue 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-green {
+  border: green 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-yellow {
+  border: yellow 1px solid;
+  background-color: #0000002a;
+}
+.dice-b-black {
+  border: black 1px solid;
+  background-color: #0000002a;
+}
+
+.dice {
+  width: 7vmin;
+  height: 7vmin;
+  margin: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
+}
+
+.reward-option {
+  padding: 20px;
+  border: #000 outset 2px;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.stack-top {
+  position: relative;
+  z-index: 9;
+  bottom: 50px;
+  left: 30px;
 }
 
 /*========================Media Queries===========================*/
@@ -499,10 +541,6 @@ footer {
     margin: 2px;
     width: 100%;
   }
-
-  .blender-area {
-    min-height: 150px;
-  }
 }
 .villain-container {
   margin-top: 5px !important;
@@ -530,6 +568,10 @@ footer {
 
 .full-height {
   height: 100% !important;
+}
+
+.power-badges {
+  width: 100%;
 }
 
 .health-container {
@@ -579,45 +621,75 @@ footer {
   color: #000;
 }
 
+.villain-modal-description > img {
+  width: 100%;
+}
+
 .red-area {
   background-color: red;
 }
+
+.red-area.highlighted-square {
+  background-color: lightcoral;
+}
+
 .blue-area {
   background-color: blue;
 }
+
+.blue-area.highlighted-square {
+  background-color: lightseagreen;
+}
+
 .green-area {
   background-color: green;
+}
+
+.green-area.highlighted-square {
+  background-color: lightgreen;
 }
 
 .yellow-area {
   background-color: yellow;
 }
 
-.size-1 {
-  border: 2px solid black;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
-}
-.size-2 {
-  padding: 10px;
-  border: 2px solid black;
-  width: 100px;
-  height: 50px;
-}
-.size-3 {
-  padding: 10px;
-  border: 2px solid black;
-  width: 150px;
-  height: 50px;
-}
-.size-4 {
-  padding: 10px;
-  border: 2px solid black;
-  width: 100px;
-  height: 100px;
+.yellow-area.highlighted-square {
+  background-color: lightyellow;
 }
 
+<<<<<<< HEAD
+=======
+.black-area {
+  background-color: rgb(0, 0, 0);
+}
+
+.black-area.highlighted-square {
+  background-color: lightslategrey;
+}
+
+.combat-box {
+  margin: 0.5vmin;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.size-1 {
+  border: 2px solid black;
+  width: 8vmin;
+  height: 8.5vmin;
+}
+.size-2 {
+  border: 2px solid black;
+  width: 16vmin;
+  height: 8.5vmin;
+}
+.size-3 {
+  border: 2px solid black;
+  width: 24vmin;
+  height: 8.5vmin;
+}
+
+>>>>>>> 63050f4024d766020c8bd418ab1b96088f26f5cc
 /*  --------------------------   Villain section End------------------------ */
 
 /*============================ Game Modal Style ============================*/
@@ -657,14 +729,12 @@ footer {
   justify-content: space-between;
 }
 
+.reward-dice
+
 /*============================ Hero Modal Style ============================*/
 
 .modal-content .hero-img {
   max-height: 200px;
-}
-
-.highlighted-square {
-  background-color: yellowgreen;
 }
 
 .villain-modal-description {

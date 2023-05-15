@@ -1,37 +1,81 @@
 /*============================Import fonts============================*/
+@import url('https://fonts.cdnfonts.com/css/star-wars');
 @import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap");
 
 /*============================Global style============================*/
 
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Hind Guntur", sans-serif;
-    font-weight: 300;
-    color: whitesmoke !important;
-    overflow-x: hidden;
+  /* font-family: 'Star Wars', sans-serif; */
+  font-family: 'Star Wars', sans-serif;
+  font-weight: 200;
+  letter-spacing: 2px;
+  /* color: whitesmoke !important; */
+  overflow-x: hidden;
+}
+
+.stars {
+  background: url("../images/stars_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+nav {
+  padding-left: 100px !important;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.lightsaber {
+  max-height: 50px;
+}
+
+.rule-container {
+  min-height: 90vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.list-group-item {
+  border: none;
+}
+
+h3, h4, h5, li, p {
+  color: #FFE81F !important;
+}
+
+h1, footer {
+  font-family: 'Star Wars', sans-serif;
+  color: #FFE81F !important;
+}
+
+footer > ul > li > a {
+  color: #FFE81F !important;
+  font-family: "Hind Guntur", sans-serif;
+}
+
+@media screen and (max-width:600px) {
+  .lightsaber {
+    display: none;
   }
 
-  .stars {
-    background: url("../images/stars_background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  body {
+    font-size: 0.8rem;
+    font-family: sans-serif;
   }
+}
 
-  .navbar-brand {
-    font-size: 30px;
+@media screen and (max-width:440px) {
+  body {
+    font-size: 0.6rem;
   }
-
-  .rule-container {
-    background-color: beige;
-    min-height: 90vh;
-    color: #000;
-  }
-  
+}

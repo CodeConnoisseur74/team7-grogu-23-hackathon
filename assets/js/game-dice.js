@@ -4,11 +4,15 @@
 
 const diceArea = document.querySelector("#dice-area");
 const blenderArea = document.querySelector("#blender-area");
+const blenderOutcome = document.querySelector("#blender-outcome");
+const blenderHiglight = document.getElementsByClassName("blender-area");
 
 // -------------------------------------------------
 let currentDiceBoard = [];
 
 let currentBlender = [3, 4];
+
+let blenderResult;
 
 // takes hero avialable dices, rolls them and pushes to dice array
 function rollDices() {
@@ -28,6 +32,7 @@ function rollDices() {
   }
   console.log(currentDiceBoard);
   renderDiceBoard();
+  callAllDragables();
 }
 
 // clears up dice array and html
@@ -69,30 +74,46 @@ function sortArrayByColor() {
 
 // turns dice in the blender to average of 2 dice in to 1 black
 function blendDice() {
-  const blackDice = { color: "black", id: currentGameSettings.diceId };
-  const sum = currentBlender.reduce((a, cV) => a + cV, 0);
-  blackDice.roll = Math.floor(sum / currentBlender.length);
-  const diceWord = setDicePhrase(blackDice.roll);
-  blackDice.dicePhrase = diceWord;
-  currentDiceBoard.push(blackDice);
-  clearBlender();
-  currentGameSettings.diceId++;
-  renderDiceBoard();
+  if (currentBlender.length === 2) {
+    const blackDice = { color: "black", id: currentGameSettings.diceId };
+    const sum = currentBlender.reduce((a, cV) => a + cV, 0);
+    blackDice.roll = Math.floor(sum / currentBlender.length);
+    const diceWord = setDicePhrase(blackDice.roll);
+    blackDice.dicePhrase = diceWord;
+
+    const diceHtml = createDiceHtml(blackDice);
+
+    blenderOutcome.appendChild(diceHtml);
+    clearBlender();
+    currentGameSettings.diceId++;
+    renderDiceBoard();
+    addNewEventListeners("reset");
+  } else {
+    blenderHiglight.classList.add("highlight-blender");
+    setTimeout(() => {
+      blenderHiglight.classList.remove("highlight-blender");
+    }, 1000);
+  }
 }
 
 function renderDiceBoard() {
   diceArea.innerHTML = "";
   for (let i = 0; i < currentDiceBoard.length; i++) {
-    const mainDiv = document.createElement("div");
-    mainDiv.classList.add("dice");
-    mainDiv.classList.add(`dice-${currentDiceBoard[i].color}`);
-    mainDiv.setAttribute("draggable", "true");
-    mainDiv.setAttribute("data-dice-ammount", currentDiceBoard[i].roll);
-    mainDiv.setAttribute("data-dice-id", currentDiceBoard[i].id);
-    const diceSVG = dicePath(currentDiceBoard[i].roll);
-    mainDiv.innerHTML = diceSVG;
+    const mainDiv = createDiceHtml(currentDiceBoard[i]);
     diceArea.appendChild(mainDiv);
   }
+}
+
+function createDiceHtml(element) {
+  const mainDiv = document.createElement("div");
+  mainDiv.classList.add("dice");
+  mainDiv.classList.add(`dice-${element.color}`);
+  mainDiv.setAttribute("draggable", "true");
+  mainDiv.setAttribute("data-dice-ammount", element.roll);
+  mainDiv.setAttribute("data-dice-id", element.id);
+  const diceSVG = dicePath(element.roll);
+  mainDiv.innerHTML = diceSVG;
+  return mainDiv;
 }
 
 function setDicePhrase(diceRoll) {
