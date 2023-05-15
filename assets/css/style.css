@@ -23,6 +23,17 @@ body {
   background-size: cover;
 }
 
+.alert {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.hidden {
+  display: none;
+}
+
 /*=============================Header Style=============================*/
 
 .row {
