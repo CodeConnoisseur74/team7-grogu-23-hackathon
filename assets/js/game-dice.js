@@ -7,12 +7,17 @@ const blenderArea = document.querySelector("#blender-area");
 const blenderOutcome = document.querySelector("#blender-outcome");
 const blenderHiglight = document.getElementsByClassName("blender-area");
 
+const DICES_PER_PAGE = 30;
+
 // -------------------------------------------------
 let currentDiceBoard = [];
 
 let currentBlender;
 
 let blenderResult;
+
+let currentPage = 1;
+
 
 // takes hero avialable dices, rolls them and pushes to dice array
 function rollDices() {
@@ -99,12 +104,61 @@ function blendDice() {
   }
 }
 
-function renderDiceBoard() {
-  for (let i = 0; i < currentDiceBoard.length; i++) {
+
+
+function renderDicePage(pageNumber) {
+  diceArea.innerHTML = "";
+  const startIndex = (pageNumber - 1) * DICES_PER_PAGE;
+  const endIndex = Math.min(startIndex + DICES_PER_PAGE, currentDiceBoard.length);
+  for (let i = startIndex; i < endIndex; i++) {
+
     const mainDiv = createDiceHtml(currentDiceBoard[i]);
     diceArea.appendChild(mainDiv);
   }
 }
+
+function renderDiceBoard() {
+  diceArea.innerHTML = "";
+  const totalPages = Math.ceil(currentDiceBoard.length / DICES_PER_PAGE);
+  let currentPage = 1;
+  renderDicePage(currentPage);
+  if (totalPages > 1) {
+    const pagination = document.createElement("div");
+    pagination.classList.add("pagination");
+    for (let i = 1; i <= totalPages; i++) {
+      const pageLink = document.createElement("a");
+      pageLink.href = "#";
+      pageLink.textContent = i;
+      if (i === currentPage) {
+        pageLink.classList.add("active");
+      }
+      pageLink.addEventListener("click", function() {
+        currentPage = i;
+        renderDicePage(currentPage);
+        const activeLink = pagination.querySelector(".active");
+        if (activeLink) {
+          activeLink.classList.remove("active");
+        }
+        pageLink.classList.add("active");
+      });
+      pagination.appendChild(pageLink);
+    }
+    diceArea.appendChild(pagination);
+  }
+}
+
+
+function createPaginationHtml() {
+  const totalPages = Math.ceil(currentDiceBoard.length / DICES_PER_PAGE);
+  let html = "";
+  for (let i = 1; i <= totalPages; i++) {
+    const isActive = i === currentPage ? "active" : "";
+    html += `<button class="${isActive}" onclick="currentPage = ${i}; renderDiceBoard()">${i}</button>`;
+  }
+  return html;
+}
+
+
 
 function createDiceHtml(element) {
   const mainDiv = document.createElement("div");
