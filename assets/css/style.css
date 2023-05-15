@@ -168,16 +168,47 @@ h2 {
 }
 
 .blender-area {
-  width: 100%;
+
+
+  width: 10vmin;
+  height: 40vmin;
+
   border: 2px solid #fff;
   border-radius: 20px;
   margin-top: 10px;
-}
 
-.blender-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.blender-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#blender-outcome {
+  width: 10vmin;
+  height: 10vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#blender-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 10vmin;
+  height: 20vmin;
+}
+
+.highlight-blender {
+  border: 2px solid #ff0000;
 }
 
 #game-button-area {
@@ -232,7 +263,6 @@ h2 {
   }
 }
 
-
 /*====================================Combat Box===============================*/
 
 /*====================================Villain Container===============================*/
@@ -243,17 +273,20 @@ h2 {
   min-height: fit-content;
 }
 
-
 .box-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-  
+
 #fighting-point-field {
   height: 100%;
   background-color: rgb(255, 127, 206);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .box-row {
@@ -327,14 +360,13 @@ h2 {
   padding: 5px;
   width: 100%;
   font-size: 16px;
-  
 }
 
-#villian-description{
+#villian-description {
   margin: 0;
 }
 
-#villain-image{
+#villain-image {
   height: 80%;
   width: 80%;
 }
@@ -367,6 +399,10 @@ h2 {
   padding: 10px 0px;
   margin: 10px;
   border-radius: 30px;
+}
+
+.highlighted-square {
+  background-color: yellowgreen;
 }
 
 #red {
@@ -483,10 +519,6 @@ footer {
     margin: 2px;
     width: 100%;
   }
-
-  .blender-area {
-    min-height: 150px;
-  }
 }
 .villain-container {
   margin-top: 5px !important;
@@ -566,40 +598,61 @@ footer {
 .red-area {
   background-color: red;
 }
+
+.red-area.highlighted-square {
+  background-color: lightcoral;
+}
+
 .blue-area {
   background-color: blue;
 }
+
+.blue-area.highlighted-square {
+  background-color: lightseagreen;
+}
+
 .green-area {
   background-color: green;
+}
+
+.green-area.highlighted-square {
+  background-color: lightgreen;
 }
 
 .yellow-area {
   background-color: yellow;
 }
 
+.yellow-area.highlighted-square {
+  background-color: lightyellow;
+}
+
+.black-area {
+  background-color: rgb(0, 0, 0);
+}
+
+.black-area.highlighted-square {
+  background-color: lightslategrey;
+}
+
+.combat-box {
+  margin: 0.5vmin;
+}
+
 .size-1 {
   border: 2px solid black;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
+  width: 9vmin;
+  height: 9vmin;
 }
 .size-2 {
-  padding: 10px;
   border: 2px solid black;
-  width: 100px;
-  height: 50px;
+  width: 18vmin;
+  height: 9vmin;
 }
 .size-3 {
-  padding: 10px;
   border: 2px solid black;
-  width: 150px;
-  height: 50px;
-}
-.size-4 {
-  padding: 10px;
-  border: 2px solid black;
-  width: 100px;
-  height: 100px;
+  width: 27vmin;
+  height: 9vmin;
 }
 
 /*  --------------------------   Villain section End------------------------ */
@@ -645,10 +698,6 @@ footer {
 
 .modal-content .hero-img {
   max-height: 200px;
-}
-
-.highlighted-square {
-  background-color: yellowgreen;
 }
 
 .villain-modal-description {
