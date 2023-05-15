@@ -21,22 +21,25 @@ let currentPage = 1;
 
 // takes hero avialable dices, rolls them and pushes to dice array
 function rollDices() {
-  const data = currentGameHeroData.diceAmount;
+  if (currentGameSettings.rollAvialable) {
+    const data = currentGameHeroData.diceAmount;
 
-  const colors = ["red", "blue", "green", "yellow", "black"];
+    const colors = ["red", "blue", "green", "yellow", "black"];
 
-  for (let color of colors) {
-    for (let i = 0; i < data[color]; i++) {
-      const diceRoll = randomInt(1, 6);
+    for (let color of colors) {
+      for (let i = 0; i < data[color]; i++) {
+        const diceRoll = randomInt(1, 6);
 
-      const diceWord = setDicePhrase(diceRoll);
+        const diceWord = setDicePhrase(diceRoll);
 
-      const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++, dicePhrase: diceWord };
-      currentDiceBoard.push(object);
+        const object = { roll: diceRoll, color: color, id: currentGameSettings.diceId++, dicePhrase: diceWord };
+        currentDiceBoard.push(object);
+      }
     }
+    renderDiceBoard();
+    callAllDragables();
   }
-  renderDiceBoard();
-  callAllDragables();
+  currentGameSettings.rollAvialable = false;
 }
 
 // clears up dice array and html
@@ -101,11 +104,14 @@ function blendDice() {
   }
 }
 
+
+
 function renderDicePage(pageNumber) {
   diceArea.innerHTML = "";
   const startIndex = (pageNumber - 1) * DICES_PER_PAGE;
   const endIndex = Math.min(startIndex + DICES_PER_PAGE, currentDiceBoard.length);
   for (let i = startIndex; i < endIndex; i++) {
+
     const mainDiv = createDiceHtml(currentDiceBoard[i]);
     diceArea.appendChild(mainDiv);
   }

@@ -167,6 +167,7 @@ function pointerup(e) {
     matchedActiveSquares[0].appendChild(dropTarget);
     callAllDropables();
     renderFightingBadges();
+    setLocalStorage();
   }
   // cleaning up data after drag ended
   diceCoordinates = {};

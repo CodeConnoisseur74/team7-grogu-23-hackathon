@@ -1,6 +1,6 @@
 /*============================Import fonts============================*/
 /* @import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300&family=Marmelad&family=Poller+One&display=swap"); */
-@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url("https://fonts.cdnfonts.com/css/star-wars");
 
 /*============================Global style============================*/
 * {
@@ -12,7 +12,7 @@
 
 body {
   /* font-family: "Hind Guntur", sans-serif; */
-  font-family: 'Star Wars', sans-serif;
+  font-family: "Star Wars", sans-serif;
   font-weight: 900;
   color: whitesmoke !important;
   overflow-x: hidden;
@@ -663,6 +663,7 @@ footer {
 .yellow-area.highlighted-square {
   background-color: lightyellow;
 }
+
 
 .black-area {
   background-color: rgb(0, 0, 0);
