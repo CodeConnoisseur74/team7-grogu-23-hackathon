@@ -224,18 +224,6 @@ function getRewardType() {
 
   return rewardType;
 }
-    if (randomNo < colorPrc) {
-            rewardType = "color";
-        } else if (randomNo < colorPrc + blackPrc) {
-            rewardType = "black";
-        } else if (randomNo < colorPrc + blackPrc + healthPrc) {
-            rewardType = "health";
-        } else {
-            rewardType = "extraStorage";
-        }
-  
-    return rewardType;
-  }
 
 function getDiceColor(rewardType) {
   const redRew = currentVillainData.colorReward.red;
@@ -264,39 +252,39 @@ function getDiceColor(rewardType) {
   return diceColors;
 }
 
-  function generateRewardHtml(colorArray,rewardType){
-    let reward ="";
-    if(rewardType == "black") {
-        reward = `
+function generateRewardHtml(colorArray, rewardType) {
+  let reward = "";
+  if (rewardType == "black") {
+    reward = `
         <div class= "reward-life reward-option" id="currentLife" onclick="saveRewardChoices('black', null)" >
             <div class= "dice-black dice" id="black-reward-dice" ">
         </div>`;
-    } else if(rewardType ==`health`) {
-        reward = `
+  } else if (rewardType == `health`) {
+    reward = `
         <div class= "reward-life reward-option" id="currentLife" onclick="saveRewardChoices('currentLife', null)">
             <i class="fa-solid fa-heart"> +10 </i>
         </div>`;
-    } else if(rewardType =="color"){
-        reward = `
+  } else if (rewardType == "color") {
+    reward = `
         <div class= "reward-option" onclick="saveRewardChoices('${colorArray[0]}', '${colorArray[1]}')">
             <div class= "dice-${colorArray[0]} dice stack" id="${colorArray[0]}-reward-dice"></div>
             <div class= "dice-${colorArray[1]} dice stack-top" id="${colorArray[1]}-reward-dice"></div>
-        </div>`
-    } else {
-        reward = `
+        </div>`;
+  } else {
+    reward = `
         <div class= "reward-option" onclick="saveRewardChoices('${colorArray[0]}', 'diceLimit')">
           <div class= "dice-b-${colorArray[0]} dice" id="${colorArray[0]}-reward-storage"></div>
-        </div>`;update
-    }
-    return reward;
+        </div>`;
+    update;
   }
-
+  return reward;
+}
 
 //----------------------------------------------------------------
 let rewardOfChoice;
 function saveRewardChoices(main, secondary) {
   rewardOfChoice = [main, secondary];
-  console.log(rewardOfChoice)
+  console.log(rewardOfChoice);
 }
 
 function updateHeroData() {
@@ -313,21 +301,24 @@ function updateHeroData() {
   let blackLimit = currentGameHeroData.diceLimit.black;
 
   let life = currentGameHeroData.currentLife;
-  
-  if (rewardOfChoice.includes("black")){
+
+  if (rewardOfChoice.includes("black")) {
     blackPower += 1;
-    if (blackPower>blackLimit){
-      blackPower = blackLimit; 
-    }} else if (rewardOfChoice.includes("diceLimit")){
-      let limitType = (rewardOfChoice[0]) + "Limit";
-      ConsoleLog(limitType);
-      limitType+= 1; 
-    } else if (rewardOfChoice.includes("currentLife")){
-      currentGameHeroData.currentLife +=;
-      let limitType = (rewardOfChoice[0]) + "Limit";
-      ConsoleLog(limitType);
-      limitType+= 1;
-    };elif (rewardOfChoice.includes("diceLimit")){
-      let limitType = (rewardOfChoice[0]) + "Limit";
-      ConsoleLog(limitType);
-      limitType+= 1;}
+    if (blackPower > blackLimit) {
+      blackPower = blackLimit;
+    }
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  } else if (rewardOfChoice.includes("currentLife")) {
+    currentGameHeroData.currentLife += "";
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  } else if (rewardOfChoice.includes("diceLimit")) {
+    let limitType = rewardOfChoice[0] + "Limit";
+    ConsoleLog(limitType);
+    limitType += 1;
+  }
+}
