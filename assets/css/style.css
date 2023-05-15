@@ -471,17 +471,6 @@ footer {
   background-color: #0000002a;
 }
 
-.dice {
-  width: 7vmin;
-  height: 7vmin;
-  margin: 5px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15%;
-}
-
 .reward-option {
   padding: 20px;
   border: #000 outset 2px;
