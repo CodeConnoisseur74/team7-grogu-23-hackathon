@@ -43,7 +43,7 @@ h1 {
 }
 
 header nav {
-  float: right;
+  float: left;
   position: relative;
   margin-top: 10px;
 }
@@ -51,32 +51,6 @@ header nav {
 header li a {
   text-decoration: none;
   color: #fff;
-}
-
-.nav-links li {
-  display: inline-block;
-  position: relative;
-  margin: 0 10px;
-  font-size: 18px;
-  padding: 5px 10px;
-}
-
-.nav-links li:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #00ca00;
-  transform-origin: bottom center;
-  transition: transform 0.25s ease-out;
-}
-
-.nav-links li:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
 }
 
 #highscore-btn {
