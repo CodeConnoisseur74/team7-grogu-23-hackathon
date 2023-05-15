@@ -1,381 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Bootstrap-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <!--Personal CSS-->
     <link rel="stylesheet" href="assets/css/index.css" />
     <title>Document</title>
-  </head>
-  <body class="stars">
+</head>
+
+<body class="stars">
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <h1><a class="navbar-brand" href="index.html">Star Dice</a></h1>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="game.html">Game</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="highscore.html">Highscores </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-capitalize" href="game.html"
-                  >start new game</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <h1><a class="navbar-brand" href="index.html">Star Dice</a></h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="game.html">Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="highscore.html">Highscores </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-capitalize" href="game.html">start new game</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <div class="container-fluid pt-5 text-color">
-      <div class="row">
-        <div class="col-10 offset-1 rule-container">
-          <h1 class="text-center mt-3">Star Dice Rules</h1>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-6 hero-rules">
-                <h4 class="text-center">
-                  Hero<span
-                    ><img
-                      class="lightsaber"
-                      src="assets/images/blue_lightsaber.png"
-                      alt=""
-                  /></span>
-                </h4>
-                <ul class="list-group border-0">
-                  <li class="list-group-item bg-transparent">
-                    Has preset starting number of 4 different colors “dices”
-                    minimum 1 maximum 3
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Some of the hero profiles have also black but have fewer of
-                    the standard ones
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Each hero has a different setup with different strengths and
-                    weaknesses
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    The amount of dice each hero can accumulate is different but
-                    the space can be given as a reward as well
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    The black dice are given either for specific heroes (or
-                    later as a reward)
-                  </li>
-                </ul>
-              </div>
-              <div class="col-6 villain-rules">
-                <h4 class="text-center">
-                  Villain<span
-                    ><img
-                      class="lightsaber"
-                      src="assets/images/red_lightsaber.png"
-                      alt=""
-                  /></span>
-                </h4>
-                <ul class="list-group">
-                  <li class="list-group-item bg-transparent">
-                    Has random rectangles representing fighting points based on
-                    4 colors
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Each rectangle can be a size of 1-4 representing how many
-                    dices maximum can be used to fight it.
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    A rectangle of 1 size number is between 1-6
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    The bigger rectangle range is multiplied by size:
-                    <ul>
-                      <li>Size 2 range 2-12</li>
-                      <li>Size 3 range 3-18</li>
-                      <li>Size 4 range 4-24</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+        <div class="row">
+            <div class="col-10 offset-1 rule-container">
+                <h1 class="text-center mt-3">Star Dice Rules</h1>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 hero-rules">
+                            <h4 class="text-center">
+                                Hero<span><img class="lightsaber" src="assets/images/blue_lightsaber.png"
+                                        alt="" /></span>
+                            </h4>
+                            <ul class="list-group border-0">
+                                <li class="list-group-item bg-transparent">
+                                    The player begins with a set of dice
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Each hero has varying sets of strengths and weaknesses.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    The amount of dice each hero can accumulate varies.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Some of the hero profiles have a special black (wild) dice, in exchange for fewer of
+                                    the standard colors.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    The black dice are given either in the beginning - for specific heroes, or later -
+                                    as a reward.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 villain-rules">
+                            <h4 class="text-center">
+                                Villain<span><img class="lightsaber" src="assets/images/red_lightsaber.png"
+                                        alt="" /></span>
+                            </h4>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent">
+                                    The Villain segment contains 3 randomely colored rectangles, representing their
+                                    fighting power points.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Each rectangle can be 1-4 dice wide, instructing how many dice can be used to fight
+                                    it.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    A rectangle, the size of one dice, can contain a fighting power number between 1-6.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    The bigger rectangles muliply their range, accoring to their size:
+                                    <ul>
+                                        <li>Size of 2 dice ranges between 2-12 fighting points</li>
+                                        <li>Size of 3 dice ranges between 3-18 fighting points</li>
+                                        <li>Size of 4 dice ranges between 4-24 fighting points</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mt-2">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h4>Begin the game:</h4>
+                            <p>
+                                Player chooses a Hero to play for the duration of the game.
+                            </p>
+                        </div>
+                        <div class="col-8 offset-2">
+                            <h4 class="text-center">Start of turn:</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent">
+                                    The player clicks "ROLL DICE" button.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    If the player starts with a dice total of, for example, 3 red, 1 blue, 2 green, 1
+                                    yellow - they will roll all the dice at once.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    After the dice are rolled, a random number is given for each dice. The total will
+                                    be, of course, between 1-6.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    For the sake of this example, let's say the player gets these number totals:
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    3 red: 5, 2, 4
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    1 blue: 5
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    2 green: 3, 6
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    1 yellow: 3
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-10 offset-1 mt-2">
+                            <h4 class="text-capitalize text-center">Player's choice:</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent">
+                                    Our Hero (the player) uses their rolled dice totals to match their Villain's
+                                    fighting points.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Example: Villain has a red rectangle of 3 spaces with the number 10 (or any possible
+                                    random total, between 3-18) player uses their red dice (5, 2, 4) to total together
+                                    11 fighting points. Since, in this example, the Villain had only 10 red fighting
+                                    points, our Hero gains a successful defeat.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    In the same turn, we see that the Villain has a 2 blue rectangles, with a total of 7
+                                    fighting points. The player would use their blue dice (5), but we see they do not
+                                    have enough blue dice to fill both and match the 7 oposing fighting points. They
+                                    have only enough for 5/7.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    The Villain also has a yellow square of 1 space, with 4 fighting points. The player
+                                    can use their yellow dice total (3) to fight back. But, again, they only have 3
+                                    fighting points to match their opponenet's 4.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Every point that is not matched and defeated at the end of the turn is deducted from
+                                    the player's total hitpoints. In this example, they could only match 5 of 7 blue =
+                                    score player would lose 2 life points. Yellow matched 3 of 4 fighting points =
+                                    player would lose 1 life point.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    For every fighting point matched and defeated, the player gets a point for their
+                                    high score. In this example, a total of 11/10 = 10 points, 5/7 = 5 points, 3/4 = 3
+                                    points: total of 18 points.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Every point that is over the limit of needed fighting points rewards the player with
+                                    double points 11/10 (1 over limit) = 2 points.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    This example player's total high score is 20 points!
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Finally, the villain has no green rectangles (therefore, no green fighting points),
+                                    and since the player has 2 green leftover dice (3, 6) they have a few choices:
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Either keep the dice and use them on the next game round, essentially having next
+                                    turn 4 green dices, 2 from round 1 and 2 from round 2
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Or the player can throw the 2 excess dice into a the blender and get their combined
+                                    average in a black colored dice. For Example (3, 6) green would turn into (4) black.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    If the player chooses to use the blender and now has a black (4) in hand, they now
+                                    have a choice to use it as, essentially, a wild card.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mt-2">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="text-capitalize text-center">Black dice:</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent">
+                                    The blender can take any mix-and-match colors, not limited to 2 of the same color.
+                                    For example, a player could mix one blue and one red and get black dice in return
+                                    for that combination.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    Black dice are more valuable because they can be used as any color, unlike the
+                                    others which have to match their opponent's fighting points. Black dice can also be
+                                    used in the blender in combination with its own or any other color to produce
+                                    another black.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mt-2">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="text-center">End of round:</h4>
+                            <ul class="list-group">
+                                <h5>
+                                    Once a player is satisfied with their decisions, they can choose to end the round.
+                                </h5>
+                                <li class="list-group-item bg-transparent">
+                                    All high score points are automatically calculated, as per the previous explanation.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    The player is then presented with a choice of reward for surviving the round! Hooray!
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    2 standard color dice (chosen at random
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    1 additional space for dice storage container (chosen at random)
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    1 black dice
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    10 life points
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="container-fluid mt-2">
-            <div class="row">
-              <div class="col-12 text-center">
-                <h4>Start of The Game</h4>
-                <p>
-                  Player chooses one of many Heroes to play for the whole game.
-                </p>
-              </div>
-              <div class="col-8 offset-2">
-                <h4 class="text-center">Start of Turn</h4>
-                <ul class="list-group">
-                  <li class="list-group-item bg-transparent">
-                    The player automatically rolls the dice (or the roll dice
-                    button can be introduced)
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    For example, at the start, the player's dice amount number
-                    is 3 red, 1 blue, 2 green, 1 yellow. He rolls all the dice
-                    at once
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    After the dice are rolled random number is given for each
-                    dice between 1-6
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    In this example, player gets 3 red with numbers (5, 2, 4)
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    1 blue with number (5)
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    2 green with number (3, 6)
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    1 yellow with number (3)
-                  </li>
-                </ul>
-              </div>
-              <div class="col-10 offset-1 mt-2">
-                <h4 class="text-capitalize text-center">player choice</h4>
-                <ul class="list-group">
-                  <li class="list-group-item bg-transparent">
-                    The player uses rolled dice to match villains fighting
-                    points
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Example: villain has a red rectangle of 3 spaces with the
-                    number 10 (possibly between 3-18) player uses his rolled
-                    dices of red combined (5, 2, 4) to make 11 essentially
-                    defending from villain with having more than required points
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Also, the villain has a rectangle of blue of 2 spaces with
-                    the number 7. Player uses blue dice he has of (5) to fill in
-                    but he does not have enough blue dices to fill and match no
-                    7 and having 5/7
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    villain also has the yellow square of 1 space with number 4
-                    and the player can use his yellow dice of (3) to fight back
-                    making ¾
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Every point that is not filled at the end of the turn is
-                    deducted from the player's hitpoints in this example 5/7
-                    blue score player would lose 2 life points plus ¾ player
-                    would lose 1 life point.
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    For every fighting point fight player gets a point for his
-                    high score in total 11/10 = 10 points, 5/7= 5 points,¾ = 3
-                    points, total 18 points
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Additionally every point that is over the limit rewards
-                    double points 11/10 = 1 over limit = 2 extra points.
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Total high score points 20
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Finally, the villain has no green fight points, and since
-                    the player has 2 green leftover dice of (3, 6) he has few
-                    choices:
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Either keep the dices and use it on the next game round,
-                    essentially having next turn 4 green dices, 2 from round 1
-                    and 2 from round 2
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    The player also can choose to throw 2 dice into a bucket and
-                    get the average (lowered down) number of both dice in black
-                    color For Example (3, 6) green would turn into (4) black,
-                    (see below for black dice)
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    With (4) black, in hand player has now a choice to use it
-                    maybe instead of yellow or add it extra to blue making 4/4
-                    yellow, and save yellow dice for a later round or 5+4/7 for
-                    blue making 9/7, in both cases saving some life points and
-                    earning extra points
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="container-fluid mt-2">
-            <div class="row">
-              <div class="col">
-                <h4 class="text-capitalize text-center">Black dice</h4>
-                <ul class="list-group">
-                  <li class="list-group-item bg-transparent">
-                    The bucket can take any mix-or-match colors, not necessarily
-                    2 of the same color. For example, you can mix one blue and
-                    one red and get black dice instead.
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    Black dice are more valuable because they can be used on any
-                    color, unlike others that have to match. Black would also be
-                    able to use in the buckets to turn into another black. For
-                    example, you can throw in tho a bucket (1) black and (6) red
-                    to get (3) black and use it to cover some space that
-                    requires 3 or 2
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="container-fluid mt-2">
-            <div class="row">
-              <div class="col">
-                <h4 class="text-center">End of round</h4>
-                <ul class="list-group">
-                  <h5>
-                    Once a player has made all decisions he can end round and
-                    this happens:
-                  </h5>
-                  <li class="list-group-item bg-transparent">
-                    All high score points are calculated as per the previous
-                    explanation
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    The reward is given to a player. The choices should be made
-                    at this point regarding what reward the player can take of
-                    either: of 3 choices
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    2 standard color dices (chosen at random, some opponents
-                    have bigger chances for specific colors)
-                  </li>
-                  <li class="list-group-item bg-transparent">
-                    1 additional space for dice storage (chosen random color out
-                    of all 5 colors)
-                  </li>
-                  <li class="list-group-item bg-transparent">1 black dice</li>
-                  <li class="list-group-item bg-transparent">
-                    Life restoration
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
     <footer class="py-3 my-4">
-      <h5 class="text-center">Jedis</h5>
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/sherry-andrews-bhutia/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Sherry Andres Bhutia</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/berat-zorlu/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Berat Zorlu</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/niclastanskanen/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Niclas Tanskanen</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/danni-power-44a4601b5/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Danni Power</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/oluwaseun-omisakin-493765133/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Oluwaseun Omisakin</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/erikas-ramanauskas/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Erikas Ramanauskas</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/krystal-juvrud/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Krystal Juvrud</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/renaldas-bendikas-100ab01a0/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Renaldas Bendikas</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://www.linkedin.com/in/hilla-muraja/"
-            class="nav-link px-2 text-light"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i> Hilla Muraja</a
-          >
-        </li>
-      </ul>
-      <p class="text-center text-light">
-        © 2023 <br />
-        Team 7 Grogu Code Institute Hackathon
-      </p>
+        <h5 class="text-center">Jedis</h5>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/sherry-andrews-bhutia/" class="nav-link px-2 text-light"
+                    target="_blank"><i class="bi bi-linkedin"></i> Sherry Andres Bhutia</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/berat-zorlu/" class="nav-link px-2 text-light" target="_blank"><i
+                        class="bi bi-linkedin"></i> Berat Zorlu</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/niclastanskanen/" class="nav-link px-2 text-light"
+                    target="_blank"><i class="bi bi-linkedin"></i> Niclas Tanskanen</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/danni-power-44a4601b5/" class="nav-link px-2 text-light"
+                    target="_blank"><i class="bi bi-linkedin"></i> Danni Power</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/oluwaseun-omisakin-493765133/" class="nav-link px-2 text-light"
+                    target="_blank"><i class="bi bi-linkedin"></i> Oluwaseun Omisakin</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/erikas-ramanauskas/" class="nav-link px-2 text-light"
+                    target="_blank"><i class="bi bi-linkedin"></i> Erikas Ramanauskas</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/krystal-juvrud/" class="nav-link px-2 text-light"
+                    target="_blank"><i class="bi bi-linkedin"></i> Krystal Juvrud</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/renaldas-bendikas-100ab01a0/" class="nav-link px-2 text-light"
+                    target="_blank"><i class="bi bi-linkedin"></i> Renaldas Bendikas</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/hilla-muraja/" class="nav-link px-2 text-light" target="_blank"><i
+                        class="bi bi-linkedin"></i> Hilla Muraja</a>
+            </li>
+        </ul>
+        <p class="text-center text-light">
+            © 2023 <br />
+            Team 7 Grogu Code Institute Hackathon
+        </p>
     </footer>
     <!--Bootstrap-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
