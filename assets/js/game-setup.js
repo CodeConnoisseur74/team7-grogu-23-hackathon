@@ -155,3 +155,31 @@ function getLocalStorage() {
 
   return [currentGameSettings, currentGameHeroData, currentVillainData, currentDiceBoard];
 }
+
+function modalControl(status) {
+  const hero = document.getElementById("select-hero-modal");
+  const villain = document.getElementById("villain-Modal");
+  const meniu = document.getElementById("Menu-modal-body");
+  const rewards = document.getElementById("gameOverModalLabel");
+  if (status == "hero") {
+    hero.classList.add("hiden");
+    villain.classList.remove("hiden");
+    meniu.classList.remove("hiden");
+    rewards.classList.remove("hiden");
+  } else if (status == "villain") {
+    hero.classList.remove("hiden");
+    villain.classList.add("hiden");
+    meniu.classList.remove("hiden");
+    rewards.classList.remove("hiden");
+  } else if (status == "meniu") {
+    hero.classList.remove("hiden");
+    villain.classList.remove("hiden");
+    meniu.classList.add("hiden");
+    rewards.classList.remove("hiden");
+  } else if (status == "rewards") {
+    hero.classList.remove("hiden");
+    villain.classList.remove("hiden");
+    meniu.classList.remove("hiden");
+    rewards.classList.add("hiden");
+  }
+}

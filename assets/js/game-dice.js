@@ -18,7 +18,6 @@ let blenderResult;
 
 let currentPage = 1;
 
-
 // takes hero avialable dices, rolls them and pushes to dice array
 function rollDices() {
   if (currentGameSettings.rollAvialable) {
@@ -94,7 +93,6 @@ function blendDice() {
     blenderOutcome.appendChild(diceHtml);
     clearBlender();
     currentGameSettings.diceId++;
-    renderDiceBoard();
     addNewEventListeners("reset");
   } else {
     blenderHiglight.classList.add("highlight-blender");
@@ -104,14 +102,11 @@ function blendDice() {
   }
 }
 
-
-
 function renderDicePage(pageNumber) {
   diceArea.innerHTML = "";
   const startIndex = (pageNumber - 1) * DICES_PER_PAGE;
   const endIndex = Math.min(startIndex + DICES_PER_PAGE, currentDiceBoard.length);
   for (let i = startIndex; i < endIndex; i++) {
-
     const mainDiv = createDiceHtml(currentDiceBoard[i]);
     diceArea.appendChild(mainDiv);
   }
@@ -132,7 +127,7 @@ function renderDiceBoard() {
       if (i === currentPage) {
         pageLink.classList.add("active");
       }
-      pageLink.addEventListener("click", function() {
+      pageLink.addEventListener("click", function () {
         currentPage = i;
         renderDicePage(currentPage);
         const activeLink = pagination.querySelector(".active");
@@ -147,7 +142,6 @@ function renderDiceBoard() {
   }
 }
 
-
 function createPaginationHtml() {
   const totalPages = Math.ceil(currentDiceBoard.length / DICES_PER_PAGE);
   let html = "";
@@ -157,8 +151,6 @@ function createPaginationHtml() {
   }
   return html;
 }
-
-
 
 function createDiceHtml(element) {
   const mainDiv = document.createElement("div");

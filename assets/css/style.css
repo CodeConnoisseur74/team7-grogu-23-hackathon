@@ -521,11 +521,11 @@ footer {
   .villain-desc {
     font-size: 0.8rem;
   }
-  
+
   #game-button-area {
     font-size: 0.8rem;
   }
-  
+
   .in-game-btn {
     font-size: 0.8rem;
   }
@@ -653,7 +653,6 @@ footer {
   background-color: lightyellow;
 }
 
-
 .black-area {
   background-color: rgb(0, 0, 0);
 }
@@ -733,16 +732,15 @@ footer {
   color: white;
 }
 
-
 @media only screen and (max-width: 990px) {
   .villain-desc {
     font-size: 0.6rem;
   }
-  
+
   #game-button-area {
     font-size: 0.6rem;
   }
-  
+
   .in-game-btn {
     font-size: 0.6rem;
   }
@@ -755,4 +753,8 @@ footer {
 
 .new-game {
   cursor: pointer;
+}
+
+.hiden {
+  display: hidden;
 }
