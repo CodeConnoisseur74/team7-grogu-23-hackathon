@@ -26,6 +26,7 @@ window.addEventListener("load", () => {
   addNewEventListeners("add");
   callAllDropables();
   renderModalHeroes();
+  renderVillainModal();
 });
 
 function endRound() {
@@ -81,9 +82,7 @@ function calculateScoreAndHealth() {
 
   for (let i = 0; i < dropBoxesCenters; i++) {
     score += dropBoxesCenters.diceScore;
-
     const total = parseInt(dropBoxesCenters.requiredScore) - dropBoxesCenters.diceScore;
-
     // either get exta points or lose  health
     total > 0 ? (score += total * 2) : (healthLoss += total);
   }
@@ -91,4 +90,16 @@ function calculateScoreAndHealth() {
   currentGameSettings.currentHealth += healthLoss;
 
   lastScore += score;
+}
+
+function selectVillain() {
+  const villainHTMLArray = document.getElementsByClassName("villain-modal-description");
+  let activeVillain;
+  for (let i = 0; i < villainHTMLArray.length; i++) {
+    const contains = villainHTMLArray[i].classList.contains("active");
+    if (contains) {
+      activeVillain = villainHTMLArray[i].getAttribute("data-villain-id");
+      renderVillian(activeVillain);
+    }
+  }
 }

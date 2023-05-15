@@ -5,8 +5,6 @@ const villainModalBody = document.querySelector("#villain-modal-body");
 
 // ..............................................................................................
 
-let currentVillainData = {};
-
 const villainlist = [
   {
     name: "Darth Veder",
@@ -159,6 +157,8 @@ const villainlist = [
   },
 ];
 
+let currentVillainData = {};
+
 /**
  * chooses villian randomly from the list provided
  * pushes two villian onto the choice list
@@ -189,7 +189,7 @@ function renderVillainModal() {
     const pictureDiv = document.createElement("img");
     const titleDiv = document.createElement("h5");
     const descriptionDiv = document.createElement("div");
-    mainDiv.setAttribute("onclick", `renderVillian(${i})`);
+    mainDiv.setAttribute("data-villain-id", `${i}`);
     let activeImage = i == 0 ? "active" : "not-active";
     mainDiv.classList.add("carousel-item", `${activeImage}`, "villain-modal-description");
 
@@ -209,7 +209,6 @@ function renderVillainModal() {
     villainModalBody.appendChild(mainDiv);
   }
 }
-renderVillainModal();
 
 function renderVillian(index) {
   currentVillainData = villianChoice[index];
