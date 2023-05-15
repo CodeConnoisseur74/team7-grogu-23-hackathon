@@ -19,11 +19,12 @@ const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + mi
 
 window.addEventListener("load", () => {
   addNewEventListeners("add");
-  findDropBoxesCenters();
+  callAllDropables();
+  renderModalHeroes();
 });
 
 function endRound() {
-  generateRewardObjects()
+  generateRewardObjects();
   // calculateHealth(); // Not done yet
   // calculateScoreGained(); // Not done yet
   // renderGameScore(); // Not done yet
@@ -42,4 +43,30 @@ function clearVillainProfile() {
   const villianDescription = document.getElementById("villian-description");
   villianImage.innerHTML = "";
   villianDescription.innerHTML = "";
+}
+
+function openHeroModal() {
+  const heroModal = new bootstrap.Modal(document.getElementById("selectHeroModal"), {
+    keyboard: false,
+  });
+
+  const menuModal = new bootstrap.Modal(document.getElementById("modalMenu"), {
+    keyboard: false,
+  });
+
+  heroModal.show();
+  menuModal.hide();
+}
+
+function selectHeroButton() {
+  const herroHTMLArray = document.getElementsByClassName("selectHero");
+  let activeHero;
+  for (let i = 0; i < herroHTMLArray.length; i++) {
+    if (herroHTMLArray[i].classList.length == 3) {
+      activeHero = herroHTMLArray[i].id;
+    }
+  }
+  for (let i = 0; i < heroesData.length; i++) {
+    if (heroesData[i].name == activeHero) renderHeroGameProfile(i);
+  }
 }

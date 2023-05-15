@@ -1,8 +1,6 @@
 "use strict";
 
 //HERO OBJECTS
-//Declare the current hero object
-let currentGameHeroData = {};
 
 //Declare hero data objects that is accessed when generating
 // the data for the selected hero.
@@ -76,11 +74,11 @@ let heroesData = [
   {
     name: "Rey",
     diceAmount: {
-      red: "3",
-      blue: "1",
-      green: "2",
-      yellow: "5",
-      black: "1",
+      red: 3,
+      blue: 1,
+      green: 2,
+      yellow: 5,
+      black: 1,
     },
     diceLimit: {
       red: 6,
@@ -97,19 +95,19 @@ let heroesData = [
   },
 ];
 
+//Declare the current hero object
+let currentGameHeroData;
+
 //SELECT HERO FUNCTIONALITIES
 
 //When html is dowloaded the modal HTML is dowloaded using the heroesData object
-renderModalHeroes();
 
 function renderModalHeroes() {
   const modalContent = document.getElementById("modal-heroes");
   let modalInner = "";
   for (let i in heroesData) {
     modalInner += `
-        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" onclick= renderHeroGameProfile(${i}) id="${
-      heroesData[i].name
-    }">
+        <div class="carousel-item ${i == 0 ? "active" : ""} selectHero" id="${heroesData[i].name}">
             <img src="${heroesData[i].image}" class="d-block hero-img m-auto text-center" alt="Image of ${
       heroesData[i].name
     }">
@@ -131,14 +129,8 @@ document.querySelectorAll(".selectHero").forEach((occurence) => {
 
 //UPDATE HERO DATA
 //This function initiates the hero profile update
-function renderHeroGameProfile(hero) {
-  let heroObject = {};
-  for (let i of heroesData) {
-    if (i.name == hero) {
-      heroObject = i;
-    }
-  }
-  currentGameHeroData = heroObject;
+function renderHeroGameProfile(index) {
+  currentGameHeroData = heroesData[index];
   renderHeroPowers();
   renderHeroLife();
   renderHeroImg();
@@ -191,7 +183,6 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
-
 function generateRewardObjects() {
     let completeRewardHtml = [];
 
@@ -220,6 +211,7 @@ function generateRewardObjects() {
     let rewardType;
 
     if (randomNo < colorPrc) {
+
             rewardType = "color";
         } else if (randomNo < colorPrc + blackPrc) {
             rewardType = "black";
@@ -241,11 +233,13 @@ function generateRewardObjects() {
     const greenRew = currentVillainData.colorReward.green;
     const yellowRew = currentVillainData.colorReward.yellow;
 
+
     let diceColors = [];
     let cycles = 0;
 
     rewardType == "color" ? (cycles = 2) : "";
     rewardType == "extraStorage" ? (cycles = 1) : "";
+
 
 
     for (let i = 0; i<cycles; i++) {
@@ -291,11 +285,10 @@ function generateRewardObjects() {
     }
     return reward;
 
+
   }
 
-  console.log(rewarsdArray);
 }
-
 
 //----------------------------------------------------------------
 
@@ -306,4 +299,4 @@ function generateRewards(rewardsArray) {
   for (let i = 0; i < (rewardsArray.length); i++) {
     rewardWrapper.innerHTML= (rewardsArray[i]);
   }
-}
+

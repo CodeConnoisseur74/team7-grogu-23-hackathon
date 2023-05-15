@@ -116,7 +116,6 @@ h2 {
 
 .dice-red {
   background-color: red;
-  border: red 0.0000000000000001 solid;
 }
 .dice-blue {
   background-color: blue;
@@ -168,8 +167,6 @@ h2 {
 }
 
 .blender-area {
-
-
   width: 10vmin;
   height: 40vmin;
 
@@ -224,16 +221,15 @@ h2 {
   padding: 0 5px;
 }
 
-
 .in-game-btn {
-    width: 100%;
-    border-radius: 30px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px outset black;
-    background: transparent;
-    font-size: 1.3rem;
-    color: white;
+  width: 100%;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px outset black;
+  background: transparent;
+  font-size: 1.3rem;
+  color: white;
 }
 
 .in-game-btn:hover {
@@ -695,22 +691,24 @@ footer {
 
 .combat-box {
   margin: 0.5vmin;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .size-1 {
   border: 2px solid black;
-  width: 9vmin;
-  height: 9vmin;
+  width: 8vmin;
+  height: 8.5vmin;
 }
 .size-2 {
   border: 2px solid black;
-  width: 18vmin;
-  height: 9vmin;
+  width: 16vmin;
+  height: 8.5vmin;
 }
 .size-3 {
   border: 2px solid black;
-  width: 27vmin;
-  height: 9vmin;
+  width: 24vmin;
+  height: 8.5vmin;
 }
 
 /*  --------------------------   Villain section End------------------------ */
