@@ -616,6 +616,10 @@ footer {
 /*  --------------------------   Hero section END ------------------------ */
 
 /*  --------------------------   Villain section Start------------------------ */
+.carousel-item > img {
+  width: 100%;
+}
+
 .villain-modal-description {
   color: #000;
 }
