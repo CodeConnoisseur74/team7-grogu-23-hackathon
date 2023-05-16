@@ -23,6 +23,17 @@ body {
   background-size: cover;
 }
 
+.alert {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.hidden {
+  display: none;
+}
+
 /*=============================Header Style=============================*/
 
 .row {
@@ -725,9 +736,6 @@ footer {
 
 /*============================ Hero Modal Style ============================*/
 
-.modal-content .hero-img {
-  max-height: 200px;
-}
 
 .villain-modal-description {
   color: white;
