@@ -28,8 +28,8 @@ function endRound() {
   // calculateHealth(); // Not done yet
   // calculateScoreGained(); // Not done yet
   // renderGameScore(); // Not done yet
-  // addGameLevel();
-  // clearVillainProfile();
+  addGameLevel();
+  clearVillainProfile();
   // updateHeroGameProfile(); // Not done yet
   // renderHeroStats(); // Not done yet
 }

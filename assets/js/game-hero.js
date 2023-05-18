@@ -199,27 +199,6 @@ function clearHeroProfile() {
 }
 
 //--------GENERATE REWARD MODAL--------//
-
-
-  let currentVillainData = {
-    name: "Darth Vader",
-    picture: "assets/images/villians/darth-vader.png",
-    description: "A high ranking Jedi Knight who fought for Galactic Republic.",
-    strongAgainst: "Prefers Blue and Red",
-    colorProcentages: {
-      red: 30,
-      blue: 30,
-      green: 20,
-      yellow: 20,
-      black: 0,
-    },
-    rewardProcentage: { color: 35, black: 10, health: 20, extraStorage: 20, extraBlackStorage: 15 },
-    colorReward: { red: 25, blue: 30, green: 10, yellow: 35 },
-    minimum: 5,
-    maximum: 7,
-  }
-
-
 function generateRewardObjects() {
 //Generates 3 rewards and adds them to reward modal
   let wrapperRewardHtml = document.getElementById("reward-wrapper");
@@ -237,11 +216,11 @@ function generateRewardObjects() {
 }
 
 function getRewardType() {
-//Generates 1 of 4 reward types:
-//black dice, 2 colored dices,
-//1 extra dice space/storage or 10 more health points
-//villain's reward percentages determine likelyhood for reward type
-//Reward is savedn to rewardType variable and retunred
+  //Generates 1 of 4 reward types:
+  //black dice, 2 colored dices,
+  //1 extra dice space/storage or 10 more health points
+  //villain's reward percentages determine likelyhood for reward type
+  //Reward is savedn to rewardType variable and retunred
   const colorPrc = currentVillainData.rewardProcentage.color;
   const blackPrc = currentVillainData.rewardProcentage.black;
   const healthPrc = currentVillainData.rewardProcentage.health;
@@ -261,12 +240,12 @@ function getRewardType() {
 }
 
 function getDiceColor(rewardType) {
-//Generates 1 of 4 colors:
-//red, blue, green or yellow
-//If rewardType is "color" two colors are generated
-//Depending on villain, the likelihood of dropping colors varies
-//If rewardType is "extraStorage" one colors are generated
-//Colors are stored in diceColors-array and returned
+  //Generates 1 of 4 colors:
+  //red, blue, green or yellow
+  //If rewardType is "color" two colors are generated
+  //Depending on villain, the likelihood of dropping colors varies
+  //If rewardType is "extraStorage" one color is generated
+  //Colors are stored in diceColors-array and returned
   const redRew = currentVillainData.colorReward.red;
   const blueRew = currentVillainData.colorReward.blue;
   const greenRew = currentVillainData.colorReward.green;
@@ -292,7 +271,8 @@ function getDiceColor(rewardType) {
 }
 
 function generateRewardHtml(colorArray, rewardType) {
-  //Change the visibility according to the reward type
+  // Generate the html
+  // Save it as a it as a string into a variable and return it 
   let rewardHtml = ""
   switch (rewardType){
     case "health":
@@ -336,7 +316,7 @@ function generateRewardHtml(colorArray, rewardType) {
 
 function saveRewardChoices(main, secondary) {
 // Temporarily stores rewards in global variable rewardOfChoice
-// Once user has selected reward they like, they mus press confirm
+// Once user has selected reward they like, they must press confirm
 // Confirm will Activate updateHeroData
   rewardOfChoice = [main, secondary];
 }
