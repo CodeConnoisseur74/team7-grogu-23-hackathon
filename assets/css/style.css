@@ -143,6 +143,11 @@ h2 {
   z-index: 50;
 }
 
+.dice-container {
+  min-height: 400px;
+  overflow-y: scroll;
+}
+
 .score-points {
   font-size: 0.7rem;
 }
