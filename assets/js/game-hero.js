@@ -99,6 +99,16 @@ const heroesData = [
 let currentGameHeroData;
 let rewardOfChoice;
 
+//Retrieve the HTML from the DOM
+const rewardWrapper = document.getElementById("reward-wrapper");
+const extraLifeHtml = document.getElementById("extra-life");
+const blackDiceHtml = document.getElementById("black-dice");
+const extraDiceHtml = document.getElementById("extra-dice");
+const extraColorOneHtml = document.getElementById("extra-dice-color-one");
+const extraColorTwoHtml = document.getElementById("extra-dice-color-two");
+const extraSpaceHtml = document.getElementById("extra-space");
+const spaceColorHtml = document.getElementById("extra-space-color");
+
 //SELECT HERO FUNCTIONALITIES
 
 //When html is dowloaded the modal HTML is dowloaded using the heroesData object
@@ -188,29 +198,32 @@ function clearHeroProfile() {
   currentGameHeroData = {};
 }
 
-//REWARD MODAL
-
+//--------GENERATE REWARD MODAL--------//
 function generateRewardObjects() {
-  let completeRewardHtml = [];
+//Generates 3 rewards and adds them to reward modal
+  let wrapperRewardHtml = document.getElementById("reward-wrapper");
+  wrapperRewardHtml.innerHTML = ""
+  let innerRewardHtml = ""
 
   for (let i = 0; i < 3; i++) {
     let rewardType = getRewardType();
     let colorArray = getDiceColor(rewardType);
-    let rewardHtml = generateRewardHtml(colorArray, rewardType);
+    innerRewardHtml += generateRewardHtml(colorArray, rewardType);
 
-    completeRewardHtml += rewardHtml;
   }
-  let rewardWrapper = document.getElementById("reward-wrapper");
-  rewardWrapper.innerHTML = completeRewardHtml;
+
+  wrapperRewardHtml.innerHTML= innerRewardHtml;
 }
 
 function getRewardType() {
+  //Generates 1 of 4 reward types:
+  //black dice, 2 colored dices,
+  //1 extra dice space/storage or 10 more health points
+  //villain's reward percentages determine likelyhood for reward type
+  //Reward is savedn to rewardType variable and retunred
   const colorPrc = currentVillainData.rewardProcentage.color;
   const blackPrc = currentVillainData.rewardProcentage.black;
   const healthPrc = currentVillainData.rewardProcentage.health;
-  const extraStoragPrc = currentVillainData.rewardProcentage.extraStorage;
-  const extraBlackStoragePrc = currentVillainData.rewardProcentage.extraBlackStorage;
-
   let randomNo = randomInt(0, 100);
   let rewardType;
 
@@ -220,21 +233,22 @@ function getRewardType() {
     rewardType = "black";
   } else if (randomNo < colorPrc + blackPrc + healthPrc) {
     rewardType = "health";
-  } else if (randomNo < colorPrc + blackPrc + healthPrc + extraStoragPrc) {
+  } else{
     rewardType = "extraStorage";
-  } else {
-    rewardType = "extraBlackStorage";
-  }
-
+  } 
   return rewardType;
 }
 
 function getDiceColor(rewardType) {
+  //Generates 1 of 4 colors:
+  //red, blue, green or yellow
+  //If rewardType is "color" two colors are generated
+  //Depending on villain, the likelihood of dropping colors varies
+  //If rewardType is "extraStorage" one color is generated
+  //Colors are stored in diceColors-array and returned
   const redRew = currentVillainData.colorReward.red;
   const blueRew = currentVillainData.colorReward.blue;
   const greenRew = currentVillainData.colorReward.green;
-  const yellowRew = currentVillainData.colorReward.yellow;
-
   let diceColors = [];
   let cycles = 0;
 
@@ -257,34 +271,53 @@ function getDiceColor(rewardType) {
 }
 
 function generateRewardHtml(colorArray, rewardType) {
-  let reward = "";
-  if (rewardType == "black") {
-    reward = `
-        <div class= "reward-life reward-option" id="currentLife" onclick="saveRewardChoices('black', null)" >
-            Black Dice <div class= "dice-black dice" id="black-reward-dice" ">
-        </div>`;
-  } else if (rewardType == `health`) {
-    reward = `
-        <div class= "reward-life reward-option" id="currentLife" onclick="saveRewardChoices('currentLife', null)">Life
-            <i class="fa-solid fa-heart"> +10 </i>
-        </div>`;
-  } else if (rewardType == "color") {
-    reward = `
-        <div class= "reward-option" onclick="saveRewardChoices('${colorArray[0]}', '${colorArray[1]}')">
-            <div class= "dice-${colorArray[0]} dice stack" id="${colorArray[0]}-reward-dice"> Dice 1</div>
-            <div class= "dice-${colorArray[1]} dice stack-top" id="${colorArray[1]}-reward-dice">Dice 2</div>
-        </div>`;
-  } else {
-    reward = `
-        <div class= "reward-option" onclick="saveRewardChoices('${colorArray[0]}', 'diceLimit')">
-          <div class= "dice-b-${colorArray[0]} dice" id="${colorArray[0]}-reward-storage">Extra Space</div>
-        </div>`;
-    ;
+  // Generate the html
+  // Save it as a it as a string into a variable and return it 
+  let rewardHtml = ""
+  switch (rewardType){
+    case "health":
+      rewardHtml = `
+        <button type="button" class= "btn reward-option col-3 btn-secondary" onclick="saveRewardChoices('currentLife', null)">
+          <i class="fa-solid fa-heart"> +10 
+            </i>
+          <br>Life
+        </button>`
+        break
+    case "black":
+      rewardHtml = `
+      <button type="button" class= "btn reward-option col-3 btn-secondary" onclick="saveRewardChoices('black', null)">
+        <div class= "dice-black dice">
+          </div>
+        <p>Black dice</p>
+      </button>`
+      break
+    case "color":
+      rewardHtml = `
+        <button type="button" class= "btn reward-option col-3 btn-secondary" onclick="saveRewardChoices('${colorArray[0]}', '${colorArray[1]}')">
+          <div class= "dice-${colorArray[0]} dice">
+            </div>
+          <div class= "dice-${colorArray[1]} dice stack-top">
+            </div>
+          <p>2 extra dices</p>
+        </button>`
+      break
+    case "extraStorage":
+      rewardHtml =`
+        <button type="button" class= "btn reward-option col-3 btn-secondary" onclick="saveRewardChoices('${colorArray[0]}', 'diceLimit')">
+          <div class= "dice-b-${colorArray[0]} dice">
+            </div>
+          <br> Dice storage
+        </button>`
+      break
   }
-  return reward;
+
+  return rewardHtml;
 }
 
 function saveRewardChoices(main, secondary) {
+// Temporarily stores rewards in global variable rewardOfChoice
+// Once user has selected reward they like, they must press confirm
+// Confirm will Activate updateHeroData
   rewardOfChoice = [main, secondary];
 }
 
@@ -296,16 +329,16 @@ function updateHeroData() {
   // Switch system is used to check the reward type.
   // Reward type determines how the currentGameHeroData is updated.
 
-  const maxLife = currentGameHeroData.maxLife;
+  const lifeLimit = currentGameHeroData.maxLife;
 
   switch (true){
-    case "black"== rewardOfChoice[0]:
+    case rewardOfChoice[0] == "black":
       currentGameHeroData.diceAmount["black"] += 1;
       break
     case rewardOfChoice[0] == "currentLife":
-      currentGameHeroData[currentLife] += 1;
-      if (currentGameHeroData.currentLife > maxLife){
-        currentGameHeroData.currentLife = maxLife};
+      currentGameHeroData["currentLife"] += 10;
+      if (currentGameHeroData.currentLife > lifeLimit){
+        currentGameHeroData.currentLife = lifeLimit};
       break
     case rewardOfChoice[1] == "diceLimit":
       currentGameHeroData.diceLimit[rewardOfChoice[0]] += 1;
