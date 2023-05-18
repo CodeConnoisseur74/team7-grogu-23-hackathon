@@ -33,69 +33,72 @@
       </div>
     </div>
 
-    <div class="container">
-      <div id="game-size-container">
-        <div class="row">
-          <!-- villain section -->
-          <div class="col-8">
-
-            <div class="row">
-
-              <div class="col-6">
-                <div class="box-container" id="fighting-point-field">
-                </div>
-              </div>
-              <div class="col-6 p-3">
-                <div class="villain-portfolio">
-                  <img src="assets/images/heroes/shadow.png" id="villain-image">
-
-                </div>
-                <div class="h-20 text-center villain-desc">
-                  <h5 id="villian-title"></h5>
-                  <p id="villian-description"></p>
-                </div>
-              </div>
-            </div>
+    <div class="container-fluid" id="game-size-container">
+        <div class="row top-row align-items-center">
+          <!-- Fighting point field -->
+          <div class="col-5">
+            <div class="box-container" id="fighting-point-field"></div>
           </div>
-          <!-- Hero section -->
-          <div class="col-4">
-            <div class="hero-portfolio">
-              <img src="assets/images/heroes/shadow.png" id="game-hero-img" alt="silhouette image" />
-            </div>
-            <div class="power-wrapper">
-              <div class="row">
-                <div class="col-4 full-height">
-                  <div class="power-container" id="red">
-                    <span class="badge bg-danger power-badges" id="red-power">0/6</span>
-                  </div>
-                  <div class="power-container" id="blue">
-                    <span class="badge bg-primary power-badges" id="blue-power">0/6</span>
+            
+            <div class="col-7">
+              <div class="row image-row">
+                <!-- Villain Img -->
+                <div class="col-5">
+                  <div class="villain-portfolio">
+                    <img src="assets/images/heroes/shadow.png" id="villain-image">
                   </div>
                 </div>
-                <div class="col-4 full-height">
-                  <div class="power-container" id="green">
-                    <span class="badge bg-success power-badges" id="green-power">0/6</span>
-                  </div>
-                  <div class="power-container" id="yellow">
-                    <span class="badge bg-warning power-badges" id="yellow-power">0/6</span>
+                <div class="col-2 versus">
+                  <h4 class="text-center">VS</h4>
+                </div>
+                <!-- Hero Img -->
+                <div class="col-5">
+                  <div class="hero-portfolio">
+                    <img src="assets/images/heroes/shadow.png" id="game-hero-img" alt="silhouette image" />
                   </div>
                 </div>
-                <div class="col-4 full-height">
-                  <div class="power-container" id="black">
-                    <span class="badge bg-dark power-badges" id="black-power">0/6</span>
-                  </div>
-
-                  <div class="health-container">
-                    <div class="healthBar">
-                      <div id="healthRemaining"></div>
-                      <i class="fa-solid fa-heart health-heart"></i>
-                      <p id="health-points">0/0</p>
+              </div>
+              <div class="row power-badges-row mt-2">
+                <div class="power-wrapper col-12">
+                  <div class="row">
+                    <div class="col-4 full-height">
+                      <div class="power-container" id="red">
+                        <span class="badge bg-danger power-badges" id="red-power">0/6</span>
+                      </div>
+                      <div class="power-container" id="blue">
+                        <span class="badge bg-primary power-badges" id="blue-power">0/6</span>
+                      </div>
+                    </div>
+                    <div class="col-4 full-height">
+                      <div class="power-container" id="green">
+                        <span class="badge bg-success power-badges" id="green-power">0/6</span>
+                      </div>
+                      <div class="power-container" id="yellow">
+                        <span class="badge bg-warning power-badges" id="yellow-power">0/6</span>
+                      </div>
+                    </div>
+                    <div class="col-4 full-height">
+                      <div class="power-container" id="black">
+                        <span class="badge bg-dark power-badges" id="black-power">0/6</span>
+                      </div>
+      
+                      <div class="health-container">
+                        <div class="healthBar">
+                          <div id="healthRemaining"></div>
+                          <i class="fa-solid fa-heart health-heart"></i>
+                          <p id="health-points">0/0</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          
+          
+        </div>
+
+            
           <!-- Dice container -->
           <div class="col-8">
             <div class="row">
@@ -149,8 +152,7 @@
                 <span class="icon"><i class="fa-solid fa-share"></span></i>End turn</button>
             </div>
           </div>
-        </div>
-      </div>
+        
     </div>
 
     <!-------------------- MODALS ------------------->
