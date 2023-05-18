@@ -157,7 +157,7 @@ const villainlist = [
   },
 ];
 
-let currentVillainData = {};
+// let currentVillainData = {};
 
 /**
  * chooses villian randomly from the list provided
