@@ -26,6 +26,13 @@
 
 
   <main>
+    <!--Displays alert message for smaller screen devices-->
+    <div class="container-fluid alert">
+      <div class="row">
+        <div class="col text-center bg-warning text-dark hidden">We recommend playing this game Horizontally for a better experience!</div>
+      </div>
+    </div>
+
     <div class="container">
       <div id="game-size-container">
         <div class="row">
@@ -211,7 +218,7 @@
                 <div id="reward-wrapper">
 
                 </div>
-                <button type="button" class="btn btn btn-warning" data-bs-dismiss="modal" id="confirm-reward-btn">
+                <button type="button" class="btn btn btn-warning" data-bs-dismiss="modal" id="confirm-reward-btn" onclick = "updateHeroData()">
                   Confirm Selection
                 </button>
               </div>
@@ -306,16 +313,16 @@
             <div class="modal-body text-center" id="Menu-modal-body">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  <a class="nav-link menu-link" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="game.html">Game</a>
+                  <a class="nav-link menu-link" href="game.html">Game</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="highscore.html">Highscores</a>
+                  <a class="nav-link menu-link" href="highscore.html">Highscores</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" onclick="openHeroModal()" data-bs-dismiss="modal">Start New Game</a>
+                  <a class="nav-link menu-link new-game" onclick="openHeroModal()" data-bs-dismiss="modal">Start New Game</a>
                 </li>
 
             </div>
