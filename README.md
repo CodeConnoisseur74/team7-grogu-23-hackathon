@@ -3,12 +3,36 @@
 
 ![main battlefield](/assets/images/README_screenshots/battlefield.png)
 
-## Game rules:
+
+# _Content Menu_
+
+- [_Content Menu_](#content-menu)
+- [_Features_](#features)
+  - [_Game Rules_](#game-rules)
+    - [_Hero_](#hero)
+    - [_Villain_](#villain)
+    - [_Begin the game_](#begin-the-game)
+      - [_Start of turn_](#start-of-turn)
+      - [_Player's choice_](#players-choice)
+      - [_Black dice_](#black-dice)
+      - [_End of round_](#end-of-round)
+  - [_Features to be Implemented_](#features-to-be-implemented)
+- [_Bugs_](#bugs)
+- [_Testing_](#testing)
+- [_Validation_](#validation)
+- [_Technologies_](#technologies)
+- [_Deployment_](#deployment)
+- [_Credits_](#credits)
+- [_Team Members_](#team-members)
 
 
-### 1) The player starts with choosing one of the hero profiles.
+# _Features_
+## _Game Rules_
 
-Hero:
+
+## The player starts with choosing one of the hero profiles.
+
+### _Hero_
 - The player begins with a minimum of one, maximum of 3 (out of 5 possible) different preset colors of dice, depending on which choice of hero is made.
 - Each hero has varying sets of strengths and weaknesses.
 - The amount of dice each hero can accumulate varies. An extra space can be given as a reward for winning a round.
@@ -16,9 +40,9 @@ Hero:
 - The black dice are given either in the beginning - for specific heroes, or later - as a reward.
 
 
-### 2) A random selection of Villains is then presented for the player.
+## A random selection of Villains is then presented for the player.
 
-Villain:
+### _Villain_
 - The Villain segment contains 3 randomely colored rectangles, representing their fighting power points.
 - Each rectangle can be 1-4 dice wide, instructing how many dice can be used to fight it.
 - A rectangle, the size of one dice, can contain a fighting power number between 1-6.
@@ -29,9 +53,9 @@ Villain:
 
 ![main battlefield](/assets/images/README_screenshots/villain-battlefield.png)
 
-### 3) Begin the game:
+## _Begin the game_
 
-I) Start of turn:
+### _Start of turn_
 
 - The player clicks "ROLL DICE" button.
 - If the player starts with a dice total of, for example, 3 red, 1 blue, 2 green, 1 yellow - they will roll all the dice at once.
@@ -43,7 +67,7 @@ I) Start of turn:
     - 1 yellow: 3
 
 
-II) Player's choice:
+### _Player's choice_
 
 - Our Hero (the player) uses their rolled dice totals to match their Villain's fighting points.
 - Example: Villain has a red rectangle of 3 spaces with the number 10 (or any possible random total, between 3-18) player uses their red dice (5, 2, 4) to total together 11 fighting points. Since, in this example, the Villain had only 10 red fighting points, our Hero gains a successful defeat.
@@ -63,12 +87,12 @@ II) Player's choice:
 
 
 
-Black dice:
+### _Black dice_
 - The blender can take any mix-and-match colors, not limited to 2 of the same color. For example, a player could mix one blue and one red and get black dice in return for that combination.
 - Black dice are more valuable because they can be used as any color, unlike the others which have to match their opponent's fighting points. Black dice can also be used in the blender in combination with its own or any other color to produce another black.
 
 
-III) End of round:
+### _End of round_
 - Once a player is satisfied with their decisions, they can choose to end the round.
 - All high score points are automatically calculated, as per the previous explanation.
 - The player is then presented with a choice of reward for surviving the round! Hooray!
@@ -79,18 +103,53 @@ III) End of round:
 
 ![main battlefield](/assets/images/README_screenshots/menu.png)
 
-### Deployed link
+# _Features to be Implemented_
+
+# _Deployment_
 
 [Click here to play!](https://codeconnoisseur74.github.io/team7-grogu-23-hackathon/)
 
-## Credits
+# _Testing_
+
+| Test     | Expected      |   Outcome  | 
+| :----     |    :----   |  :---- | 
+| Click on deployed link | Game Instructions page loads | &check; |
+| Click on Game | Play Game page loads | &check; |
+| High Scores Tab clicked | High Scores page loads | &check; |
+| Press Home tab | Game Instructions page appears | &check; |
+| Preass Start New Game link | Hero selection modal appears | &check; |
+| Press Choose Villain button | Choose Villain modal appears | &check; |
+| Press Confirm Selection button | Return to Play Game Screen | 0 |
+| Press X button to exit modal | Return to Play Game Screen| 0 |
+| Click Rewards Modal button | Rewards modal window pops up | &check; |
+| Press Roll Dice button | New dice icons appear for user to choose from | 0 |
+| Press Blend Dice button | Dice left in the Blender slot disappear and their number average appears as a black dice | &check; |
+| Press End Turn button | Play Game Page loads as a fresh, newly reset board | 0 |
+
+# _Bugs_
+The bugs we encountered while creating the game as a team:
+ - Example 1 and how we fixed it
+ - Example 2 and how we solved it
+ - ETC ETC ETC
+
+# _Validation_
+
+| Validator     | Pass | Fail     |
+| :---        |    :----:   | :----: |
+| HTML      | 0       | &check;   |
+| CSS   | 0        | &check;     |
+| JavaScript      |   0      | &check;   |
+| Lighthouse   |    0      | &check;      |
+| Grammarly      | &check;       | 0   |
+
+# _Credits_
 
 * [Sound effects](https://pixabay.com/sound-effects/search/star%20wars/)
-* [Images Source](https://pixabay.com/)
-* [Images Source](https://www.pexels.com/)
-* [Images Source](https://www.kindpng.com/)
+* [Pixabay](https://pixabay.com/)
+* [Pexels](https://www.pexels.com/)
+* [Kindpng](https://www.kindpng.com/)
 
-### Team Members
+# _Team Members_
 
 | Name                | LinkedIn                                                                                    | GitHub                                                                                    |
 |---------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
