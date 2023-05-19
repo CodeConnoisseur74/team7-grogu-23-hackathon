@@ -133,18 +133,18 @@
                 </div>
               </div>
               <div class="col-10">
-                <div id="game-button-area">
-                  <p> High Score Here!</p>
+                <div id="game-button-area container">
+                  <p class="text-center">High Score Here!</p>
                   <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="blendDice()">
                     Blend<span class="icon"><i class="fa-solid fa-blender"></i></span>Dice
                   </button>
                   <button id="roll-dice" class="blend-dice-btn text-center in-game-btn" onclick="rollDices()">
                     Roll<span class="icon"><i class="fa-solid fa-dice"></i></span>Dice
                   </button>
-                  <button type="button" class="text-center in-game-btn" data-bs-toggle="modal" data-bs-target="#modalMenu">
-                    <span class="icon"><i class="fa-solid fa-bars"></i></span> Menu</button>
-                  <button type="button" class="text-center in-game-btn" onclick="endRound()">
-                    <span class="icon"><i class="fa-solid fa-share"></span></i>End turn</button>
+                  <button type="button" class="text-center in-game-btn" data-bs-toggle="modal" data-bs-target="#modalMenu">Game<span class="icon"><i class="fa-solid fa-bars"></i></span>Menu
+                    </button>
+                  <button type="button" class="text-center in-game-btn" onclick="endRound()">End<span class="icon"><i class="fa-solid fa-share"></i></span>turn
+                    </button>
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@
         </div>
         <!--Next tag closes game container-->
         <div class="pt-1">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectHeroModal">
+          <button type="button" class="btn btn-primary bottom-buttons" data-bs-toggle="modal" data-bs-target="#selectHeroModal">
             Choose a Hero
           </button>
           <div class="modal fade hero-selection" id="selectHeroModal" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -189,7 +189,7 @@
             </div>
           </div>
           <!-------------------- Rewards Modal ------------------->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#select-reward-modal">
+          <button type="button" class="btn btn-primary bottom-buttons" data-bs-toggle="modal" data-bs-target="#select-reward-modal">
             Rewards Modal
           </button>
     
@@ -227,7 +227,7 @@
           <!-------------------- Villain selection modal Start------------------->
           <!-- Button trigger modal -->
     
-          <button type="button" class="btn btn btn-warning" data-bs-toggle="modal" data-bs-target="#villainModal">
+          <button type="button" class="btn btn btn-warning bottom-buttons" data-bs-toggle="modal" data-bs-target="#villainModal">
             Select Villain
           </button>
     
@@ -269,7 +269,7 @@
           </div>
     
           <!-------------------- Game Over Modal ------------------->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameOverModal">
+          <button type="button" class="btn btn-primary bottom-buttons" data-bs-toggle="modal" data-bs-target="#gameOverModal">
     
             Game Lost
           </button>

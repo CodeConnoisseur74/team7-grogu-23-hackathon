@@ -106,7 +106,7 @@ h2 {
 /*============================ Top Row ============================*/
 
 #fighting-point-field {
-  min-height: 400px;
+  height: 400px;
   background-color: rgba(180, 180, 180, 0.3);
   display: flex;
   flex-wrap: wrap;
@@ -114,6 +114,8 @@ h2 {
   border: 2px outset black;
   border-radius: 20px;
 }
+
+
 
 .villain-portfolio, .hero-portfolio {
   display: flex;
@@ -144,7 +146,7 @@ h2 {
 }
 
 .dice-container {
-  min-height: 400px;
+  height: 400px;
   overflow-y: scroll;
 }
 
@@ -226,11 +228,9 @@ h2 {
 .blender-area {
   width: 10vmin;
   height: 40vmin;
-
   border: 2px solid #fff;
   border-radius: 20px;
   margin-top: 10px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -398,11 +398,6 @@ h2 {
   margin: 0;
 }
 
-#villain-image {
-  height: 80%;
-  width: 80%;
-}
-
 /*============================Hero Image============================*/
 
 
@@ -501,17 +496,7 @@ footer {
   .nav-links li {
     display: block;
   }
-  .villain-desc {
-    font-size: 0.8rem;
-  }
-  
-  #game-button-area {
-    font-size: 0.8rem;
-  }
-  
-  .in-game-btn {
-    font-size: 0.8rem;
-  }
+
 }
 
 @media only screen and (max-width: 990px) {
@@ -705,18 +690,44 @@ footer {
   color: white;
 }
 
+@media screen and (max-width:1200px) {
+  #fighting-point-field {
+    height: 250px;
+  }
+  .dice-container{
+    height: 40vmin;
+  }
+  .villain-portfolio img, .hero-portfolio img {
+    width: 100px;
+  }
+  .bottom-buttons {
+    font-size: 16px;
+  }
+}
+
 
 @media only screen and (max-width: 990px) {
-  .villain-desc {
-    font-size: 0.6rem;
+  #fighting-point-field {
+    height: 150px;
   }
-  
+  .dice-container{
+    height: 40vmin;
+  }
+
   #game-button-area {
     font-size: 0.6rem;
+  }
+
+  #game-button-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .in-game-btn {
     font-size: 0.6rem;
+    width: 60px;
+    height: 80px;
   }
 }
 
